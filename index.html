@@ -1,0 +1,5352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قاموس إنجليزي – عربي</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#eef1f6;--card:#fff;--ink:#14213d;--mut:#6a748c;--acc:#2b3a8f;--gold:#b8892b;--line:#d9dfeb;--v:#2b3a8f;--a:#a8731a;--n:#0f766e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1222;--card:#141c33;--ink:#e8ecf7;--mut:#8d98b5;--acc:#8c9cff;--gold:#e0b25a;--line:#232d4a;--v:#8c9cff;--a:#e0b25a;--n:#4fd1c0}}
+:root[data-theme="dark"]{--bg:#0c1222;--card:#141c33;--ink:#e8ecf7;--mut:#8d98b5;--acc:#8c9cff;--gold:#e0b25a;--line:#232d4a;--v:#8c9cff;--a:#e0b25a;--n:#4fd1c0}
+html,body{margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Naskh Arabic","Segoe UI",Tahoma,sans-serif;line-height:1.6}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:18px 16px 10px;z-index:2;border-bottom:1px solid var(--line)}
+.wrap{max-width:620px;margin:0 auto}
+h1{margin:0;font:700 1.7rem/1.2 "Fraunces",Georgia,serif;color:var(--ink)}
+.sub{color:var(--mut);font-size:.9rem;margin:2px 0 12px}
+input{width:100%;box-sizing:border-box;padding:13px 16px;font:inherit;font-size:1rem;border:1.5px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink)}
+input:focus{outline:none;border-color:var(--acc)}
+.chips{display:flex;gap:8px;margin-top:10px;overflow-x:auto}
+.chip{flex:none;border:1.5px solid var(--line);background:transparent;color:var(--mut);padding:5px 14px;border-radius:999px;font:inherit;font-size:.9rem;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.chip:focus-visible,.say:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+main{max-width:620px;margin:0 auto;padding:6px 16px 32px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line)}
+.w{flex:1;min-width:0}
+.en{direction:ltr;text-align:left;font:500 1.2rem/1.3 "Fraunces",Georgia,serif}
+.ar{color:var(--acc);font-size:1.05rem}
+.tag{font-size:.75rem;padding:1px 9px;border-radius:999px;border:1px solid currentColor}
+.tag.v{color:var(--v)}.tag.a{color:var(--a)}.tag.n{color:var(--n)}.tag.c{color:var(--mut)}
+.pic{flex:none;width:52px;height:52px;border-radius:14px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;font-size:1.9rem;color:var(--mut)}.say{font-size:1.15rem;flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--acc);display:grid;place-items:center;cursor:pointer}
+.say.on{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.empty{text-align:center;color:var(--mut);padding:40px 0}
+#inst{color:var(--acc)}#ip{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 10px;font-size:.92rem}#count{color:var(--mut);font-size:.85rem;margin:10px 2px 0}
+
+.star{font-size:1.25rem;flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--gold);display:grid;place-items:center;cursor:pointer}
+.star.on{background:var(--gold);color:#fff;border-color:var(--gold)}
+#toast{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:.95rem;opacity:0;transition:opacity .3s;pointer-events:none;z-index:50}
+#nbfab{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:10px;z-index:30;height:40px;padding:0 12px;border-radius:999px;border:1.5px solid var(--gold);background:var(--card);color:var(--ink);font:inherit;font-size:.95rem;cursor:pointer;box-shadow:0 2px 8px #0003}
+#nbp{position:fixed;top:calc(env(safe-area-inset-top,0px) + 56px);left:10px;z-index:30;width:min(250px,72vw);max-height:60vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 6px 24px #0005;padding:8px 10px}
+#nbp[hidden]{display:none}
+.nbt{display:flex;justify-content:space-between;align-items:center;font-size:.95rem;margin-bottom:4px}
+.nbt button,.nwh button{border:0;background:transparent;color:var(--mut);font-size:1rem;cursor:pointer;width:30px;height:30px;padding:0}
+.nbe{color:var(--mut);font-size:.85rem;padding:8px 0}
+.nw{border-top:1px solid var(--line);padding:5px 0}
+.nwh{display:flex;align-items:center;gap:2px}
+.nwh .nm{flex:1;min-width:0;cursor:pointer;line-height:1.25}
+.nwh b{display:block;direction:ltr;text-align:left;font-size:1rem}
+.nwh small{display:block;color:var(--mut);font-size:.8rem}
+.nl{max-height:130px;overflow:auto;margin-top:4px}
+#nbp .nl input{width:100%;height:32px;padding:0 8px;margin:2px 0;font-size:1rem;border-radius:8px;direction:ltr;text-align:left;border:1.5px solid var(--line)}
+#nbp .nl input.ok{color:#1a9b4a;border-color:#1a9b4a;background:#1a9b4a22;font-weight:700}
+#nbp .nl input.bad{color:#d8362f;border-color:#d8362f;background:#d8362f22;font-weight:700}
+.nmore,#nbclr{display:block;width:100%;margin-top:4px;padding:5px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--mut);font:inherit;font-size:.85rem;cursor:pointer}
+
+#splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(160deg,#1b9a86,#16476a);color:#fff;transition:opacity .6s,visibility .6s;cursor:pointer}
+#splash.out{opacity:0;visibility:hidden}
+.sp-logo{width:104px;height:104px;border-radius:26px;background:#fff;display:grid;place-items:center;box-shadow:0 12px 32px #0005;animation:pop .6s ease-out}
+.sp-logo span{font-size:34px;font-weight:800;color:#1b9a86;letter-spacing:1px}
+.sp-logo::after{content:"";position:absolute;}
+#splash h1{margin:18px 0 4px;font-size:2rem}
+#splash p{margin:0;opacity:.9;direction:ltr}
+.sp-bar{width:150px;height:4px;border-radius:4px;background:#ffffff44;overflow:hidden;margin-top:22px}
+.sp-bar i{display:block;height:100%;width:0;background:#f5be46;animation:load 1.6s ease forwards}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+@keyframes load{to{width:100%}}
+
+/* تصميم محسّن */
+html[data-theme=light]{--bg:#eaf7f4;--card:#ffffff;--ink:#16324a;--mut:#5c6b7a;--line:#d6e6e3;--acc:#1b9a86;--gold:#e09a1a}
+html[data-theme=dark]{--bg:#0f1b24;--card:#1a2b38;--ink:#e6f1f4;--mut:#9fb3bf;--line:#2a3f4d;--acc:#3fc1ab;--gold:#f5be46}
+body{background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,#1b9a86,#16476a)!important;color:#fff;border-radius:0 0 24px 24px;box-shadow:0 8px 24px #0006;padding-bottom:12px}
+header h1{color:#fff}
+header .sub{color:#e6f7f4!important}
+.chip{border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink);transition:.2s}
+.chip[aria-pressed=true]{background:linear-gradient(135deg,#1b9a86,#16476a);color:#fff;border-color:transparent}
+.row{border-radius:16px;box-shadow:0 3px 12px #0002;margin:8px 0;border:1px solid var(--line);padding:12px;background:var(--card);transition:transform .15s}
+.row:active{transform:scale(.985)}
+.pic{background:linear-gradient(135deg,#1b9a86,#16476a);color:#fff;border-radius:14px;font-weight:700}
+.en{color:var(--ink)}
+.star{background:var(--card);border:1.5px solid var(--gold);color:var(--gold)}
+.star.on{background:linear-gradient(135deg,#f5be46,#e09a1a);color:#fff}
+.say{background:var(--card);border:1px solid var(--line);border-radius:50%}
+#nbfab{background:linear-gradient(135deg,#f5be46,#e09a1a);color:#fff;border:0;font-weight:700}
+#nbp{border-radius:18px;box-shadow:0 10px 30px #0008;background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.nw{border-radius:12px}
+#themeb,#aib{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:31;width:40px;height:40px;border-radius:50%;background:var(--card);font-size:18px;cursor:pointer;box-shadow:0 2px 8px #0003;padding:0}
+#themeb{left:92px;border:1.5px solid var(--gold)}
+#aib{left:142px;border:1.5px solid var(--acc)}
+#aip{position:fixed;top:calc(env(safe-area-inset-top,0px) + 56px);left:10px;z-index:30;width:min(320px,88vw);max-height:70vh;overflow:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px #0008;padding:12px;display:flex;flex-direction:column;gap:8px}
+#aip[hidden]{display:none}
+.aih{display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#aix{border:0;background:transparent;color:var(--mut);font-size:1rem;cursor:pointer}
+#aip input,#aip textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:8px;font:inherit;font-size:.95rem}
+#aiq{min-height:70px;resize:vertical}
+#aisend{border:0;border-radius:10px;padding:10px;background:linear-gradient(135deg,#1b9a86,#16476a);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+#aio{white-space:pre-wrap;font-size:.95rem;line-height:1.7;color:var(--ink)}
+#splash{background:linear-gradient(-45deg,#1b9a86,#16476a,#0f3b5e,#1b9a86);background-size:300% 300%;animation:bgmove 6s ease infinite}
+@keyframes bgmove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.sp-logo{animation:spin3d 1.2s ease-out both}
+@keyframes spin3d{0%{transform:rotateY(180deg) scale(.4);opacity:0}100%{transform:none;opacity:1}}
+#splash h1{animation:rise .8s .5s ease-out both}
+#splash p{animation:rise .8s .8s ease-out both}
+.sp-bar{animation:rise .6s 1s both}
+@keyframes rise{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+</style>
+<meta name="theme-color" content="#2b3a8f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="قاموسي">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACo0lEQVR4nO3csU1cURBAUWO5G6gAF+B2HLkIJ7gdF+AOKMgB0soBFxak/2dkzkkJ9jG6zH8Su3tze//wCZ7zefoA7CUOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJg/Rl+gDPePzz/cyX+/3zrn707cfjmSe5+/rrzJd71aI4Tm5iocsEllSy5bGijH8tmcb85lgyiG2exjK7QoY3hzJeNjufyTiUcY3BKW25c7DQWBzWxvWmZjUThzLeamRiHiskcZAG4vBMeZ/z52ZzkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBmv9owgsOemP+u//3ve08R7M5SOIgiYMkDtLqC+m2m9q28xzN5iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJg7T6bYLbPiey7TxHszlI4iCJgyQO0uoL6bab2rbzHM3mIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDtPptgts+J7LtPEezOUjiIImDJA7S6gvptpvatvMczeYgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYM0EMdBnzj9750/N5uDJA7STByeLG81MrGxzaGP603NymOFNBmH5XGNwSkNbw59vGx2PvNfwfD0+3+0bzd41YY/my13jg2z2GPJNOY3x8VlIh92iyxp4uLm9v5h+gwsteWxwkLiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA7SX+wTXZvAwM/rAAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACo0lEQVR4nO3csU1cURBAUWO5G6gAF+B2HLkIJ7gdF+AOKMgB0soBFxak/2dkzkkJ9jG6zH8Su3tze//wCZ7zefoA7CUOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJg/Rl+gDPePzz/cyX+/3zrn707cfjmSe5+/rrzJd71aI4Tm5iocsEllSy5bGijH8tmcb85lgyiG2exjK7QoY3hzJeNjufyTiUcY3BKW25c7DQWBzWxvWmZjUThzLeamRiHiskcZAG4vBMeZ/z52ZzkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBmv9owgsOemP+u//3ve08R7M5SOIgiYMkDtLqC+m2m9q28xzN5iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJg7T6bYLbPiey7TxHszlI4iCJgyQO0uoL6bab2rbzHM3mIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDtPptgts+J7LtPEezOUjiIImDJA7S6gvptpvatvMczeYgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYM0EMdBnzj9750/N5uDJA7STByeLG81MrGxzaGP603NymOFNBmH5XGNwSkNbw59vGx2PvNfwfD0+3+0bzd41YY/my13jg2z2GPJNOY3x8VlIh92iyxp4uLm9v5h+gwsteWxwkLiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA7SX+wTXZvAwM/rAAAAAElFTkSuQmCC">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1b9a86">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<script>(function(){var t=null;try{t=localStorage.getItem("theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t})();</script>
+</head>
+<body>
+<button id="themeb" type="button" aria-label="تبديل الوضع">🌙</button>
+<button id="aib" type="button" aria-label="المساعد الذكي">✨</button>
+<div id="aip" hidden><div class="aih"><span>✨ المساعد الذكي (Google Gemini)</span><button id="aix" type="button">✕</button></div><input id="aik" type="password" dir="ltr" placeholder="مفتاح Gemini API"><input id="aim" dir="ltr" placeholder="gemini-2.0-flash"><textarea id="aiq" placeholder="اسأل عن أي كلمة، أو اطلب جملًا وأمثلة"></textarea><button id="aisend" type="button">إرسال</button><div id="aio"></div></div>
+
+<div id="splash"><div class="sp-logo"><span>EN</span></div><h1>قاموسي</h1><p>English · عربي</p><div class="sp-bar"><i></i></div></div>
+<header><div class="wrap">
+<h1>English · عربي</h1>
+<div class="sub">اضغط على السماعة لسماع النطق · <a href="#" id="inst">ثبّته كتطبيق</a></div>
+<div id="ip" hidden></div>
+<input id="q" type="search" placeholder="ابحث بالإنجليزي أو بالعربي" autocomplete="off">
+<div class="chips" id="chips">
+<button class="chip" data-t="" aria-pressed="true">الكل</button>
+<button class="chip" data-t="n" aria-pressed="false">أسماء</button>
+<button class="chip" data-t="v" aria-pressed="false">أفعال</button>
+<button class="chip" data-t="c" aria-pressed="false">مركبات</button>
+</div></div></header>
+<button id="nbfab" type="button" aria-label="الدفتر">📓 <span id="cnt">0</span></button>
+<div id="nbp" hidden><div class="nbt"><b>📓 دفتري</b><button id="nbx" type="button" aria-label="إغلاق">✕</button></div><div id="nbbox"></div><button id="nbclr" type="button">مسح الدفتر</button></div>
+<div id="toast"></div>
+<main><div id="count"></div><div id="list"></div></main>
+<script>
+const RAW=`a bit|قليلاً|c|
+a couple of|اثنان تقريباً|c|
+a few|بضعة|c|
+a little|قليلاً|c|
+a lot of|الكثير من|c|
+abandon|يتخلى عن|v|
+ability|قدرة|n|
+about|حول||
+above|فوق||
+absent|غائب|a|
+absolute|مطلق|a|
+absorb|يمتص|v|
+abundant|وفير|a|
+accept|يقبل|v|
+accident|حادث||
+accompany|يرافق|v|
+according to|وفقاً لـ|c|
+accountant|محاسب|n|
+accurate|دقيق|a|
+accuse|يتهم|v|
+ache|يؤلم|v|
+achieve|يحقق|v|
+across|عبر||
+act|يتصرف|v|
+active|نشيط|a|
+add|يضيف|v|
+address|عنوان||
+adequate|كافٍ|a|
+adjacent|مجاور|a|
+adjust|يعدل|v|
+admire|يُعجب بـ|v|
+admit|يعترف|v|
+adopt|يتبنى|v|
+adorable|محبوب|a|
+adore|يعشق|v|
+adult|بالغ||
+adventure|مغامرة|n|
+advice|نصيحة||
+advise|ينصح|v|
+afraid|خائف||
+after|بعد||
+again|مرة أخرى||
+age|عمر||
+aggressive|عدواني|a|
+agile|رشيق|a|
+agree|يوافق|v|
+agree with|يتفق مع|c|
+agriculture|زراعة|n|
+aim|يهدف|v|
+air|هواء||
+air conditioner|مكيف|c|
+airport|مطار||
+airy|جيد التهوية|a|
+alarm|منبه|n|
+alarm clock|ساعة منبهة|c|
+album|ألبوم|n|
+alert|متيقظ|a|
+alien|كائن فضائي|n|👽
+alike|متشابه|a|
+alive|حي|a|
+all|كل||
+all day long|طوال اليوم|c|
+all of a sudden|فجأة|c|
+allocate|يخصص|v|
+allow|يسمح|v|
+alone|وحيد||
+alphabet|أبجدية|n|
+always|دائماً||
+amaze|يذهل|v|
+amazing|مذهل||
+ambition|طموح|n|
+ambitious|طموح|a|
+ambulance|سيارة إسعاف|c|
+ample|واسع|a|
+amused|مستمتع|a|
+analyze|يحلل|v|
+anchor|مرساة|n|⚓
+ancient|عريق|a|
+and|و||
+anger|غضب|n|
+angry|غاضب||
+animal|حيوان||
+ankle|كاحل|n|
+anniversary|ذكرى سنوية|n|
+announce|يعلن|v|
+annoying|مزعج|a|
+answer|إجابة||
+ant|نملة|n|
+anthem|نشيد|n|
+anxious|قلق|a|
+any|أي||
+apartment|شقة|n|
+apologize|يعتذر|v|
+app|تطبيق|c|
+apparent|جلي|a|
+appear|يظهر|v|
+apple|تفاحة||🍎
+apple pie|فطيرة تفاح|c|
+apply|يتقدم|v|
+appointment|موعد|n|
+appreciate|يقدّر|v|
+approve|يوافق رسمياً|v|
+archer|رامٍ|n|
+argue|يجادل|v|
+argument|جدال|n|
+arm|ذراع||
+armor|درع|n|
+army|جيش|n|
+arrange|يرتب|v|
+arrival|وصول|n|
+arrive|يصل|v|
+arrogant|متغطرس|a|
+arrow|سهم|n|
+art|فن||
+artificial|اصطناعي|a|
+artist|فنان|n|
+as a result|نتيجة لذلك|c|
+as far as i know|على حد علمي|c|
+as soon as|بمجرد أن|c|
+as usual|كالعادة|c|
+as well as|وكذلك|c|
+ashamed|خجلان|a|
+ask|يسأل|v|
+ask for help|يطلب المساعدة|c|
+astronaut|رائد فضاء|n|🧑‍🚀
+at home|في المنزل|c|
+at last|أخيراً|c|
+at least|على الأقل|c|
+at night|ليلاً|c|
+at the same time|في الوقت نفسه|c|
+at work|في العمل|c|
+atmosphere|أجواء|n|
+atom|ذرة|n|⚛️
+attach|يرفق|v|
+attack|يهاجم|v|
+attempt|يحاول|v|
+attend|يحضر|v|
+attention|انتباه|n|
+attract|يجذب|v|
+attractive|جذاب|a|
+audience|جمهور|n|
+audio|صوت|n|
+aunt|عمة أو خالة|n|
+authority|سلطة|n|
+available|متاح|a|
+avocado|أفوكادو|n|🥑
+avoid|يتجنب|v|
+awake|مستيقظ|a|
+aware|مدرك|a|
+awful|فظيع|a|
+awkward|محرج|a|
+axe|فأس|n|🪓
+baby|طفل رضيع||
+back|ظهر||
+back and forth|ذهاباً وإياباً|c|
+back yard|الفناء الخلفي|c|
+backpack|حقيبة ظهر|n|🎒
+bacon|لحم مقدد|n|🥓
+bad|سيئ||
+badminton|ريشة طائرة|n|🏸
+bag|حقيبة||
+bagel|بيغل|n|🥯
+baguette|باغيت|n|🥖
+bake|يخبز|v|
+bakery|مخبز|n|🥖
+balance|توازن|n|
+bald|أصلع|a|
+ball|كرة||
+balloon|بالون|n|🎈
+ban|يحظر|v|
+banana|موز|n|🍌
+bandage|ضمادة|n|🩹
+bank|بنك||🏦
+barber|حلاق|n|
+bare|عارٍ|a|
+bargain|يساوم|v|
+bark|ينبح|v|
+baseball|بيسبول|n|⚾
+bashful|خجول|a|
+basket|سلة|n|
+basketball|كرة سلة|c|
+bat|خفاش|n|🦇
+bathe|يستحم|v|
+bathroom|حمام|c|
+bathtub|حوض استحمام|n|
+battery|بطارية|c|🔋
+battery low|بطارية ضعيفة|n|🪫
+battle|معركة|n|
+beach|شاطئ||
+bean|فاصولياء|n|
+bear|دب|n|🐻
+beard|لحية|n|
+beat|يضرب|v|
+beautiful|جميل||
+beauty|جمال|n|
+because|لأن||
+because of|بسبب|c|
+bed|سرير||🛏️
+bedroom|غرفة نوم|c|
+bee|نحلة|n|🐝
+beer|بيرة|n|🍺
+before|قبل||
+beg|يتوسل|v|
+begin|يبدأ|v|
+beginning|بداية|n|
+behind|خلف||
+belief|إيمان|n|
+believe|يؤمن|v|
+bell|جرس|n|🔔
+belong|ينتمي|v|
+belong to|ينتمي إلى|c|
+below|تحت||
+belt|حزام|n|
+bend|ينحني|v|
+beneficial|نافع|a|
+benefit|فائدة|n|
+best|الأفضل||
+best friend|أفضل صديق|c|
+bet|يراهن|v|
+betray|يخون|v|
+better|أفضل||
+between|بين||
+bicycle|دراجة|c|🚲
+big|كبير||
+bikini|بيكيني|n|👙
+bill|فاتورة|n|
+bind|يربط|v|
+bird|طائر||🐦
+birthday|عيد ميلاد||
+bite|يعض|v|
+bitter|مرّ|a|
+black|أسود||
+black hole|ثقب أسود|c|
+blackboard|سبورة|c|
+blade|نصل|n|
+blame|يلوم|v|
+blank|فارغ|a|
+blanket|بطانية|n|
+bleak|قاتم|a|
+bless|يبارك|v|
+bless you|يرحمك الله|c|
+blessing|نعمة|n|
+blind|أعمى|a|
+blink|يرمش|v|
+blood|دم|n|
+blood pressure|ضغط الدم|c|
+bloom|يزهر|v|
+blow|ينفخ|v|
+blue|أزرق||
+blueberry|توت أزرق|n|🫐
+blurry|ضبابي الرؤية|a|
+board game|لعبة لوحية|c|
+boarding pass|بطاقة صعود|c|
+boast|يتباهى|v|
+boat|قارب||⛵
+body|جسم||
+boil|يغلي|v|
+bold|جريء|a|
+bon appetit|بالهناء والشفاء|c|
+bone|عظم|n|
+book|كتاب||📚
+book stack|كومة كتب|n|📚
+bookmark|فاصل كتاب|n|🔖
+boot|حذاء طويل|n|👢
+border|حدود|n|
+bored|ضجِر|a|
+boring|ممل||
+born|مولود||
+borrow|يستعير|v|
+boss|رئيس|n|
+both|كلاهما||
+bottle|زجاجة||
+bouquet|باقة ورد|n|💐
+bow|ينحني|v|
+bow and arrow|قوس وسهم|n|🏹
+bowl|وعاء|n|
+bowling|بولينغ|n|🎳
+box|صندوق||
+boxing|ملاكمة|n|🥊
+boy|ولد||
+brain|دماغ|n|
+brake|يكبح|v|
+brave|شجاع|a|
+bread|خبز||🍞
+break|يكسر|v|
+break down|يتعطل|c|
+break the ice|يكسر الجمود|c|
+breakfast|فطور||
+breath|نَفَس|n|
+breathe|يتنفس|v|
+breed|يربي|v|
+breezy|عليل|a|
+bridge|جسر||
+brief|موجز|a|
+bright|ساطع||
+brilliant|لامع|a|
+bring|يحضر|v|
+broadcast|يبث|v|
+broccoli|بروكلي|n|🥦
+broken|مكسور|a|
+broom|مكنسة|n|🧹
+brother|أخ||
+brown|بني||
+brush|فرشاة|n|
+bubble|يفور|v|
+bubbly|فوّار|a|
+bucket|دلو|n|🪣
+buckle|يشد الحزام|v|
+budget|ميزانية|n|
+build|يبني|v|
+building|مبنى||
+bull|ثور|n|🐂
+bullet|رصاصة|n|
+bump|يصطدم|v|
+bumpy|وعر|a|
+burger|برجر|n|🍔
+burn|يحرق|v|
+bury|يدفن|v|
+bus|حافلة||🚌
+bus stop|موقف حافلة|c|
+business|أعمال|n|
+business card|بطاقة عمل|c|
+busy|مشغول||
+butter|زبدة|n|
+butterfly|فراشة|n|🦋
+button|زر|n|
+buy|يشتري|v|
+buzz|يطن|v|
+by accident|بالصدفة|c|
+by hand|يدوياً|c|
+by heart|عن ظهر قلب|c|
+by the way|بالمناسبة|c|
+cabbage|ملفوف|n|
+cable car|عربة معلقة|n|🚠
+cactus|صبار|n|🌵
+cake|كعكة||🎂
+calculate|يحسب|v|
+calendar|تقويم|n|📅
+call|يتصل|v|
+call back|يعاود الاتصال|c|
+call the police|اتصل بالشرطة|c|
+calm|هادئ|a|
+calm down|يهدأ|c|
+camel|جمل|n|🐪
+camera|كاميرا||📷
+camp fire|نار المخيم|c|
+can you help me|هل تساعدني|c|
+cancel|يلغي|v|
+candidate|مرشح|n|
+candle|شمعة|n|🕯️
+candy|حلوى سكرية|n|🍬
+canoe|زورق|n|🛶
+canvas|قماش رسم|n|
+cap|قبعة رياضية|n|🧢
+capable|قادر|a|
+capital|عاصمة|n|
+captain|قبطان|n|
+capture|يأسر|v|
+car|سيارة||🚗
+car rental|تأجير سيارات|c|
+carbon|كربون|n|
+card|بطاقة||
+care|اهتمام||
+care about|يهتم بـ|c|
+career|مسيرة مهنية|n|
+careful|حذر|a|
+careless|مهمل|a|
+carpet|سجادة|n|
+carrot|جزر|n|🥕
+carry|يحمل|v|
+carry on|يواصل|c|
+cartoon|رسوم متحركة|n|
+carve|ينحت|v|
+castle|قلعة|n|🏰
+casual|غير رسمي|a|
+cat|قطة||🐱
+catch|يمسك|v|
+catch a cold|يصاب بالزكام|c|
+cause|سبب|n|
+cautious|حذر|a|
+cave|كهف|n|
+cease|يتوقف|v|
+celebrate|يحتفل|v|
+cell|خلية|n|
+cemetery|مقبرة|n|
+century|قرن|n|
+cereal|حبوب|n|
+ceremony|حفل رسمي|n|
+certain|مؤكد|a|
+certificate|شهادة|n|
+chain|سلسلة|n|
+chair|كرسي||🪑
+chalk|طباشير|n|
+challenge|يتحدى|v|
+chance|فرصة|n|
+change|يغير|v|
+chapter|فصل كتاب|n|
+character|شخصية|n|
+charger|شاحن|c|
+charity|عمل خيري|n|
+chase|يطارد|v|
+chat|يدردش|v|
+cheap|رخيص||
+cheat|يغش|v|
+check|يتحقق|v|
+check in|يسجل الدخول|c|
+check out|يغادر الفندق|c|
+cheek|خد|n|
+cheeky|وقح مرح|a|
+cheer|يهتف|v|
+cheer up|يتفاءل|c|
+cheerful|بشوش|a|
+cheers|في صحتك|c|
+cheers glass|كأس|n|🥂
+cheese|جبن||🧀
+cheese slice|شريحة جبن|n|🧀
+cheesy|مبتذل|a|
+chef|طاهٍ|n|
+cherry|كرز|n|🍒
+chess|شطرنج|n|♟️
+chest|صدر|n|
+chew|يمضغ|v|
+chick|كتكوت|n|🐤
+chicken|دجاجة|n|🐔
+child|طفل||
+chilled|مبرّد|a|
+chilly|بارد قليلاً|a|
+chimney|مدخنة|n|
+chocolate|شوكولاتة|n|🍫
+choice|خيار|n|
+choke|يختنق|v|
+choose|يختار|v|
+chop|يقطّع|v|
+chronic|مزمن|a|
+chubby|ممتلئ|a|
+chunky|سميك|a|
+church|كنيسة|n|⛪
+cinema|سينما|n|
+circle|دائرة|n|
+city|مدينة||
+civil|مدني|a|
+claim|يدّعي|v|
+clammy|رطب لزج|a|
+clap|يصفق|v|
+classic|كلاسيكي|a|
+classroom|فصل دراسي|c|
+clay|طين|n|
+clean|نظيف||
+clear|واضح||
+clever|ذكي|a|
+click|ينقر|v|
+climate|مناخ|n|
+climb|يتسلق|v|
+cling|يتشبث|v|
+clinic|عيادة|n|
+clock|ساعة||🕐
+close|يغلق|v|
+clothes|ملابس||
+cloud|سحابة||☁️
+cloudy|غائم|a|
+clover|برسيم|n|🍀
+clown|مهرج|n|
+cluck|يقوقئ|v|
+clumsy|أخرق|a|
+coal|فحم|n|
+coast|ساحل|n|
+coat|معطف|n|
+coconut|جوز هند|n|🥥
+coffee|قهوة||☕
+coffee shop|مقهى|c|
+cold|بارد||
+colleague|زميل|n|
+collect|يجمع|v|
+color|لون||
+colorful|ملون|a|
+comb|مشط|n|
+combine|يجمع|v|
+come|يأتي|v|
+come across|يصادف|c|
+come back|يعود|c|
+come in|يدخل|c|
+come true|يتحقق|c|
+come up with|يبتكر|c|
+comet|مذنب|n|☄️
+comfort|يواسي|v|
+comfortable|مريح||
+comic|هزلي|a|
+commit|يلتزم|v|
+committee|لجنة|n|
+common|شائع|a|
+communicate|يتواصل|v|
+community|مجتمع|n|
+compact|مدمج|a|
+company|شركة||
+compare|يقارن|v|
+compass|بوصلة|n|🧭
+compatible|متوافق|a|
+compete|ينافس|v|
+competition|منافسة|n|
+complain|يشتكي|v|
+complete|يكمل|v|
+complex|معقد|a|
+compose|يؤلف|v|
+compulsory|إلزامي|a|
+computer|حاسوب||💻
+concrete|ملموس|a|
+condition|حالة|n|
+conference|مؤتمر|n|
+confess|يعترف|v|
+confidence|ثقة|n|
+confident|واثق|a|
+confirm|يؤكد|v|
+confused|مرتبك|a|
+congratulations|تهانينا|c|
+connect|يربط|v|
+conquer|يفتح|v|
+conscious|واعٍ|a|
+consider|يعتبر|v|
+constant|ثابت|a|
+consume|يستهلك|v|
+contain|يحتوي|v|
+content|راضٍ|a|
+continue|يستمر|v|
+contract|عقد|n|
+conversation|محادثة|n|
+convince|يقنع|v|
+cook|يطبخ|v|
+cookie|بسكويتة|n|🍪
+cool|بارد لطيف||
+cooperate|يتعاون|v|
+copper|نحاس|n|
+copy|ينسخ|v|
+coral reef|شعاب مرجانية|c|
+corn|ذرة|n|🌽
+correct|صحيح|v|
+corrupt|فاسد|a|
+cost|تكلفة||
+cost a fortune|يكلف ثروة|c|
+costly|مكلف|a|
+cotton|قطن|n|
+cough|يسعل|v|
+count|يعد|v|
+country|بلد||
+course|دورة||
+court|محكمة|n|
+cousin|ابن العم||
+cover|يغطي|v|
+cow|بقرة||🐮
+cozy|دافئ ومريح|a|
+crab|سلطعون|n|🦀
+cranky|متقلب المزاج|a|
+crash|يصطدم|v|
+crawl|يزحف|v|
+crayon|قلم شمعي|n|🖍️
+crazy|مجنون||
+create|يبتكر|v|
+creative|مبدع|a|
+credit card|بطاقة ائتمان|c|
+creepy|مخيف|a|
+crisp|مقرمش|a|
+crocodile|تمساح|n|🐊
+croissant|كرواسون|n|🥐
+crooked|معوج|a|
+cross|يعبر|v|
+crowd|حشد|n|
+crowded|مزدحم|a|
+crown|تاج|n|👑
+cruel|قاسٍ|a|
+crunchy|مقرمش|a|
+crush|يسحق|v|
+cry|يبكي|v|
+cucumber|خيار|n|
+cuddle|يحتضن|v|
+cuddly|محبب للعناق|a|
+culture|ثقافة|n|
+cunning|ماكر|a|
+cup|فنجان||
+cure|يشفي|v|
+curious|فضولي|a|
+curly|مجعد|a|
+current|حالي|a|
+curse|يلعن|v|
+curtain|ستارة|n|
+customer|عميل|n|
+cut|يقطع|v|
+cut down|يقلل|c|
+cut off|يقطع|c|
+cute|لطيف|a|
+cycling|ركوب الدراجات|n|🚴
+daily|يومي|a|
+damage|يتلف|v|
+damp|رطب|a|
+dance|يرقص|v|
+danger|خطر||
+dangerous|خطير|a|
+dare|يجرؤ|v|
+dark|مظلم||
+dashing|أنيق جذاب|a|
+dates|تمر|n|
+daughter|ابنة||
+day|يوم|v|
+day by day|يوماً بعد يوم|c|
+day off|يوم إجازة|c|
+dazzling|مبهر|a|
+dead|ميت||
+deadline|موعد نهائي|c|
+deaf|أصم|a|
+dear|عزيز||
+debt|دين|n|
+decay|يتحلل|v|
+decent|محترم|a|
+decide|يقرر|v|
+decision|قرار|n|
+decline|يرفض|v|
+decorate|يزيّن|v|
+deep|عميق||
+deer|غزال|n|🦌
+defeat|يهزم|v|
+defeated|مهزوم|a|
+defend|يدافع|v|
+degree|درجة علمية|n|
+delay|يؤخر|v|
+delicate|رقيق|a|
+delicious|لذيذ||
+delighted|مسرور|a|
+deliver|يوصّل|v|
+demand|يطالب|v|
+democracy|ديمقراطية|n|
+dentist|طبيب أسنان|n|🦷
+deny|ينكر|v|
+departure gate|بوابة المغادرة|c|
+depend|يعتمد|v|
+depend on|يعتمد على|c|
+describe|يصف|v|
+desert|صحراء||🏜️
+deserve|يستحق|v|
+desk|مكتب||
+desperate|يائس|a|
+dessert|حلوى|n|
+destroy|يدمر|v|
+determined|عازم|a|
+develop|يطوّر|v|
+diamond|ألماس|n|
+diamond ring|خاتم ألماس|n|💎
+dice|نرد|n|🎲
+dictionary|قاموس|n|
+die|يموت|v|
+difference|فرق|n|
+different|مختلف||
+difficult|صعب||
+dig|يحفر|v|
+digital|رقمي|a|
+diligent|مجتهد|a|
+dim|خافت|a|
+dining room|غرفة الطعام|c|
+dinner|عشاء||
+dinosaur|ديناصور|n|
+dip|يغمس|v|
+direct|مباشر|a|
+direction|اتجاه|n|
+dirty|متسخ||
+disabled|ذو إعاقة|a|
+disagree|يختلف|v|
+disappear|يختفي|v|
+disappointed|خائب|a|
+discover|يكتشف|v|
+discuss|يناقش|v|
+disease|مرض|n|
+disgusting|مقزز|a|
+dislike|يكره|v|
+distance|مسافة|n|
+distant|بعيد|a|
+distribute|يوزع|v|
+disturb|يزعج|v|
+dive|يغوص|v|
+divide|يقسّم|v|
+diving|غوص|n|🤿
+dizzy|دائخ|a|
+do exercise|يتمرن|c|
+do homework|يحل واجبه|c|
+do the dishes|يغسل الصحون|c|
+do you speak english|هل تتكلم الإنجليزية|c|
+doctor|طبيب||
+dog|كلب||🐶
+dolphin|دلفين|n|🐬
+domestic|محلي|a|
+donate|يتبرع|v|
+donkey|حمار|n|
+door|باب||🚪
+dopey|ساذج|a|
+doubt|يشك|v|
+doughnut|دونات|n|🍩
+dove|حمامة سلام|n|🕊️
+down|أسفل||
+download|ينزّل|v|
+dozen|دزينة|n|
+drafty|كثير التيار|a|
+drag|يجر|v|
+dragon|تنين|n|
+draw|يرسم|v|
+dreadful|مريع|a|
+dream|حلم|v|
+dreamy|حالم|a|
+dress|فستان||
+dress up|يتأنق|c|
+drink|يشرب|v|
+drip|يقطر|v|
+drive|يقود|v|
+driver|سائق|n|
+drown|يغرق|v|
+drowsy|ناعس|a|
+drum|طبل|n|
+dry|جاف|v|
+duck|بطة|n|🦆
+dull|باهت|a|
+during|أثناء||
+dust|غبار|n|
+dusty|مغبر|a|
+eager|متشوق|a|
+eagle|نسر|n|🦅
+ear|أذن||👂
+early|مبكر||
+earn|يكسب|v|
+earth|أرض||
+earthquake|زلزال|c|
+east|شرق||
+eastern|شرقي|a|
+easy|سهل||
+eat|يأكل|v|
+eat out|يأكل خارجاً|c|
+economic|اقتصادي|a|
+economy|اقتصاد|n|
+edit|يحرر|v|
+educate|يثقف|v|
+education|تعليم|n|
+eerie|مخيف|a|
+effective|فعال|a|
+efficient|كفء|a|
+effort|جهد|n|
+egg|بيضة||🥚
+eggplant|باذنجان|n|🍆
+elbow|مرفق|n|
+elderly|مسن|a|
+elect|ينتخب|v|
+election|انتخابات|n|
+elegant|أنيق|a|
+elephant|فيل|n|🐘
+email|بريد إلكتروني|c|
+embrace|يحتضن|v|
+emerge|يبرز|v|
+emergency|طوارئ|n|
+emergency room|غرفة الطوارئ|c|
+emotion|عاطفة|n|
+emotional|عاطفي|a|
+employ|يوظف|v|
+employee|موظف|n|
+empty|فارغ||
+encourage|يشجع|v|
+end|نهاية||
+endless|لا نهائي|a|
+enemy|عدو||
+energetic|نشيط|a|
+energy|طاقة||
+engage|يخطب|v|
+engine|محرك|n|
+engineer|مهندس|n|
+enjoy|يستمتع|v|
+enormous|ضخم|a|
+enough|كافٍ||
+ensure|يضمن|v|
+enter|يدخل|v|
+entire|كامل|a|
+entrance|مدخل|n|
+envelope|ظرف|n|
+envelope letter|مظروف|n|✉️
+envious|حسود|a|
+environment|بيئة|n|
+equal|متساوٍ|a|
+erase|يمحو|v|
+eraser|ممحاة|n|
+escape|يهرب|v|
+essential|أساسي|a|
+eternal|أبدي|a|
+evaluate|يقيّم|v|
+even|حتى||
+evening|مساء||
+every|كل||
+evidence|دليل|n|
+exact|دقيق|a|
+exam|امتحان||
+examine|يفحص|v|
+example|مثال||
+exceed|يتجاوز|v|
+excellent|ممتاز|a|
+excessive|مفرط|a|
+exchange|يتبادل|v|
+exchange rate|سعر الصرف|c|
+excited|متحمس||
+excuse|عذر||
+excuse me|عفواً|c|
+exercise|تمرين||
+exhausted|منهك|a|
+exhibition|معرض|n|
+exist|يوجد|v|
+exit|مخرج||
+exotic|غريب مبهر|a|
+expect|يتوقع|v|
+expensive|غالي||
+experience|خبرة|n|
+explain|يشرح|v|
+explore|يستكشف|v|
+express|يعبّر|v|
+extend|يمدد|v|
+eye|عين||👁️
+eyebrow|حاجب|n|
+eyelid|جفن|n|
+fabric|قماش|n|
+fabulous|خرافي|a|
+face|وجه||
+face to face|وجهاً لوجه|c|
+fact|حقيقة||
+factory|مصنع|n|
+fade|يبهت|v|
+fail|يفشل|v|
+faint|خافت|a|
+fair|عادل|a|
+fairy tale|حكاية خرافية|c|
+faithful|وفي|a|
+falcon|صقر|n|
+fall|يسقط|v|
+fall asleep|ينام|c|
+fall in love|يقع في الحب|c|
+false|خاطئ|a|
+fame|شهرة|n|
+familiar|مألوف|a|
+family|عائلة||
+famous|مشهور||
+fancy|فاخر|a|
+fantastic|رائع|a|
+far|بعيد||
+farm|مزرعة||
+farmer|مزارع|n|
+fast|سريع|v|
+fast food|وجبات سريعة|c|
+fasten|يشدّ|v|
+fat|سمين||
+fatal|قاتل|a|
+father|أب||
+fear|خوف||
+feather|ريشة|n|
+fee|رسوم|n|
+feeble|واهن|a|
+feed|يطعم|v|
+feel|يشعر|v|
+feel better|يتحسن شعوره|c|
+feel like|يشعر برغبة في|c|
+fence|سياج|n|
+fertile|خصب|a|
+festival|مهرجان|n|
+fetch|يجلب|v|
+fever|حمى|c|
+feverish|محموم|a|
+few|قليل||
+fierce|شرس|a|
+fight|يقاتل|v|
+figure out|يستنتج|c|
+file|يؤرشف|v|
+fill|يملأ|v|
+fill in|يعبّئ|c|
+film|فيلم||
+filthy|قذر|a|
+find|يجد|v|
+find out|يكتشف|c|
+fine|بخير||
+finger|إصبع||
+fingerprint|بصمة|c|
+finish|ينهي|v|
+fire|نار||🔥
+fire station|مركز إطفاء|c|
+fire truck|سيارة إطفاء|n|🚒
+fireworks|ألعاب نارية|n|🎆
+first|أول||
+first aid|إسعافات أولية|c|
+first class|درجة أولى|c|
+first of all|أولاً وقبل كل شيء|c|
+fish|سمكة||🐟
+fishing|صيد السمك|n|🎣
+fist|قبضة|n|✊
+fit|لائق بدنياً|a|
+fix|يصلح|v|
+fizzy|غازي|a|
+flag|علم||🏁
+flaky|متقشر|a|
+flame|لهب|n|
+flamingo|فلامنغو|n|🦩
+flash|يومض|v|
+flashlight|كشاف|n|🔦
+flat|مسطح|a|
+flawless|بلا عيب|a|
+flee|يفر|v|
+flexible|مرن|a|
+flight|رحلة جوية|n|
+flip|يقلب|v|
+float|يطفو|v|
+floor|أرض الغرفة||
+flour|دقيق|n|
+flow|يتدفق|v|
+flower|زهرة||🌸
+fluent|طلق|a|
+fluffy|منفوش|a|
+flush|يسحب السيفون|v|
+fly|يطير|v|
+fog|ضباب|n|
+foggy|ضبابي|a|
+fold|يطوي|v|
+follow|يتبع|v|
+fond|مولع|a|
+food|طعام||
+foolish|أحمق|a|
+foot|قدم||🦶
+football|كرة قدم|c|
+footprint|أثر قدم|n|👣
+for example|على سبيل المثال|c|
+for free|مجاناً|c|
+for sale|للبيع|c|
+forbid|يمنع|v|
+forecast|يتنبأ|v|
+foreign|أجنبي|a|
+forest|غابة||
+forget|ينسى|v|
+forgetful|نسّاء|a|
+forgive|يسامح|v|
+fork|شوكة||
+formal|رسمي|a|
+fortunate|محظوظ|a|
+found|يؤسس|v|
+foundation|أساس|n|
+fountain|نافورة|n|
+fox|ثعلب|n|🦊
+fragile|هش|a|
+fragrant|عطر|a|
+frame|إطار|n|
+frank|صريح|a|
+frantic|محموم|a|
+freckled|منمّش|a|
+free|حر مجاني||
+freedom|حرية|n|
+freeze|يتجمد|v|
+french fries|بطاطس مقلية|c|
+frequent|متكرر|a|
+fresh|طازج||
+Friday|الجمعة|n|
+fridge|ثلاجة|n|
+friend|صديق||
+friendly|ودود|a|
+friendship|صداقة|n|
+fries|بطاطس مقلية|n|🍟
+frighten|يخيف|v|
+frog|ضفدع|n|🐸
+from time to time|من وقت لآخر|c|
+front|أمام||
+front desk|مكتب الاستقبال|c|
+front door|الباب الأمامي|c|
+frown|يعبس|v|
+frozen|متجمد|a|
+fruit|فاكهة||
+fry|يقلي|v|
+fuel|وقود|n|
+full|ممتلئ||
+full moon|بدر|c|
+full moon night|ليلة قمر|n|🌕
+full time|دوام كامل|c|
+fun|مرح||
+funny|مضحك||
+furious|غاضب جداً|a|
+furniture|أثاث|n|
+future|مستقبل||
+fuzzy|زغبي|a|
+gain|يكسب|v|
+gain weight|يزيد وزنه|c|
+galaxy|مجرة|n|
+gamble|يقامر|v|
+game|لعبة||
+gap|فجوة|n|
+garage|مرآب|n|
+garden|حديقة||
+garlic|ثوم|n|🧄
+gas|غاز|n|
+gas station|محطة وقود|c|
+gasp|يلهث|v|
+gate|بوابة||
+gather|يجتمع|v|
+gene|جين|n|
+generation|جيل|n|
+generous|كريم|a|
+gentle|رقيق|a|
+genuine|أصيل|a|
+get along|ينسجم مع|c|
+get angry|يغضب|c|
+get back|يرجع|c|
+get better|يتحسن|c|
+get in|يدخل سيارة|c|
+get lost|يضيع|c|
+get married|يتزوج|c|
+get off|ينزل من|c|
+get on|يركب|c|
+get ready|يستعد|c|
+get tired|يتعب|c|
+get up|ينهض|c|
+get well soon|الشفاء العاجل|c|
+get worse|يسوء|c|
+ghost|شبح|n|👻
+giant|عملاق|a|
+gift|هدية||🎁
+gift box|علبة هدية|n|🎁
+gift card|بطاقة هدية|c|
+giggle|يضحك بخفة|v|
+giraffe|زرافة|n|
+girl|بنت||
+give|يعطي|v|
+give a hand|يساعد|c|
+give a speech|يلقي خطاباً|c|
+give advice|يقدم نصيحة|c|
+give back|يعيد|c|
+give up|يستسلم|c|
+glad|سعيد||
+glass|زجاج||
+glass bottle|زجاجة زجاجية|n|🍾
+glasses|نظارات|n|👓
+global|عالمي|a|
+global warming|الاحتباس الحراري|c|
+globe|كرة أرضية|n|🌍
+gloomy|كئيب|a|
+glorious|مجيد|a|
+glossy|لامع|a|
+glove|قفاز|n|
+glow|يتوهج|v|
+glue|غراء|n|
+go|يذهب|v|
+go abroad|يسافر للخارج|c|
+go away|يذهب بعيداً|c|
+go for a walk|يتمشى|c|
+go on|يستمر|c|
+go out|يخرج|c|
+go shopping|يذهب للتسوق|c|
+go to bed|يذهب للنوم|c|
+goal|هدف|n|
+goat|ماعز|n|
+gold|ذهب||🥇
+gold medal|ميدالية ذهبية|c|🥇
+golf|غولف|n|⛳
+good|جيد||
+good luck|حظاً سعيداً|c|
+good morning|صباح الخير|c|
+good night|تصبح على خير|c|
+goofy|أخرق مرح|a|
+gorgeous|فاتن|a|
+gorilla|غوريلا|n|🦍
+government|حكومة|n|
+grab|يمسك بقوة|v|
+graceful|رشيق|a|
+grade|درجة|n|
+gradual|تدريجي|a|
+grandfather|جد||
+grandmother|جدة||
+grandson|حفيد|n|
+grant|يمنح|v|
+grape|عنب|n|🍇
+grass|عشب||
+grateful|ممتن|a|
+grave|قبر|n|
+great|عظيم||
+greedy|طماع|a|
+green|أخضر||
+greet|يحيّي|v|
+grim|كالح|a|
+grin|يبتسم ابتسامة عريضة|v|
+grind|يطحن|v|
+groan|يئن|v|
+gross|فظ|a|
+ground|أرض||
+group|مجموعة||
+grow|ينمو|v|
+grow up|يكبر|c|
+grumpy|متجهم|a|
+guard|حارس|n|
+guess|يخمن|v|
+guest|ضيف||
+guest room|غرفة الضيوف|c|
+guide|يرشد|v|
+guilty|مذنب|a|
+guitar|غيتار|n|🎸
+gulp|يبتلع|v|
+gulp down|يشرب دفعة|v|
+gusty|عاصف|a|
+gym|نادي رياضي|n|
+gymnastics|جمباز|n|🤸
+habit|عادة|n|
+hair|شعر||
+hair dryer|مجفف شعر|c|
+hairy|مشعر|a|
+half|نصف||
+hall|قاعة|n|
+hammer|مطرقة|n|🔨
+hand|يد|v|✋
+hand in|يسلّم|c|
+hand luggage|حقيبة يد للطائرة|c|
+handbag|حقيبة يد|c|
+handle|يتعامل مع|v|
+handsome|وسيم|a|
+handy|مفيد عملياً|a|
+hang|يعلق|v|
+hang up|ينهي المكالمة|c|
+happen|يحدث|v|
+happy|سعيد||
+happy birthday|عيد ميلاد سعيد|c|
+harbor|ميناء|n|
+hard|صعب صلب||
+harmful|ضار|a|
+harmless|غير مؤذٍ|a|
+harsh|قاسٍ|a|
+hasty|متسرع|a|
+hat|قبعة||🎩
+hate|يكره|v|
+have|يملك|v|
+have a bath|يستحم|c|
+have a look|يلقي نظرة|c|
+have a nice day|أتمنى لك يوماً سعيداً|c|
+have breakfast|يتناول الفطور|c|
+have fun|يستمتع|c|
+hazy|ضبابي|a|
+head|رأس||
+headache|صداع|c|
+headphones|سماعات|c|
+heal|يلتئم|v|
+health|صحة||
+health insurance|تأمين صحي|c|
+healthy|صحي|a|
+hear|يسمع|v|
+heart|قلب||❤️
+heart attack|نوبة قلبية|c|
+heartbroken|مكسور القلب|a|
+heat|يسخن|v|
+heavy|ثقيل||
+hedge|سور نباتي|n|
+hedgehog|قنفذ|n|🦔
+hefty|ثقيل|a|
+helicopter|مروحية|n|🚁
+helmet|خوذة|n|
+help|يساعد|v|
+helpful|مفيد|a|
+helpless|عاجز|a|
+hen|دجاجة|n|🐔
+here|هنا||
+heritage|تراث|n|
+hero|بطل|n|
+hesitant|متردد|a|
+hesitate|يتردد|v|
+hidden|مخفي|a|
+hide|يختبئ|v|
+high|عالٍ||
+high heel|كعب عالٍ|n|👠
+high school|مدرسة ثانوية|c|
+highlight|يبرز|v|
+hilarious|مضحك جداً|a|
+hill|تلة||
+hippopotamus|فرس النهر|n|🦛
+hire|يوظف|v|
+history|تاريخ||
+hit|يضرب|v|
+hit the road|ينطلق في الطريق|c|
+hobby|هواية||
+hockey|هوكي|n|🏒
+hold|يمسك|v|
+hold on|ينتظر لحظة|c|
+holiday|عطلة||
+hollow|أجوف|a|
+holy|مقدس|a|
+home|منزل||
+homework|واجب منزلي|c|
+honest|صادق||
+honey|عسل|n|🍯
+honor|يكرّم|v|
+hook|خطاف|n|
+hop|يقفز|v|
+hope|أمل||
+hopeful|متفائل|a|
+hopeless|ميؤوس منه|a|
+horse|حصان||🐴
+horse riding|ركوب الخيل|c|🏇
+hospital|مستشفى||🏥
+host|مضيف|n|
+hot|حار||
+hot dog|نقانق ساخنة|c|🌭
+hotel|فندق||🏨
+hour|ساعة زمنية||
+house|بيت||🏠
+how are you|كيف حالك|c|
+how much is it|بكم هذا|c|
+howl|يعوي|v|
+hug|يعانق|v|
+huge|هائل|a|
+hum|يدندن|v|
+humble|متواضع|a|
+humor|دعابة|n|
+hundred|مئة|n|
+hunger|جوع|n|
+hungry|جائع|a|
+hunt|يصطاد|v|
+hurry|يستعجل|v|
+hurry up|يستعجل|c|
+hurt|يؤلم|v|
+husband|زوج||
+i agree|أوافق|c|
+i am hungry|أنا جائع|c|
+i am lost|أنا تائه|c|
+i am sorry|أنا آسف|c|
+i don't understand|لا أفهم|c|
+i feel sick|أشعر بالمرض|c|
+i hope so|آمل ذلك|c|
+i love you|أحبك|c|
+i miss you|اشتقت لك|c|
+i need help|أحتاج مساعدة|c|
+i think so|أظن ذلك|c|
+i would like|أريد من فضلك|c|
+ice|ثلج||
+ice cream|آيس كريم|c|
+ice cube|مكعب ثلج|n|🧊
+ice skating|تزلج على الجليد|c|⛸️
+icy|جليدي|a|
+idea|فكرة||
+identical|مطابق|a|
+idiotic|غبي جداً|a|
+idle|عاطل|a|
+ignore|يتجاهل|v|
+ill|عليل|a|
+illegal|غير قانوني|a|
+imagination|خيال|n|
+imagine|يتخيل|v|
+immediate|فوري|a|
+immense|هائل|a|
+impatient|نافد الصبر|a|
+imply|يلمّح|v|
+important|مهم||
+impossible|مستحيل|a|
+impress|يبهر|v|
+improve|يحسّن|v|
+in a hurry|على عجل|c|
+in charge of|مسؤول عن|c|
+in common|مشترك|c|
+in fact|في الواقع|c|
+in front of|أمام|c|
+in general|عموماً|c|
+in love|واقع في الحب|c|
+in order to|من أجل|c|
+in public|علناً|c|
+in the end|في النهاية|c|
+in time|في الوقت المناسب|c|
+include|يشمل|v|
+income|دخل|n|
+increase|يزيد|v|
+incredible|لا يصدق|a|
+independent|مستقل|a|
+industry|صناعة|n|
+inexpensive|رخيص|a|
+inform|يبلّغ|v|
+inherit|يرث|v|
+inject|يحقن|v|
+injury|إصابة|n|
+ink|حبر|n|
+inner|داخلي|a|
+innocent|بريء|a|
+insane|مجنون|a|
+insect|حشرة|n|
+inside|داخل||
+insist|يصرّ|v|
+inspire|يلهم|v|
+install|يركّب|v|
+instead of|بدلاً من|c|
+insult|يهين|v|
+intelligent|ذكي|a|
+intend|ينوي|v|
+interesting|ممتع||
+interrupt|يقاطع|v|
+interview|مقابلة|n|
+introduce|يقدّم|v|
+invent|يخترع|v|
+invention|اختراع|n|
+invest|يستثمر|v|
+invite|يدعو|v|
+iron|يكوي|v|
+iron metal|حديد|n|
+island|جزيرة||🏝️
+it depends|يعتمد على الأمر|c|
+it is delicious|إنه لذيذ|c|
+itch|يحك|v|
+itchy|مثير للحكة|a|
+jacket|سترة|n|🧥
+jar|برطمان|n|
+jealous|غيور|a|
+jellyfish|قنديل البحر|n|🪼
+jewel|جوهرة|n|
+job|وظيفة||
+job interview|مقابلة عمل|c|
+jog|يهرول|v|
+join|ينضم|v|
+joke|نكتة||
+jolly|مرح|a|
+journal|صحيفة|n|
+journey|رحلة||
+joy|فرح||
+joystick|عصا تحكم|n|🕹️
+judge|قاضٍ|n|
+juggle|يلعب بالكرات|v|
+juice|عصير||🧃
+juicy|عصيري|a|
+jump|يقفز|v|
+jungle|أدغال|n|
+junior|مبتدئ|a|
+just kidding|أمزح فقط|c|
+justice|عدالة|n|
+justify|يبرر|v|
+kangaroo|كنغر|n|🦘
+karate|كاراتيه|n|🥋
+keen|متحمس|a|
+keep|يحتفظ|v|
+keep an eye on|يراقب|c|
+keep calm|يحافظ على هدوئه|c|
+keep in touch|يبقى على اتصال|c|
+keep the change|احتفظ بالباقي|c|
+keep up|يواكب|c|
+kettle|غلاية|n|
+key|مفتاح||🔑
+keyboard|لوحة مفاتيح|c|
+kick|يركل|v|
+kill|يقتل|v|
+kind|لطيف||
+king|ملك||
+kingdom|مملكة|n|
+kiss|يقبّل|v|
+kitchen|مطبخ||
+kitten|هرة صغيرة|n|🐱
+kiwi|كيوي|n|🥝
+knee|ركبة||
+kneel|يركع|v|
+knife|سكين||
+knit|يحيك|v|
+knock|يطرق|v|
+knot|عقدة|n|
+knotty|معقد|a|
+know|يعرف|v|
+knowledge|معرفة|n|
+koala|كوالا|n|🐨
+laboratory|مختبر|n|
+lack|يفتقر|v|
+ladder|سلّم|n|
+lady|سيدة||
+ladybug|دعسوقة|n|🐞
+lake|بحيرة||
+lamb|حمل|n|🐑
+lame|أعرج|a|
+lamp|مصباح|n|🪔
+land|أرض||
+language|لغة||
+laptop|حاسوب محمول|n|💻
+large|كبير||
+last|أخير||
+lasting|دائم|a|
+late|متأخر||
+laugh|يضحك|v|
+laugh at|يضحك على|c|
+launch|يطلق|v|
+law|قانون||
+lawn|مرج|n|
+lawyer|محامٍ|n|
+lazy|كسول||
+lead|يقود|v|
+leader|قائد|n|
+leaf|ورقة شجر||
+leafy|وارف|a|
+leak|يتسرب|v|
+lean|يتكئ|v|
+learn|يتعلم|v|
+leave|يغادر|v|
+lecture|محاضرة|n|
+left|يسار|v|
+leg|ساق||
+legal|قانوني|a|
+lemon|ليمون|n|🍋
+lemonade|عصير ليمون|n|
+lend|يعير|v|
+less|أقل||
+lesson|درس||
+let down|يخذل|c|
+letter|رسالة||
+library|مكتبة||
+license|رخصة|n|
+lick|يلعق|v|
+lid|غطاء|n|
+lie|يكذب|v|
+life|حياة||
+lift|يرفع|v|
+light|ضوء||
+light bulb|مصباح كهربائي|n|💡
+lightning|برق|n|
+lightning bolt|صاعقة|n|⚡
+like|يحب|v|
+likely|محتمل|a|
+limit|يحدّ|v|
+limp|مترهل|a|
+lion|أسد||🦁
+lip|شفة|n|
+lipstick|أحمر شفاه|n|💄
+listen|يستمع|v|
+listen to|يستمع إلى|c|
+little|صغير||
+live|يعيش|v|
+lively|حيوي|a|
+living room|غرفة المعيشة|c|
+lizard|سحلية|n|🦎
+llama|لاما|n|🦙
+load|يحمّل|v|
+lobster|كركند|n|🦞
+local|محلي|a|
+lock|يقفل|v|🔒
+log in|يسجل دخول|c|
+log out|يسجل خروج|c|
+lollipop|مصاصة|n|🍭
+lonely|وحيد|a|
+long|طويل||
+long time no see|زمن طويل لم أرك|c|
+look|ينظر|v|
+look after|يعتني بـ|c|
+look at|ينظر إلى|c|
+look for|يبحث عن|c|
+look forward to|يتطلع إلى|c|
+look like|يشبه|c|
+look up|يبحث في القاموس|c|
+loose|فضفاض|a|
+lose|يخسر|v|
+lose weight|يخسر وزنه|c|
+lot|كثير||
+loud|عالٍ صوتاً|a|
+love|حب||
+lovely|محبّب|a|
+low|منخفض||
+loyal|مخلص|a|
+luck|حظ||
+lucky|محظوظ|a|
+luggage|أمتعة|n|
+luggage cart|عربة أمتعة|n|🧳
+lumpy|متكتل|a|
+lunch|غداء||
+machine|آلة||
+mad|غاضب جداً||
+magazine|مجلة|n|
+magnet|مغناطيس|n|🧲
+magnificent|رائع الجمال|a|
+mail|بريد||
+mailbox|صندوق بريد|n|📫
+maintain|يصون|v|
+major|رئيسي|a|
+make|يصنع|v|
+make a decision|يتخذ قراراً|c|
+make a living|يكسب رزقه|c|
+make a mistake|يخطئ|c|
+make friends|يكوّن صداقات|c|
+make money|يكسب المال|c|
+make progress|يحرز تقدماً|c|
+make sure|يتأكد|c|
+make up your mind|يحسم قراره|c|
+man|رجل||
+manage|يدير|v|
+manager|مدير|n|
+mango|مانجو|n|🥭
+many|كثير||
+map|خريطة||🗺️
+map pin|موقع|n|📍
+maple leaf|ورقة القيقب|n|🍁
+marathon|ماراثون|n|🏃
+marble|رخام|n|
+mark|يضع علامة|v|
+market|سوق||
+marry|يتزوج|v|
+match|يطابق|v|
+matter|مسألة||
+mattress|مرتبة|n|
+mature|ناضج|a|
+mayor|عمدة|n|
+meadow|مرعى|n|
+meal|وجبة||
+mean|يقصد|v|
+measure|يقيس|v|
+meat|لحم||
+medal|ميدالية|n|🏅
+medicine|دواء|n|
+meet|يقابل|v|
+meeting room|غرفة اجتماعات|c|
+melon|شمام|n|🍈
+melt|يذوب|v|
+member|عضو||
+memory|ذاكرة||
+mend|يرقّع|v|
+mention|يذكر|v|
+menu|قائمة طعام|n|
+meow|يموء|v|
+message|رسالة|n|
+messy|فوضوي|a|
+metal|معدن|n|
+method|طريقة|n|
+microphone|ميكروفون|n|🎤
+microscope|مجهر|n|🔬
+middle|وسط||
+midnight|منتصف الليل|c|
+mild|معتدل|a|
+milk|حليب||🥛
+milky way|درب التبانة|c|
+million|مليون|n|
+mind|عقل||
+minister|وزير|n|
+minor|ثانوي|a|
+minty|منعنع|a|
+minute|دقيقة||
+mirror|مرآة||🪞
+miserable|بائس|a|
+mislead|يضلل|v|
+miss|يفتقد|v|
+miss out|تفوته فرصة|c|
+mission|مهمة|n|
+mistake|خطأ|n|
+mix|يخلط|v|
+mobile phone|هاتف محمول|c|
+modern|حديث|a|
+modest|متواضع|a|
+modify|يعدّل|v|
+moist|رطب|a|
+moment|لحظة|n|
+Monday|الاثنين|n|
+money|مال||💰
+monkey|قرد|n|🐵
+month|شهر||
+moody|متقلب|a|
+moon|قمر||🌙
+mop|يمسح الأرض|v|
+more or less|تقريباً|c|
+morning|صباح||
+mosque|مسجد|n|🕌
+mosquito|بعوضة|n|🦟
+mother|أم||
+motorcycle|دراجة نارية|c|
+mountain|جبل||⛰️
+mouse|فأر|n|🐭
+mouth|فم||👄
+move|يتحرك|v|
+move on|يتجاوز|c|
+movie|فيلم سينمائي||
+mow|يجز العشب|v|
+mud|طين|n|
+muddy|موحل|a|
+mumble|يتمتم|v|
+muscle|عضلة|n|💪
+museum|متحف|n|🏛️
+mushroom|فطر|n|
+music|موسيقى||🎵
+music note|نوتة موسيقية|n|🎵
+mutual|متبادل|a|
+mysterious|غامض|a|
+nail|يثبّت|v|
+name|اسم||
+napkin|منديل|n|
+narrow|ضيق||
+nasty|كريه|a|
+nation|أمة|n|
+native|أصلي|a|
+natural resources|موارد طبيعية|c|
+nature|طبيعة|n|
+naughty|مشاكس|a|
+near|قريب||
+neat|مرتب|a|
+necessary|ضروري|a|
+neck|رقبة||
+need|يحتاج|v|
+needle|إبرة|n|
+needy|محتاج|a|
+neglect|يهمل|v|
+negotiate|يفاوض|v|
+neighbor|جار||
+neighborhood|حي|n|
+nephew|ابن الأخ|n|
+nervous|متوتر|a|
+nest|عش|n|
+net|شبكة|n|
+never|أبداً||
+never mind|لا تهتم|c|
+new|جديد||
+news|أخبار||
+newspaper|جريدة|c|
+newspaper roll|صحيفة|n|🗞️
+next|التالي||
+next to|بجانب|c|
+nibble|يقضم|v|
+nice|لطيف||
+nice to meet you|تشرفنا|c|
+niece|ابنة الأخ|n|
+night|ليل||
+no problem|لا مشكلة|c|
+no way|مستحيل|c|
+noble|نبيل|a|
+nod|يومئ|v|
+noise|ضجيج||
+noodles|نودلز|n|🍜
+north|شمال||
+northern|شمالي|a|
+nose|أنف||👃
+notable|بارز|a|
+note|ملاحظة||
+notebook|دفتر|c|
+nothing|لا شيء||
+notice|يلاحظ|v|
+novel|رواية|n|
+now|الآن||
+nuclear|نووي|n|
+numb|مخدّر|a|
+number|رقم||
+nurse|ممرضة|n|
+nut|مكسرات|n|
+nutty|بنكهة المكسرات|a|
+oak|سنديان|n|
+obedient|مطيع|a|
+obey|يطيع|v|
+observe|يراقب|v|
+obtain|يحصل على|v|
+obvious|واضح|a|
+occasion|مناسبة|n|
+occasional|عرضي|a|
+ocean|محيط||
+octopus|أخطبوط|n|🐙
+odd|غريب الأطوار|a|
+of course|بالطبع|c|
+offend|يسيء|v|
+offer|يعرض|v|
+office|مكتب عمل||
+office hours|ساعات الدوام|c|
+official|رسمي|a|
+often|غالباً||
+oil|زيت||
+oily|دهني|a|
+old|قديم||
+olive|زيتون|n|🫒
+on purpose|عن قصد|c|
+on sale|في التخفيض|c|
+on the other hand|من ناحية أخرى|c|
+on time|في الموعد|c|
+once again|مرة أخرى|c|
+once in a while|بين الحين والآخر|c|
+one by one|واحداً تلو الآخر|c|
+one more time|مرة أخرى|c|
+one way|اتجاه واحد|c|
+onion|بصل|n|🧅
+only|فقط||
+open|يفتح|v|
+opening hours|ساعات الافتتاح|c|
+operate|يجري عملية|v|
+opinion|رأي|n|
+opportunity|فرصة سانحة|n|
+oppose|يعارض|v|
+orange|برتقال||🍊
+orange juice|عصير برتقال|c|🧃
+orchard|بستان|n|
+order|يطلب|v|
+ordinary|اعتيادي|a|
+organize|ينظم|v|
+original|أصلي|a|
+ostrich|نعامة|n|
+other|آخر||
+out of date|قديم الطراز|c|
+out of order|معطل|c|
+outgoing|منفتح|a|
+outside|خارج||
+outstanding|متميز|a|
+oven|فرن|n|
+over|فوق||
+over and over|مراراً|c|
+overall|شامل|a|
+owe|يدين بـ|v|
+owl|بومة|n|🦉
+own|يملك|v|
+oxygen|أكسجين|n|
+pack|يحزم|v|
+paddle|يجدّف|v|
+page|صفحة||
+pain|ألم||
+paint|يدهن|v|
+paint palette|لوحة ألوان|n|🎨
+paint roller|بكرة دهان|n|🖌️
+pair|زوج||
+palace|قصر|n|
+pale|شاحب|a|
+palm|نخلة|n|
+pancake|فطيرة رقيقة|n|🥞
+panda|باندا|n|🐼
+paper|ورق||
+paperclip|مشبك ورق|n|📎
+parachute|مظلة هبوط|n|🪂
+parent|والد||
+park|حديقة عامة|v|
+parking lot|موقف سيارات|c|
+parrot|ببغاء|n|🦜
+part time|دوام جزئي|c|
+participate|يشارك|v|
+party|حفلة||
+pass|يمر|v|
+pass away|يتوفى|c|
+pass by|يمر بجانب|c|
+passenger|راكب|n|
+passport|جواز سفر|c|
+password|كلمة مرور|c|
+past|ماضي||
+pasta|معكرونة|n|🍝
+pat|يربّت|v|
+path|مسار|n|
+patience|صبر|n|
+patient|صبور|a|
+pause|يتوقف مؤقتاً|v|
+pay|يدفع|v|
+pay attention|ينتبه|c|
+pay back|يسدد|c|
+pay phone|هاتف عمومي|c|
+peace|سلام||
+peach|خوخ|n|🍑
+peacock|طاووس|n|🦚
+peanut|فول سوداني|n|🥜
+pear|إجاص|n|🍐
+pearl|لؤلؤة|n|🦪
+peek|يختلس النظر|v|
+peel|يقشّر|v|
+pen|قلم||🖊️
+pencil|قلم رصاص|n|✏️
+penguin|بطريق|n|🐧
+people|ناس||
+pepper|فلفل|n|
+peppy|حيوي|a|
+perfect|مثالي|a|
+perform|يؤدي|v|
+perfume|عطر|n|
+permanent|دائم|a|
+permit|يسمح|v|
+person|شخص||
+personal|شخصي|a|
+persuade|يقنع|v|
+pet|يداعب|v|
+pharmacy|صيدلية|n|⚕️
+phone|هاتف||📱
+phone call|مكالمة هاتفية|c|
+photo|صورة||
+physical|جسدي|a|
+piano|بيانو|n|🎹
+pick|يلتقط|v|
+pick out|يختار|c|
+pick up|يلتقط|c|
+picture|صورة||
+pie|فطيرة|n|🥧
+piece|قطعة||
+piece of cake|أمر سهل جداً|c|
+pig|خنزير|n|🐖
+pigeon|حمامة|n|
+pile|يكدّس|v|
+pill|حبة دواء|n|💊
+pillar|عمود|n|
+pillow|وسادة|n|
+pilot|طيار|n|
+pin|دبوس|n|📌
+pinch|يقرص|v|
+pine tree|شجرة صنوبر|n|🌲
+pineapple|أناناس|n|🍍
+pirate|قرصان|n|
+pizza|بيتزا|n|🍕
+place|مكان||
+plain|عادي|a|
+plan|خطة||
+plane|طائرة||✈️
+planet|كوكب|n|🪐
+plant|نبتة|v|
+plastic|بلاستيك|n|
+plate|صحن|n|
+platform|منصة|n|
+play|يلعب|v|
+pleasant|ممتع|a|
+please|من فضلك||
+pleasure|متعة|n|
+plenty|وفير|a|
+plow|يحرث|v|
+plug|يوصل بالكهرباء|v|🔌
+plump|ممتلئ|a|
+pocket|جيب||
+point|نقطة||
+point out|يشير إلى|c|
+pointless|بلا فائدة|a|
+poisonous|سام|a|
+poke|يخز|v|
+police|شرطة||
+police car|سيارة شرطة|n|🚓
+police station|مركز شرطة|c|
+policy|سياسة|n|
+polish|يلمّع|v|
+polished|مصقول|a|
+polite|مهذب|a|
+pond|بركة|n|
+poor|فقير||
+pop|يفرقع|v|
+popcorn|فشار|n|🍿
+popular|شعبي|a|
+population|سكان|n|
+porch|شرفة|n|
+possible|ممكن||
+post office|مكتب بريد|c|
+postcard|بطاقة بريدية|n|
+pot|وعاء||
+potato|بطاطس|n|🥔
+potential|محتمل|a|
+pour|يسكب|v|
+power|قوة||
+powerful|قوي النفوذ|a|
+practice|يتدرب|v|
+pray|يصلي|v|
+precious|ثمين|a|
+predict|يتوقع|v|
+pregnant|حامل|a|
+prepare|يجهز|v|
+present|هدية حاضر||
+preserve|يحفظ|v|
+pretend|يتظاهر|v|
+pretty|جميل||
+prevent|يمنع|v|
+previous|سابق|a|
+price|سعر||
+prickly|شائك|a|
+pride|فخر|n|
+primary|أولي|a|
+print|يطبع|v|
+printer|طابعة|n|🖨️
+prison|سجن|n|
+private|خاص|a|
+prize|جائزة||
+problem|مشكلة||
+proceed|يتابع|v|
+produce|ينتج|v|
+profit|ربح|n|
+progress|تقدم|n|
+project|مشروع|n|
+promise|وعد||
+pronounce|ينطق|v|
+proper|مناسب|a|
+protect|يحمي|v|
+proud|فخور||
+prove|يثبت|v|
+provide|يوفر|v|
+public|عام|a|
+publish|ينشر|v|
+publisher|ناشر|n|
+pull|يسحب|v|
+pull out|يسحب|c|
+pump|مضخة|n|
+punish|يعاقب|v|
+puppy|جرو|n|🐶
+purpose|غاية|n|
+purr|يخرخر|v|
+pursue|يلاحق|v|
+push|يدفع|v|
+push on|يواصل الدفع|c|
+put|يضع|v|
+put away|يضع في مكانه|c|
+put down|يضع أرضاً|c|
+put off|يؤجل|c|
+put on|يرتدي|c|
+puzzle|لغز|n|
+puzzled|محتار|a|
+quack|يبطبط|v|
+quality|جودة|n|
+queen|ملكة||
+question|سؤال||
+quick|سريع||
+quiet|هادئ||
+quit|يقلع عن|v|
+rabbit|أرنب|n|🐰
+race|يتسابق|v|
+racing car|سيارة سباق|n|🏎️
+radio|راديو|n|📻
+rain|مطر||🌧️
+rain coat|معطف مطر|c|
+rain forest|غابة مطيرة|c|
+rainbow|قوس قزح|c|🌈
+rainbow arc|قوس|n|🌈
+rainy|ماطر|a|
+rainy day|يوم ماطر|n|🌧️
+rank|رتبة|n|
+rapid|سريع|a|
+rare|نادر|a|
+raw|نيئ|a|
+razor|شفرة|n|
+read|يقرأ|v|
+ready|جاهز||
+real|حقيقي||
+reason|سبب||
+recall|يستذكر|v|
+receive|يستلم|v|
+recipe|وصفة|n|
+reckless|متهور|a|
+recognize|يتعرف على|v|
+recommend|يوصي|v|
+record|يسجّل|v|
+red|أحمر||
+red carpet|سجادة حمراء|c|
+reduce|يقلل|v|
+reflect|يعكس|v|
+refugee|لاجئ|n|
+refuse|يرفض|v|
+region|منطقة|n|
+regret|يندم|v|
+regular|منتظم|a|
+rehearse|يتدرب مسرحياً|v|
+relax|يسترخي|v|
+release|يفرج|v|
+relevant|ذو صلة|a|
+reliable|موثوق|a|
+religion|دين|n|
+rely|يعتمد|v|
+rely on|يعتمد على|c|
+remarkable|لافت|a|
+remember|يتذكر|v|
+remind|يذكّر|v|
+remote control|جهاز تحكم|c|
+remove|يزيل|v|
+rent|يستأجر|v|
+repeat|يكرر|v|
+replace|يستبدل|v|
+reply|يرد|v|
+report|تقرير|n|
+represent|يمثل|v|
+require|يتطلب|v|
+rescue|ينقذ|v|
+research|بحث|n|
+resign|يستقيل|v|
+resist|يقاوم|v|
+resource|مورد|n|
+respect|يحترم|v|
+respond|يستجيب|v|
+responsibility|مسؤولية|n|
+responsible|مسؤول|a|
+rest|يرتاح|v|
+restaurant|مطعم|n|🍽️
+restless|قلق|a|
+restore|يستعيد|v|
+result|نتيجة|n|
+retire|يتقاعد|v|
+return|يعود|v|
+reveal|يكشف|v|
+revenue|إيراد|n|
+reward|مكافأة|n|
+rhinoceros|وحيد القرن|n|🦏
+ribbon|شريط|n|
+rice|أرز||🍚
+rich|غني||
+ride|يركب|v|
+right|يمين صحيح|v|
+right now|الآن تماماً|c|
+rigid|جامد|a|
+ring|خاتم||💍
+rinse|يشطف|v|
+ripe|ناضج|a|
+rise|يرتفع|v|
+river|نهر||
+road|طريق||
+road sign|لافتة طريق|c|
+roar|يزأر|v|
+rob|يسرق|v|
+robot|روبوت|n|
+rock|صخرة|v|
+rocket|صاروخ|n|🚀
+rocket ship|مركبة فضائية|n|🚀
+roll|يتدحرج|v|
+roof|سقف|n|
+room|غرفة||
+room service|خدمة الغرف|c|
+rooster|ديك|n|🐓
+rope|حبل||
+rose|وردة|n|🌹
+rot|يتعفن|v|
+rotten|فاسد|a|
+rough|خشن|a|
+round|مستدير||
+round trip|رحلة ذهاب وعودة|c|
+route|مسار|n|
+row|يجدّف|v|
+rub|يفرك|v|
+rude|وقح|a|
+rugby|رغبي|n|🏉
+rule|قاعدة||
+ruler|مسطرة|n|
+run|يركض|v|
+run away|يهرب|c|
+run into|يصادف|c|
+run out of|ينفد منه|c|
+rural|ريفي|a|
+rush hour|وقت الذروة|c|
+rust|صدأ|n|
+rusty|صدئ|a|
+sack|كيس|n|
+sacred|مقدس|a|
+sad|حزين||
+saddle|سرج|n|
+safe|آمن||
+sail|يبحر|v|
+sailboat|مركب شراعي|n|⛵
+salad|سلطة|n|🥗
+salary|راتب|c|
+salt|ملح||
+salty|مالح|a|
+same|نفس||
+sand|رمل||
+sand castle|قصر رمل|c|
+sand dune|كثيب رملي|c|
+sandal|صندل|n|🩴
+sandwich|ساندويتش|n|🥪
+satellite|قمر صناعي|n|
+satisfy|يرضي|v|
+Saturday|السبت|n|
+sauce|صلصة|n|
+sausage|نقانق|n|
+savage|همجي|a|
+save|ينقذ|v|
+save time|يوفر وقتاً|c|
+saw|منشار|n|🪚
+saxophone|ساكسفون|n|🎷
+say|يقول|v|
+say it again|أعد ذلك|c|
+scale|ميزان|n|
+scare|يخيف|v|
+scared|مذعور|a|
+scarf|وشاح|n|
+scary|مخيف|a|
+scatter|يبعثر|v|
+scene|مشهد|n|
+schedule|جدول|n|
+scholarship|منحة دراسية|n|
+school|مدرسة||🏫
+science|علم|n|
+science fiction|خيال علمي|c|
+scientist|عالِم|n|
+scissors|مقص|n|✂️
+scooter|سكوتر|n|🛴
+scorpion|عقرب|n|🦂
+scratch|يخدش|v|
+scream|يصرخ|v|
+screen|شاشة|c|
+screwdriver|مفك|n|🪛
+scrub|يفرك بشدة|v|
+scruffy|أشعث|a|
+sea|بحر||🌊
+sea level|مستوى البحر|c|
+sea shore|شاطئ البحر|c|
+seafood|مأكولات بحرية|c|
+seal|يختم|v|
+search|يبحث|v|
+search engine|محرك بحث|c|
+seasick|مصاب بدوار البحر|a|
+season|فصل||
+seat|مقعد||
+second|ثانية||
+secret|سر|n|
+security|أمن|n|
+see|يرى|v|
+see you later|أراك لاحقاً|c|
+seed|بذرة|n|🌱
+select|ينتقي|v|
+selfish|أناني|a|
+sell|يبيع|v|
+send|يرسل|v|
+senior|كبير|a|
+sensitive|حساس|a|
+sentence|جملة||
+serious|جدي||
+set off|ينطلق|c|
+set up|يؤسس|c|
+settle|يستقر|v|
+severe|شديد|a|
+sew|يخيط|v|
+shabby|رث|a|
+shadow|ظل|n|
+shake|يهز|v|
+shaky|مرتجف|a|
+shallow|ضحل|a|
+shape|شكل||
+share|يشارك|v|
+shark|قرش|n|🦈
+sharp|حاد|a|
+shave|يحلق|v|
+sheep|خروف||🐑
+shell|صدفة|n|
+shelter|مأوى|n|
+shield|درع واقٍ|n|🛡️
+shine|يلمع|v|
+shiny|لامع|a|
+ship|سفينة|n|🚢
+shirt|قميص||
+shiver|يرتعش|v|
+shoe|حذاء||👞
+shooting star|شهاب|n|🌠
+shop|متجر|v|
+shopping cart|عربة تسوق|c|🛒
+shopping mall|مركز تسوق|c|
+short|قصير||
+shorts|شورت|n|🩳
+shoulder|كتف|n|
+shout|يصرخ|v|
+show|يعرض|v|
+show off|يتباهى|c|
+show up|يظهر|c|
+shower|دش|n|🚿
+shrimp|روبيان|n|🦐
+shrink|ينكمش|v|
+shrug|يهز كتفيه|v|
+shy|خجول||
+sick|مريض||
+side|جانب||
+side by side|جنباً إلى جنب|c|
+side effect|أثر جانبي|c|
+sigh|يتنهد|v|
+sign|علامة||
+sign in|يدخل حسابه|c|
+sign up|يشترك|c|
+significant|مهم|a|
+silence|صمت|n|
+silent|صامت|a|
+silky|حريري|a|
+silly|سخيف مضحك|a|
+silver|فضة||
+similar|مماثل|a|
+simple|بسيط||
+sincere|صادق|a|
+sing|يغني|v|
+singer|مغنٍّ|n|
+sink|يغرق|v|
+sip|يرتشف|v|
+sister|أخت||
+sit|يجلس|v|
+sit down|يجلس|c|
+size|حجم||
+skate|يتزلج|v|
+skateboard|لوح تزلج|n|🛹
+skeleton|هيكل عظمي|n|
+skiing|تزلج|n|⛷️
+skill|مهارة|n|
+skin|جلد||
+skull|جمجمة|n|💀
+sky|سماء||
+slave|عبد|n|
+sleek|أملس لامع|a|
+sleep|ينام|v|
+sleeping bag|كيس نوم|c|
+sleepy|نعسان|a|
+slide|ينزلق|v|
+slim|نحيف|a|
+slimy|مخاطي|a|
+slip|ينزلق|v|
+sloppy|مهمل|a|
+slow|بطيء||
+slow down|يبطئ|c|
+small|صغير||
+smart|ذكي|a|
+smell|رائحة||
+smile|يبتسم|v|
+smoke|دخان||
+smoky|مدخن|a|
+smooth|أملس|a|
+snail|حلزون|n|🐌
+snake|ثعبان|n|🐍
+sneaker|حذاء رياضي|n|👟
+sneeze|يعطس|v|
+sniff|يشمّ|v|
+snore|يشخر|v|
+snow|ثلج||❄️
+snow boots|حذاء ثلج|c|
+snow man|رجل ثلج|c|
+snowflake|ندفة ثلج|n|❄️
+snowy|ثلجي|a|
+snug|مريح ضيق|a|
+so far|حتى الآن|c|
+soak|ينقع|v|
+soaked|مبتل|a|
+soap|صابون||
+sob|ينتحب|v|
+sober|صاحٍ|a|
+social media|وسائل التواصل|c|
+society|مجتمع|n|
+sock|جورب|n|🧦
+soda|مشروب غازي|n|🥤
+sofa|أريكة|n|🛋️
+soft|ناعم||
+soggy|مبلل|a|
+solar energy|طاقة شمسية|c|
+solar system|نظام شمسي|c|
+sold out|نفدت الكمية|c|
+soldier|جندي||
+solve|يحل|v|
+son|ابن||
+song|أغنية||
+soon|قريباً||
+sooner or later|عاجلاً أم آجلاً|c|
+sore|مؤلم|a|
+sore throat|التهاب الحلق|c|
+sorry|آسف||
+sort out|يرتب أو يحل|c|
+sound|صوت||
+soup|شوربة||🍲
+sour|حامض|a|
+south|جنوب||
+southern|جنوبي|a|
+space station|محطة فضاء|c|
+spare|احتياطي|a|
+sparkle|بريق|n|✨
+speak|يتكلم|v|
+speak slowly|تكلم ببطء|c|
+special|خاص|a|
+speech|خطاب|n|
+speed|سرعة||
+speed limit|حد السرعة|c|
+speed up|يسرّع|c|
+spell|يتهجى|v|
+spend|ينفق|v|
+spice|بهار|n|
+spicy|حار بالتوابل|a|
+spider|عنكبوت|n|🕷️
+spill|ينسكب|v|
+spill the beans|يفشي السر|c|
+spin|يدور|v|
+splash|يرش|v|
+split|ينقسم|v|
+sponge|إسفنجة|n|
+sponsor|يرعى|v|
+spooky|مرعب|a|
+spoon|ملعقة|n|
+spray|يرش|v|
+spread|ينتشر|v|
+spring|ربيع||
+square|مربع||
+squeak|يصرصر|v|
+squeaky|صرّار|a|
+squeeze|يعصر|v|
+squid|حبار|n|🦑
+squirrel|سنجاب|n|🐿️
+stable|مستقر|a|
+stadium|ملعب|n|🏟️
+stage|مسرح|n|
+stairs|درج||
+stamp|طابع|n|
+stand|يقف|v|
+stand for|يرمز إلى|c|
+stand up|يقف|c|
+star|نجمة||⭐
+stare|يحدق|v|
+starry|مرصّع بالنجوم|a|
+start|يبدأ|v|
+statement|بيان|n|
+station|محطة||
+statue|تمثال|n|🗽
+stay|يبقى|v|
+stay up|يسهر|c|
+steady|ثابت|a|
+steak|ستيك|n|🥩
+steal|يسرق|v|
+steam|بخار|n|
+steel|فولاذ|n|
+step|خطوة||
+step by step|خطوة بخطوة|c|
+stethoscope|سماعة طبية|n|🩺
+stew|يخنة|n|
+stick|عصا|n|
+sticky|لزج|a|
+stir|يحرّك|v|
+stomach|معدة|n|
+stone|حجر||
+stop|يتوقف|v|
+store|مخزن||
+storm|عاصفة||
+stormy|عاصف|a|
+story|قصة||
+strange|غريب|a|
+stranger|غريب|n|
+straw|قشة|n|
+strawberry|فراولة|n|🍓
+street|شارع||
+strength|قوة|n|
+stretch|يمدد|v|
+stripe|خط|n|
+strive|يجتهد|v|
+stroll|يتنزه|v|
+strong|قوي||
+stubborn|عنيد|a|
+student|طالب||
+study|يدرس|v|
+stuffy|خانق|a|
+stumble|يتعثر|v|
+stupid|غبي|a|
+subject|موضوع|n|
+subway|مترو|n|🚇
+succeed|ينجح|v|
+success|نجاح|n|
+successful|ناجح|a|
+sudden|مفاجئ|a|
+suffer|يعاني|v|
+sugar|سكر||
+sugary|سكري|a|
+suggest|يقترح|v|
+suit|بدلة|n|
+suitable|ملائم|a|
+suitcase|حقيبة سفر|c|
+summer|صيف||
+sun|شمس||☀️
+sun hat|قبعة شمس|c|
+Sunday|الأحد|n|
+sunflower|دوار الشمس|c|
+sunglasses|نظارة شمسية|c|
+sunny|مشمس|a|
+sunrise|شروق الشمس|c|🌅
+sunscreen|واقي شمس|n|🧴
+sunset|غروب الشمس|c|
+supermarket|سوبرماركت|c|
+supply|إمداد|n|
+support|يدعم|v|
+sure|متأكد||
+surface|سطح|n|
+surfing|ركوب الأمواج|n|🏄
+surprise|يفاجئ|v|
+surrender|يستسلم|v|
+survive|ينجو|v|
+sushi|سوشي|n|🍣
+suspect|يشتبه|v|
+swallow|يبلع|v|
+swan|بجعة|n|🦢
+sweat|يتعرق|v|
+sweaty|متعرق|a|
+sweep|يكنس|v|
+sweet|حلو||
+swim|يسبح|v|
+swimming pool|مسبح|c|
+swimming suit|ملابس سباحة|c|
+swing|يتأرجح|v|
+swollen|متورم|a|
+sword|سيف|n|
+symbol|رمز|n|
+syringe|حقنة|n|💉
+table|طاولة||
+tackle|يعالج مشكلة|v|
+taco|تاكو|n|🌮
+take|يأخذ|v|
+take a break|يأخذ استراحة|c|
+take a photo|يلتقط صورة|c|
+take a seat|يجلس|c|
+take a shower|يستحم|c|
+take action|يتخذ إجراء|c|
+take advantage of|يستغل|c|
+take after|يشبه والديه|c|
+take away|طعام للخارج|c|
+take it easy|خذها ببساطة|c|
+take notes|يدوّن ملاحظات|c|
+take off|يقلع|c|
+take over|يتولى|c|
+take part|يشارك|c|
+take place|يحدث|c|
+take risks|يغامر|c|
+talent|موهبة|n|
+talk|يتحدث|v|
+talk about|يتحدث عن|c|
+talkative|ثرثار|a|
+tall|طويل القامة||
+tangy|لاذع النكهة|a|
+tap|ينقر|v|
+target|هدف|n|🎯
+taste|طعم|v|
+tasty|لذيذ|a|
+tax|ضريبة|n|
+tax free|معفى من الضرائب|c|
+taxi|سيارة أجرة|n|🚕
+tea|شاي||🍵
+teach|يعلم|v|
+teacher|معلم||
+team|فريق||
+teapot|إبريق شاي|n|🫖
+tear|يمزق|v|
+tease|يمازح|v|
+technology|تكنولوجيا|n|
+telescope|تلسكوب|n|🔭
+television|تلفاز|n|📺
+tell|يخبر|v|
+temporary|مؤقت|a|
+tempt|يغري|v|
+tend|يميل|v|
+tender|حنون|a|
+tennis|تنس|n|🎾
+tent|خيمة|n|⛺
+terrible|مروّع|a|
+test|اختبار||
+text message|رسالة نصية|c|
+thank|يشكر|v|
+thank you|شكراً لك|c|
+the bill please|الحساب من فضلك|c|
+theater|مسرح|n|🎭
+theory|نظرية|n|
+thermometer|ميزان حرارة|n|🌡️
+thick|سميك||
+thief|لص|n|
+thin|رفيع||
+thing|شيء||
+think|يفكر|v|
+think about|يفكر في|c|
+thirsty|عطشان||
+thorny|شائك|a|
+thorough|شامل|a|
+thousand|ألف|n|
+thread|خيط|n|
+threat|تهديد|n|
+threaten|يهدد|v|
+thrilled|منتشٍ|a|
+throat|حنجرة|n|
+throw away|يرمي|c|
+throw up|يتقيأ|c|
+thumb|إبهام|n|
+thunder|رعد|n|⛈️
+Thursday|الخميس|n|
+ticket|تذكرة||
+tickle|يدغدغ|v|
+tide|مد|n|
+tidy|مرتب|a|
+tidy up|يرتب|c|
+tie|يربط|v|👔
+tiger|نمر|n|🐯
+tight|ضيق محكم||
+tile|بلاطة|n|
+time|وقت||
+timid|وجل|a|
+tiny|صغير جداً|a|
+tired|متعب||
+toast|يحمص|v|
+toasty|دافئ|a|
+today|اليوم||
+together|معاً||
+toilet|مرحاض|n|🚽
+tomato|طماطم|n|🍅
+tomb|ضريح|n|
+tomorrow|غداً||
+tongue|لسان|n|
+tooth|سن||🦷
+tooth paste|معجون أسنان|c|
+toothbrush|فرشاة أسنان|c|
+top|قمة||
+tornado|إعصار|n|🌪️
+touch|يلمس|v|
+tough|متين|a|
+tour|جولة||
+tour guide|مرشد سياحي|c|
+tourist|سائح|n|
+tourist attraction|معلم سياحي|c|
+towel|منشفة|n|
+tower|برج|n|
+town|بلدة||
+toy|لعبة طفل||
+tractor|جرار|n|🚜
+trade|يتاجر|v|
+tradition|تقليد|n|
+traditional|تقليدي|a|
+traffic jam|ازدحام مروري|c|
+traffic light|إشارة مرور|c|
+train|قطار||🚆
+tram|ترام|n|🚊
+translate|يترجم|v|
+translation|ترجمة|n|
+trap|يحاصر|v|
+travel|يسافر|v|
+travel agency|وكالة سفر|c|
+tray|صينية|n|
+treasure|كنز|n|
+tree|شجرة||🌳
+tremble|يرتجف|v|
+trend|اتجاه|n|
+tricky|صعب الحل|a|
+trim|يقص|v|
+trip|رحلة قصيرة||
+trophy|كأس|n|🏆
+trot|يخبّ|v|
+trouble|مشكلة||
+trousers|بنطال|n|👖
+truck|شاحنة||
+true|صحيح||
+trumpet|بوق|n|🎺
+trunk|جذع|n|
+trust|يثق|v|
+trustworthy|جدير بالثقة|a|
+try|يحاول|v|
+try on|يجرّب لبساً|c|
+try out|يجرّب|c|
+tube|أنبوب|n|
+Tuesday|الثلاثاء|n|
+tulip|توليب|n|🌷
+tunnel|نفق|n|
+turn|يدور|v|
+turn around|يستدير|c|
+turn down|يخفض أو يرفض|c|
+turn off|يطفئ|c|
+turn on|يشغّل|c|
+turn up|يرفع الصوت|c|
+turtle|سلحفاة|n|🐢
+twist|يلوي|v|
+twisty|ملتوٍ|a|
+type|يكتب على الحاسوب|v|
+typical|نموذجي|a|
+ugly|قبيح|a|
+ultimate|نهائي|a|
+umbrella|مظلة|c|☂️
+uncle|عم أو خال|n|
+under|تحت||
+under the weather|متوعك|c|
+understand|يفهم|v|
+uneasy|منزعج|a|
+unfair|ظالم|a|
+unhappy|تعيس|a|
+unicorn|يونيكورن|n|🦄
+unique|فريد|a|
+unite|يوحّد|v|
+university|جامعة|n|
+unlock|يفتح القفل|v|
+unlucky|منحوس|a|
+unpack|يفرغ الحقائب|v|
+unusual|غير مألوف|a|
+up to date|حديث|c|
+upload|يرفع ملفاً|v|
+upset|منزعج|a|
+urban|حضري|a|
+urge|يحث|v|
+use|يستخدم|v|
+use up|يستنفد|c|
+useful|نافع|a|
+usual|معتاد||
+vaccine|لقاح|n|
+vacuum|يكنس بالمكنسة|v|
+vain|مغرور|a|
+valley|وادي||
+valuable|قيّم|a|
+van|حافلة صغيرة|n|🚐
+vanish|يتلاشى|v|
+vase|مزهرية|n|
+vast|شاسع|a|
+vein|وريد|n|
+vest|صدرية|n|
+victim|ضحية|n|
+victory|نصر|n|
+video game|لعبة فيديو|c|🎮
+village|قرية|n|
+violent|عنيف|a|
+violin|كمان|n|🎻
+virus|فيروس|n|🦠
+visit|يزور|v|
+vital|حيوي|a|
+voice|صوت||
+volcano|بركان|n|🌋
+volleyball|كرة طائرة|n|🏐
+volunteer|متطوع|n|
+vote|يصوّت|v|
+wade|يخوض|v|
+wag|يهز ذيله|v|
+wage|أجر|n|
+wait|ينتظر|v|
+wait for|ينتظر|c|
+wake|يستيقظ|v|
+wake up|يستيقظ|c|
+walk|يمشي|v|
+wall|جدار||
+wallet|محفظة|c|👛
+wander|يتجول|v|
+want|يريد|v|
+war|حرب||
+warlike|حربي|a|
+warm|دافئ||
+warm up|يسخن|c|
+warn|يحذّر|v|
+warning|تحذير|n|
+warty|ثؤلولي|a|
+wash|يغسل|v|
+wash up|يغسل الصحون|c|
+washing machine|غسالة|c|
+waste time|يضيع وقتاً|c|
+watch|يشاهد|v|⌚
+water|ماء||💧
+waterfall|شلال|c|
+watermelon|بطيخ|n|🍉
+wave|موجة||
+wax|شمع|n|
+way|طريقة||
+weak|ضعيف||
+wealth|ثروة|n|
+wealthy|ثري|a|
+weapon|سلاح|n|
+wear|يلبس|v|
+wear out|يبلى|c|
+weather|طقس||
+weave|ينسج|v|
+web|شبكة|n|
+website|موقع إلكتروني|c|
+wedding|زفاف|n|
+Wednesday|الأربعاء|n|
+week|أسبوع||
+weekend|عطلة نهاية الأسبوع|c|
+weigh|يزن|v|
+weight|وزن||
+weird|غريب|a|
+welcome|أهلاً||
+west|غرب||
+western|غربي|a|
+wet|مبلل||
+whale|حوت|n|🐋
+what is your name|ما اسمك|c|
+what time is it|كم الساعة|c|
+wheel|عجلة|n|
+wheelchair|كرسي متحرك|n|🦽
+where are you from|من أين أنت|c|
+where is the toilet|أين الحمام|c|
+whirl|يدور|v|
+whisper|يهمس|v|
+whistle|صفارة|n|
+white|أبيض||
+whole|كامل|a|
+wide|واسع||
+wife|زوجة||
+wifi|واي فاي|c|
+wild|بري|a|
+willing|راغب|a|
+win|يفوز|v|
+wind|ريح||
+window|نافذة||
+windy|عاصف الريح|a|
+wine|نبيذ|n|🍷
+wing|جناح|n|
+wink|يغمز|v|
+winter|شتاء||
+wipe|يمسح|v|
+wire|سلك|n|
+wisdom|حكمة|n|
+wise|حكيم|a|
+wish|يتمنى|v|
+witness|يشهد|v|
+wobbly|مترنح|a|
+wolf|ذئب|n|🐺
+woman|امرأة||
+wonder|يتساءل|v|
+wonderful|رائع|a|
+wood|خشب||
+woolly|صوفي|a|
+word|كلمة||
+work|يعمل|v|
+work out|يمارس الرياضة|c|
+worker|عامل|n|
+world|عالم||
+worm|دودة|n|🪱
+worried|قلق|a|
+worry|يقلق|v|
+worry about|يقلق بشأن|c|
+worship|يعبد|v|
+worthless|عديم القيمة|a|
+worthy|جدير|a|
+wound|جرح|n|
+wrap|يلف|v|
+wrench|مفتاح ربط|n|🔧
+write|يكتب|v|
+write back|يرد كتابةً|c|
+write down|يدوّن|c|
+writer|كاتب|n|
+wrong|خطأ||
+yard|فناء|n|
+yawn|يتثاءب|v|
+year|سنة||
+yell|يصيح|v|
+yellow|أصفر||
+yesterday|أمس||
+yield|يخضع|v|
+yoga|يوغا|n|🧘
+you are welcome|عفواً على الشكر|c|
+young|شاب||
+youthful|شبابي|a|
+yummy|لذيذ جداً|a|
+zebra|حمار وحشي|n|🦓
+zebra crossing|ممر مشاة|c|
+zero|صفر|n|
+zesty|منعش|a|
+zoo|حديقة حيوان|n|
+zoom|يقرّب|v|
+mirror|مرآة|n|
+shelf|رف|n|
+drawer|درج|n|
+stairs|سلالم|n|
+wall|جدار|n|
+floor|أرضية|n|
+garden|حديقة|n|
+balcony|شرفة|n|
+elevator|مصعد|n|
+kitchen|مطبخ|n|
+bathroom|حمام|n|
+bedroom|غرفة نوم|n|
+stove|موقد|n|
+fork|شوكة|n|
+knife|سكين|n|
+cup|كوب|n|
+bottle|زجاجة|n|
+soap|صابون|n|
+toothbrush|فرشاة أسنان|n|
+toothpaste|معجون أسنان|n|
+wallet|محفظة|n|
+purse|حقيبة يد|n|
+umbrella|مظلة|n|
+necklace|قلادة|n|
+bracelet|سوار|n|
+ring|خاتم|n|
+earring|قرط|n|
+shoe|حذاء|n|
+shirt|قميص|n|
+skirt|تنورة|n|
+dress|فستان|n|
+tie|ربطة عنق|n|
+hat|قبعة|n|
+uniform|زي موحد|n|
+cheese|جبن|n|
+sugar|سكر|n|
+salt|ملح|n|
+rice|أرز|n|
+egg|بيضة|n|
+milk|حليب|n|
+yogurt|لبن|n|
+beef|لحم بقر|n|
+fish|سمك|n|
+soup|شوربة|n|
+cake|كعكة|n|
+juice|عصير|n|
+coffee|قهوة|n|
+tea|شاي|n|
+apple|تفاحة|n|
+orange|برتقالة|n|
+lettuce|خس|n|
+lentil|عدس|n|
+head|رأس|n|
+face|وجه|n|
+hair|شعر|n|
+ear|أذن|n|
+nose|أنف|n|
+mouth|فم|n|
+tooth|سن|n|
+neck|رقبة|n|
+arm|ذراع|n|
+finger|إصبع|n|
+back|ظهر|n|
+leg|ساق|n|
+knee|ركبة|n|
+foot|قدم|n|
+toe|إصبع القدم|n|
+skin|جلد|n|
+lung|رئة|n|
+river|نهر|n|
+lake|بحيرة|n|
+sea|بحر|n|
+ocean|محيط|n|
+forest|غابة|n|
+valley|وادي|n|
+hill|تلة|n|
+rock|صخرة|n|
+sand|رمل|n|
+storm|عاصفة|n|
+cloud|سحابة|n|
+rainbow|قوس قزح|n|
+snow|ثلج|n|
+wind|رياح|n|
+earthquake|زلزال|n|
+flood|فيضان|n|
+drought|جفاف|n|
+horse|حصان|n|
+cow|بقرة|n|
+sheep|خروف|n|
+lion|أسد|n|
+bird|طائر|n|
+fly|ذبابة|n|
+hospital|مستشفى|n|
+bank|بنك|n|
+market|سوق|n|
+supermarket|سوبرماركت|n|
+library|مكتبة|n|
+park|حديقة عامة|n|
+police|شرطة|n|
+president|رئيس|n|
+law|قانون|n|
+war|حرب|n|
+peace|سلام|n|
+waiter|نادل|n|
+soldier|جندي|n|
+student|طالب|n|
+professor|أستاذ جامعي|n|
+lesson|درس|n|
+exam|امتحان|n|
+homework|واجب منزلي|n|
+pen|قلم حبر|n|
+screen|شاشة|n|
+keyboard|لوحة مفاتيح|n|
+battery|بطارية|n|
+charger|شاحن|n|
+camera|كاميرا|n|
+website|موقع إلكتروني|n|
+password|كلمة مرور|n|
+file|ملف|n|
+folder|مجلد|n|
+network|شبكة|n|
+signal|إشارة|n|
+truth|حقيقة|n|
+lie|كذبة|n|
+memory|ذاكرة|n|
+luck|حظ|n|
+fear|خوف|n|
+hope|أمل|n|
+trust|ثقة|n|
+courage|شجاعة|n|
+honesty|صدق|n|
+kindness|لطف|n|
+health|صحة|n|
+illness|مرض|n|
+fever|حمى|n|
+headache|صداع|n|
+cough|سعال|n|
+surgery|عملية جراحية|n|
+accident|حادث|n|
+danger|خطر|n|
+safety|أمان|n|
+history|تاريخ|n|
+advice|نصيحة|n|
+failure|فشل|n|
+reason|سبب|n|
+throw|يرمي|v|
+answer|يجيب|v|
+hope|يأمل|v|
+cost|يكلف|v|
+decrease|ينقص|v|
+welcome|يرحب|v|
+promise|يعد|v|
+arrest|يعتقل|v|
+rule|يحكم|v|
+prefer|يفضل|v|
+as soon as possible|في أقرب وقت ممكن|c|
+at the moment|في الوقت الحالي|c|
+far away|بعيد جدًا|c|
+from now on|من الآن فصاعدًا|c|
+every now and then|بين الحين والآخر|c|
+by mistake|بالخطأ|c|
+in private|سرًّا|c|
+out of stock|نفد من المخزون|c|
+work experience|خبرة عملية|c|
+lunch break|استراحة الغداء|c|
+business trip|رحلة عمل|c|
+sick leave|إجازة مرضية|c|
+bank account|حساب بنكي|c|
+cash machine|صراف آلي|c|
+shopping list|قائمة التسوق|c|
+home address|عنوان المنزل|c|
+phone number|رقم الهاتف|c|
+email address|عنوان البريد الإلكتروني|c|
+driving license|رخصة قيادة|c|
+passport control|مراقبة الجوازات|c|
+one-way ticket|تذكرة ذهاب فقط|c|
+return ticket|تذكرة ذهاب وعودة|c|
+ask for|يطلب|c|
+get along with|ينسجم مع|c|
+have a good time|يقضي وقتًا ممتعًا|c|
+set the table|يجهّز المائدة|c|
+in a good mood|في مزاج جيد|c|
+ambulance|سيارة إسعاف|n|
+stretcher|نقالة|n|
+prescription|وصفة طبية|n|
+allergy|حساسية|n|
+infection|عدوى|n|
+symptom|عَرَض مرضي|n|
+diagnosis|تشخيص|n|
+patient|مريض|n|
+surgeon|جرّاح|n|
+scar|ندبة|n|
+fracture|كسر|n|
+insomnia|أرق|n|
+diabetes|سكري|n|
+asthma|ربو|n|
+cancer|سرطان|n|
+bacteria|بكتيريا|n|
+software|برمجيات|n|
+database|قاعدة بيانات|n|
+algorithm|خوارزمية|n|
+server|خادم|n|
+browser|متصفح|n|
+download|تنزيل|n|
+link|رابط|n|
+icon|أيقونة|n|
+cable|كابل|n|
+router|جهاز توجيه|n|
+headphones|سماعات رأس|n|
+tablet|جهاز لوحي|n|
+experiment|تجربة|n|
+molecule|جزيء|n|
+gravity|جاذبية|n|
+energy|طاقة|n|
+electricity|كهرباء|n|
+universe|كون|n|
+runway|مدرج|n|
+motorcycle|دراجة نارية|n|
+bicycle|دراجة هوائية|n|
+truck|شاحنة|n|
+highway|طريق سريع|n|
+roundabout|دوّار|n|
+crossroads|مفترق طرق|n|
+sidewalk|رصيف المشاة|n|
+petrol|بنزين|n|
+tire|إطار|n|
+seatbelt|حزام الأمان|n|
+brake|مكبح|n|
+mop|ممسحة|n|
+detergent|منظّف|n|
+trash|قمامة|n|
+nail|مسمار|n|
+screw|برغي|n|
+drill|مثقاب|n|
+rope|حبل|n|
+lock|قفل|n|
+zipper|سحّاب|n|
+pocket|جيب|n|
+parcel|طرد|n|
+loan|قرض|n|
+interest|فائدة|n|
+insurance|تأمين|n|
+pension|معاش تقاعدي|n|
+inflation|تضخم|n|
+unemployment|بطالة|n|
+poverty|فقر|n|
+trade|تجارة|n|
+export|تصدير|n|
+import|استيراد|n|
+warehouse|مستودع|n|
+invoice|فاتورة|n|
+receipt|إيصال|n|
+discount|خصم|n|
+refund|استرداد|n|
+warranty|ضمان|n|
+intelligence|ذكاء|n|
+creativity|إبداع|n|
+curiosity|فضول|n|
+relationship|علاقة|n|
+marriage|زواج|n|
+divorce|طلاق|n|
+neighbor|جار|n|
+guest|ضيف|n|
+enemy|عدو|n|
+king|ملك|n|
+queen|ملكة|n|
+prince|أمير|n|
+princess|أميرة|n|
+funeral|جنازة|n|
+celebration|احتفال|n|
+holiday|عطلة|n|
+concert|حفلة موسيقية|n|
+movie|فيلم|n|
+poem|قصيدة|n|
+story|قصة|n|
+newspaper|صحيفة|n|
+article|مقال|n|
+headline|عنوان رئيسي|n|
+cliff|جرف|n|
+waterfall|شلال|n|
+swamp|مستنقع|n|
+branch|غصن|n|
+root|جذر|n|
+leaf|ورقة شجر|n|
+flower|زهرة|n|
+grass|عشب|n|
+gold|ذهب|n|
+silver|فضة|n|
+iron|حديد|n|
+glass|زجاج|n|
+wood|خشب|n|
+stone|حجر|n|
+wool|صوف|n|
+leather|جلد طبيعي|n|
+silk|حرير|n|
+crow|غراب|n|
+sparrow|عصفور|n|
+goose|إوزة|n|
+seal|فقمة|n|
+adapt|يتكيف|v|
+afford|يتحمل كلفة|v|
+assume|يفترض|v|
+bother|يزعج|v|
+concentrate|يركز|v|
+judge|يحكم على|v|
+reject|يرفض|v|
+repair|يصلح؛ يرمم|v|
+research|يبحث علميًا|v|
+waste|يهدر؛ يضيّع|v|
+take part in|يشارك في|c|
+take care of|يعتني بـ|c|
+take into account|يأخذ بعين الاعتبار|c|
+make sense|منطقي؛ مفهوم|c|
+make an effort|يبذل جهدًا|c|
+give way|يفسح الطريق|c|
+go ahead|تفضّل؛ استمر|c|
+get used to|يعتاد على|c|
+let go|يترك؛ يتخلى|c|
+put up with|يتحمّل؛ يصبر على|c|
+watch out|احذر|c|
+used to|اعتاد على؛ كان قد|c|
+be about to|على وشك أن|c|
+be able to|قادر على|c|
+be going to|ينوي؛ سوف|c|
+would like|يودّ؛ يرغب|c|
+had better|من الأفضل أن|c|
+as long as|طالما؛ بشرط أن|c|
+as if|كأنّما؛ كما لو أن|c|
+even though|على الرغم من أن|c|
+no matter what|مهما كان؛ مهما حدث|c|
+in addition|بالإضافة إلى ذلك|c|
+in conclusion|في الختام|c|
+for instance|على سبيل المثال|c|
+in spite of|على الرغم من|c|
+in case|تحسّبًا؛ في حال|c|
+in advance|مسبقًا؛ مقدّمًا|c|
+at first|في البداية؛ أولًا|c|
+at once|فورًا؛ في الحال|c|
+on average|في المتوسط؛ بالمعدل|c|
+on foot|سيرًا على الأقدام|c|
+on the whole|إجمالًا؛ بوجه عام|c|
+by chance|بالصدفة|c|
+by far|بفارق كبير|c|
+for sure|بالتأكيد؛ بلا شك|c|
+for rent|للإيجار|c|
+out loud|بصوت عالٍ|c|
+well known|مشهور؛ معروف|c|
+junk food|طعام غير صحي|c|
+fruit juice|عصير فواكه|c|
+olive oil|زيت زيتون|c|
+peanut butter|زبدة الفول السوداني|c|
+soft drink|مشروب غازي|c|
+tap water|ماء الصنبور|c|
+mineral water|مياه معدنية|c|
+vacuum cleaner|مكنسة كهربائية|c|
+light bulb|مصباح كهربائي|c|
+smart phone|هاتف ذكي|c|
+video call|مكالمة فيديو|c|
+screen shot|لقطة شاشة|c|
+car park|موقف سيارات|c|
+public transport|مواصلات عامة|c|
+weather forecast|توقعات الطقس|c|
+climate change|تغيّر المناخ|c|
+natural disaster|كارثة طبيعية|c|
+health care|رعاية صحية|c|
+waiting room|غرفة الانتظار|c|
+medical record|سجل طبي|c|
+life jacket|سترة نجاة|c|
+customer service|خدمة العملاء|c|
+steering wheel|مقود السيارة|c|
+terminal|صالة المطار|n|
+suitcase|حقيبة سفر|n|
+customs|الجمارك|n|
+visa|تأشيرة|n|
+delay|تأخير|n|
+gate|بوابة|n|
+departure|مغادرة|n|
+destination|وجهة|n|
+itinerary|برنامج الرحلة|n|
+souvenir|تذكار|n|
+guide|مرشد|n|
+map|خريطة|n|
+ferry|عبّارة|n|
+injection|حقنة|n|
+therapy|علاج|n|
+appetite|شهية|n|
+stress|توتر|n|
+diet|حمية|n|
+vitamin|فيتامين|n|
+protein|بروتين|n|
+calorie|سعرة حرارية|n|
+salary|راتب|n|
+loss|خسارة|n|
+deadline|موعد نهائي|n|
+client|عميل|n|
+supplier|مورّد|n|
+employer|صاحب عمل|n|
+meeting|اجتماع|n|
+agenda|جدول أعمال|n|
+presentation|عرض تقديمي|n|
+strategy|استراتيجية|n|
+investment|استثمار|n|
+shipment|شحنة|n|
+crime|جريمة|n|
+witness|شاهد|n|
+verdict|حكم قضائي|n|
+fine|غرامة|n|
+citizen|مواطن|n|
+immigrant|مهاجر|n|
+moon|قمر|n|
+sun|شمس|n|
+species|نوع حي|n|
+fossil|حفرية|n|
+pollution|تلوث|n|
+recycling|إعادة التدوير|n|
+waste|نفايات|n|
+curriculum|منهج|n|
+thesis|رسالة علمية|n|
+graduate|خريج|n|
+campus|حرم جامعي|n|
+grammar|قواعد اللغة|n|
+vocabulary|مفردات|n|
+pronunciation|نطق|n|
+sentence|جملة|n|
+paragraph|فقرة|n|
+essay|مقال|n|
+poet|شاعر|n|
+journalist|صحفي|n|
+actor|ممثل|n|
+painting|لوحة فنية|n|
+sculpture|منحوتة|n|
+gift|هدية|n|
+key|مفتاح|n|
+fan|مروحة|n|
+heater|مدفأة|n|
+jealousy|غيرة|n|
+loneliness|وحدة|n|
+dream|حلم|n|
+nightmare|كابوس|n|
+plan|خطة|n|
+advantage|ميزة|n|
+similarity|تشابه|n|
+situation|موقف|n|
+decade|عقد|n|
+era|حقبة|n|
+design|يصمم|v|
+review|يراجع؛ يقيّم|v|
+upset|يزعج؛ يحزن؛ يغضب|v|
+lazy|كسول|a|
+funny|مضحك|a|
+serious|جاد|a|
+shy|خجول|a|
+proud|فخور|a|
+tired|متعب؛ مرهق|a|
+thirsty|عطشان|a|
+angry|غاضب|a|
+excited|متحمس؛ مبتهج|a|
+surprised|متفاجئ|a|
+comfortable|مريح|a|
+safe|آمن؛ مأمون|a|
+expensive|غالٍ؛ مكلف|a|
+cheap|رخيص|a|
+fresh|طازج؛ منعش|a|
+sweet|حلو؛ سكري|a|
+heavy|ثقيل|a|
+light|خفيف؛ فاتح اللون|a|
+thick|سميك؛ كثيف|a|
+thin|رفيع؛ نحيف|a|
+narrow|ضيق|a|
+wide|واسع؛ عريض|a|
+deep|عميق|a|
+empty|فارغ|a|
+full|ممتلئ؛ كامل|a|
+quiet|هادئ|a|
+noisy|صاخب؛ مزعج|a|
+bright|ساطع؛ مشرق؛ ذكي|a|
+dark|مظلم؛ داكن|a|
+wet|مبتل؛ رطب|a|
+dry|جاف؛ ناشف|a|
+straight|مستقيم|a|
+possible|ممكن|a|
+useless|عديم الفائدة|a|
+ready|جاهز؛ مستعد|a|
+busy|مشغول؛ مزدحم|a|
+free|حر؛ مجاني؛ فارغ|a|
+famous|مشهور؛ شهير|a|
+in my opinion|في رأيي|c|
+to be honest|بصراحة|c|
+after all|بعد كل شيء|c|
+above all|قبل كل شيء؛ أهم من ذلك|c|
+in demand|مطلوب بشدة|c|
+in trouble|في ورطة؛ في مأزق|c|
+on the way|في الطريق|c|
+out of breath|منقطع النفس؛ لاهث|c|
+take a look|يلقي نظرة|c|
+have a try|يجرّب؛ يحاول|c|
+give in|يستسلم؛ يرضخ|c|
+get rid of|يتخلص من|c|
+get together|يجتمع؛ يلتقي|c|
+go back|يعود؛ يرجع|c|
+go down|ينزل؛ ينخفض؛ يهبط|c|
+go up|يصعد؛ يرتفع؛ يزداد|c|
+go on a trip|يذهب في رحلة|c|
+let me know|أخبرني؛ دعني أعرف|c|
+let's go|هيا بنا|c|
+you're welcome|عفوًا؛ على الرحب والسعة|c|
+I'm sorry|أنا آسف|c|
+well done|أحسنت؛ عمل ممتاز|c|
+just in case|تحسبًا؛ احتياطًا|c|
+trash can|سلة مهملات|c|
+power cut|انقطاع الكهرباء|c|
+petrol station|محطة وقود|c|
+bus driver|سائق حافلة|c|
+taxi driver|سائق سيارة أجرة|c|
+police officer|ضابط شرطة|c|
+fire fighter|رجل إطفاء؛ إطفائي|c|
+shop assistant|بائع في متجر|c|
+sales manager|مدير مبيعات|c|
+hotel room|غرفة فندق|c|
+fresh air|هواء نقي؛ هواء منعش|c|
+common cold|نزلة برد؛ زكام|c|
+food poisoning|تسمم غذائي|c|
+mobile app|تطبيق جوال؛ تطبيق هاتف|c|
+internet connection|اتصال بالإنترنت|c|
+data base|قاعدة بيانات|c|
+train|قطار|n|
+boat|قارب|n|
+bridge|جسر|n|
+intersection|تقاطع|n|
+pavement|رصيف|n|
+ticket|تذكرة|n|
+timetable|جدول مواعيد|n|
+football|كرة القدم|n|
+basketball|كرة السلة|n|
+swimming|سباحة|n|
+race|سباق|n|
+team|فريق|n|
+coach|مدرب|n|
+player|لاعب|n|
+referee|حكم|n|
+match|مباراة|n|
+score|نتيجة؛ هدف|n|
+champion|بطل؛ بطل مسابقة|n|
+exercise|تمرين؛ رياضة|n|
+hobby|هواية|n|
+toy|لعبة؛ دمية|n|
+carpenter|نجار|n|
+plumber|سباك|n|
+electrician|كهربائي|n|
+mechanic|ميكانيكي|n|
+tailor|خياط|n|
+baker|خباز|n|
+butcher|جزار|n|
+cashier|أمين صندوق؛ كاشير|n|
+secretary|سكرتير؛ سكرتيرة|n|
+architect|مهندس معماري|n|
+pharmacist|صيدلي|n|
+translator|مترجم|n|
+interpreter|مترجم فوري|n|
+servant|خادم؛ خادمة|n|
+shepherd|راعٍ|n|
+fisherman|صياد سمك|n|
+paper|ورق؛ صحيفة؛ بحث|n|
+brick|طوب؛ آجر|n|
+cement|إسمنت|n|
+paint|طلاء؛ دهان|n|
+smoke|دخان|n|
+ice|جليد؛ ثلج متجمد|n|
+shade|ظل؛ مظلة|n|
+shape|شكل؛ هيئة|n|
+size|حجم؛ مقاس|n|
+weight|وزن|n|
+height|ارتفاع؛ طول|n|
+length|طول؛ مدة|n|
+width|عرض|n|
+speed|سرعة|n|
+level|مستوى؛ طابق|n|
+edge|حافة؛ طرف|n|
+corner|زاوية؛ ركن؛ ناصية|n|
+square|مربع؛ ساحة|n|
+triangle|مثلث|n|
+line|خط؛ سطر؛ طابور|n|
+point|نقطة؛ نقطة نقاش|n|
+layer|طبقة|n|
+bottom|قاع؛ أسفل؛ قعر|n|
+top|قمة؛ أعلى؛ غطاء|n|
+middle|وسط؛ منتصف|n|
+side|جانب؛ طرف|n|
+center|مركز؛ وسط|n|
+island|جزيرة|n|
+desert|صحراء|n|
+mountain|جبل|n|
+beach|شاطئ؛ ساحل|n|
+suburb|ضاحية|n|
+district|منطقة؛ مقاطعة؛ حي|n|
+address|عنوان؛ خطاب|n|
+passport|جواز سفر|n|
+identity|هوية؛ كيان|n|
+signature|توقيع|n|
+label|ملصق؛ علامة؛ تسمية|n|
+brand|ماركة؛ علامة تجارية|n|
+price|سعر؛ ثمن|n|
+offer|عرض؛ تقديم؛ مناقصة|n|
+order|طلب؛ ترتيب؛ أمر|n|
+delivery|توصيل؛ تسليم؛ ولادة|n|
+complaint|شكوى؛ تذمر|n|
+feedback|ملاحظات؛ رد فعل؛ تعليق|n|
+mood|مزاج؛ حالة نفسية؛ ميل|n|
+feeling|شعور؛ إحساس؛ عاطفة|n|
+sadness|حزن؛ كآبة؛ أسى|n|
+happiness|سعادة؛ فرح؛ بهجة|n|
+laughter|ضحك؛ قهقهة|n|
+tear|دمعة؛ دموع؛ تمزيق|n|
+smile|ابتسامة|n|
+voice|صوت؛ رأي؛ تصويت؛ ملفوظ|n|
+noise|ضجيج؛ صوت عالٍ؛ ضوضاء|n|
+echo|صدى؛ ترديد؛ صدى الصوت|n|
+rhythm|إيقاع؛ وزن؛ نغمة|n|
+melody|لحن؛ نغمة؛ أغنية|n|
+lyrics|كلمات الأغنية؛ أشعار غنائية|n|
+band|فرقة موسيقية؛ شريط؛ عصابة؛ حزام|n|
+orchestra|أوركسترا؛ فرقة موسيقية سمفونية|n|
+bounce|يرتد؛ يقفز؛ يطفو؛ يتناط|v|
+brush|يفرّش؛ يمسح؛ يلمس بخفة|v|
+press|يضغط؛ يكبس؛ يكوي؛ يعصر؛ يلحّ|v|
+smell|يشم؛ يفوح؛ تنبعث منه رائحة؛ يستشعر|v|
+spit|يبصق؛ يتفل؛ يقذف؛ يلفظ؛ يرذاذ؛ يتمتم|v|
+tip|يميل؛ يقلب؛ يعطي بقشيشًا؛ يلمح؛ ينبه؛ يخمّن|v|
+get out|يخرج؛ ينزل؛ يفلت؛ يتسرب|c|
+give away|يتبرع؛ يوزع مجانًا؛ يفضح؛ يكشف سرًّا|c|
+hold up|يؤخر؛ يرفع؛ يسطو؛ يتحمل؛ يصمد؛ يُعيق|c|
+keep on|يواصل؛ يستمر؛ يداوم على؛ يلح؛ يتابع؛ يتمسك|c|
+let in|يسمح بالدخول؛ يُدخل؛ يسمح؛ يسرّب؛ يطلع على|c|
+look into|يفحص؛ يحقق في؛ يدرس؛ يبحث في؛ يتحرى عن|c|
+look out|يحترس؛ ينتبه؛ يتنبه؛ يطل على؛ يراقب؛ يحذر|c|
+look over|يراجع؛ يتفحص؛ يطّلع على؛ يتجاهل؛ يتغاضى|c|
+pass out|يغمى عليه؛ يفقد الوعي؛ يوزع؛ يتخرج؛ يسقط مغشيًا|c|
+pay off|يسدد بالكامل؛ يؤتي ثماره؛ يرشو؛ يحقق نتيجة؛ ينجح|c|
+put out|يطفئ؛ يخمد؛ يصدر؛ ينشر؛ يزعج؛ يحرج؛ يمدد|c|
+speak up|يتكلم بصوت عالٍ؛ يرفع صوته؛ يبدي رأيه؛ يجاهر|c|
+switch off|يطفئ؛ يوقف؛ يغلق؛ يقطع؛ يفصل؛ يتوقف عن الانتباه|c|
+switch on|يشغّل؛ يضيء؛ يفتح؛ يوصل؛ يحرك؛ يوقد|c|
+turn into|يتحول إلى؛ يصبح؛ يحوّل إلى؛ يتغير إلى|c|
+turn out|يتبين؛ ينتهي؛ يطفئ؛ يحضر؛ يطرد؛ يخرج؛ ينتج|c|
+as well|أيضًا؛ كذلك؛ فضلًا عن؛ بالإضافة إلى ذلك|c|
+at school|في المدرسة؛ بالمدرسة؛ في دراسته|c|
+in the morning|في الصباح؛ صباحًا؛ في الصباح الباكر|c|
+in the evening|في المساء؛ مساءً؛ عند المساء؛ في الأمسية|c|
+on Monday|يوم الاثنين؛ في يوم الاثنين|c|
+on weekends|في عطلات نهاية الأسبوع؛ في عطلة الأسبوع|c|
+every day|كل يوم؛ يوميًا؛ على مدار اليوم|c|
+once a week|مرة في الأسبوع؛ أسبوعيًا؛ مرة أسبوعيًا|c|
+twice a day|مرتين في اليوم؛ مرتين يوميًا|c|
+next week|الأسبوع القادم؛ الأسبوع المقبل|c|
+last year|العام الماضي؛ السنة الماضية؛ في العام الماضي|c|
+two weeks ago|قبل أسبوعين؛ منذ أسبوعين؛ قبل أسبوعين من الآن|c|
+the day before yesterday|أول أمس؛ قبل أمس|c|
+the day after tomorrow|بعد غد|c|
+how much|كم؛ بكم؛ ما مقدار؛ بأي سعر؛ كم ثمن|c|
+how many|كم عدد؛ كم؛ ما عدد|c|
+how long|كم المدة؛ كم من الوقت؛ ما طول؛ كم يستغرق|c|
+how far|كم المسافة؛ إلى أي مدى؛ ما بعد؛ إلى أين|c|
+how often|كم مرة؛ بأي تكرار؛ كم مرة في؛ كل كم|c|
+what time|كم الساعة؛ في أي وقت؛ متى؛ في أي ساعة|c|
+where from|من أين؛ من أي مكان؛ من أي بلد|c|
+alarm clock|منبّه|n|
+attitude|موقف؛ سلوك|n|
+author|مؤلف|n|
+baby|رضيع|n|
+basement|قبو|n|
+birth|ولادة|n|
+breakfast|فطور|n|
+bubble|فقاعة|n|
+cabin|كوخ؛ مقصورة|n|
+cart|عربة تسوق|n|
+cattle|ماشية|n|
+chin|ذقن|n|
+circus|سيرك|n|
+clock|ساعة حائط|n|
+closet|خزانة ملابس|n|
+clue|دليل؛ خيط|n|
+coin|عملة معدنية|n|
+collar|ياقة|n|
+comedy|كوميديا|n|
+comparison|مقارنة|n|
+conclusion|استنتاج؛ خاتمة|n|
+conflict|صراع؛ نزاع|n|
+consumer|مستهلك|n|
+contest|مسابقة|n|
+crack|شق؛ صدع|n|
+crew|طاقم؛ فريق عمل|n|
+crop|محصول|n|
+cure|علاج؛ شفاء|n|
+custom|عادة؛ تقليد|n|
+damage|ضرر؛ تلف|n|
+darkness|ظلام|n|
+daughter|ابنة|n|
+dawn|فجر|n|
+deal|صفقة؛ اتفاق|n|
+death|موت؛ وفاة|n|
+desire|رغبة؛ شوق|n|
+desk|مكتب؛ منضدة|n|
+detail|تفصيل؛ جزئية|n|
+diver|غواص|n|
+drama|دراما؛ مسرحية|n|
+duty|واجب؛ مهمة|n|
+editor|محرّر؛ رئيس تحرير|n|
+empire|إمبراطورية|n|
+error|خطأ؛ عطل|n|
+exit|مخرج؛ خروج|n|
+expert|خبير؛ متخصص|n|
+fairy tale|قصة خرافية؛ حكاية|n|
+fashion|موضة؛ أزياء|n|
+fate|قدر؛ مصير|n|
+field|حقل؛ ميدان|n|
+figure|رقم؛ شكل|n|
+flag|علم؛ راية|n|
+flavor|نكهة؛ طعم|n|
+fortune|ثروة؛ حظ|n|
+fund|صندوق؛ مال|n|
+gesture|إيماءة؛ حركة|n|
+giant|عملاق؛ مارد|n|
+assist|يعاون؛ يساعد|v|
+calm|يهدّئ؛ يسكّن|v|
+clear|يوضّح؛ يزيل|v|
+collapse|ينهار؛ يسقط|v|
+estimate|يقدّر؛ يخمّن|v|
+fear|يخاف؛ يخشى|v|
+force|يجبر؛ يُكره|v|
+matter|يهمّ؛ يؤثر|v|
+mind|يمانع؛ يهتم|v|
+point|يشير؛ يوجّه|v|
+raise|يرفع؛ يربّي|v|
+reach|يصل إلى؛ يبلغ|v|
+realize|يدرك؛ يحقق|v|
+relate|يربط؛ يروي|v|
+risk|يخاطر؛ يغامر|v|
+rush|يندفع؛ يسرع|v|
+ahead of time|قبل الموعد؛ مبكرًا|c|
+all right|حسنًا؛ لا بأس|c|
+any more|بعد الآن؛ لم يعد|c|
+at all|على الإطلاق؛ إطلاقًا|c|
+at any rate|على أي حال؛ في كل الأحوال|c|
+before long|عمّا قريب؛ بعد وقت قصير|c|
+by oneself|بمفرده؛ وحده|c|
+care for|يهتم بـ؛ يرعى|c|
+come on|هيا؛ تعال|c|
+come out|يصدر؛ يظهر|c|
+deal with|يتعامل مع؛ يعالج|c|
+do without|يستغني عن|c|
+end up|ينتهي به الأمر؛ يؤول إلى|c|
+even if|حتى لو؛ ولو|c|
+for ever|إلى الأبد؛ للأبد|c|
+for the first time|للمرة الأولى|c|
+get across|يوصل؛ يعبر|c|
+get away|يهرب؛ يفلت|c|
+get by|يدبّر أمره؛ يكفيه|c|
+get over|يتعافى من؛ يتخطى|c|
+give out|يوزّع؛ ينفد|c|
+go through|يمرّ بـ؛ يخوض|c|
+hang on|انتظر لحظة؛ تمسّك|c|
+hang out|يتسكع؛ يقضي وقتًا مع الأصدقاء|c|
+have to|يجب عليه؛ مضطر إلى|c|
+in case of|في حال؛ في حالة|c|
+in terms of|من حيث؛ فيما يتعلق بـ|c|
+in the long run|على المدى البعيد؛ في النهاية|c|
+keep away|يبتعد؛ يُبعد|c|
+keep out|يمنع الدخول؛ يبقى خارجًا|c|
+kind of|نوعًا ما؛ بعض الشيء|c|
+lots of|كثير من؛ الكثير من|c|
+make up|يؤلّف؛ يصالح|c|
+no longer|لم يعد؛ لم تعد|c|
+not at all|ليس على الإطلاق؛ عفوًا|c|
+now and then|بين حين وآخر|c|
+on and on|بلا انقطاع؛ باستمرار|c|
+on hand|متوفر؛ في متناول اليد|c|
+one another|بعضهم بعضًا؛ كل واحد الآخر|c|
+only just|للتو؛ بالكاد|c|
+out of the question|مستحيل؛ غير وارد|c|
+over there|هناك؛ هنالك|c|
+per cent|بالمئة؛ نسبة مئوية|c|
+rather than|بدلًا من؛ عوضًا عن|c|
+right away|في الحال؛ فورًا|c|
+so as to|لكي؛ كي|c|
+such as|مثل؛ كـ|c|
+sure enough|كما هو متوقع؛ بالفعل|c|
+that is|أي؛ يعني|c|
+these days|هذه الأيام؛ في أيامنا هذه|c|
+with regard to|فيما يتعلق بـ؛ بخصوص|c|
+without doubt|بلا شك؛ بالتأكيد|c|
+abbreviation|اختصار؛ مختصر|n|
+absence|غياب|n|
+accent|لهجة؛ نبرة|n|
+access|وصول؛ دخول|n|
+achievement|إنجاز|n|
+acid|حمض|n|
+agent|وكيل؛ عميل|n|
+aim|هدف؛ غاية|n|
+alcohol|كحول|n|
+alley|زقاق؛ ممر ضيق|n|
+angle|زاوية|n|
+apology|اعتذار|n|
+applause|تصفيق|n|
+approach|نهج؛ أسلوب|n|
+arch|قوس؛ قنطرة|n|
+area|منطقة؛ مساحة|n|
+ash|رماد|n|
+average|متوسط؛ معدّل|n|
+award|جائزة؛ تكريم|n|
+background|خلفية؛ خلفية الصورة|n|
+badge|شارة؛ وسام|n|
+bait|طُعم|n|
+bargain|صفقة رابحة؛ مساومة|n|
+barn|حظيرة؛ مخزن حبوب|n|
+base|قاعدة؛ أساس|n|
+beam|شعاع؛ عارضة|n|
+beast|وحش؛ حيوان مفترس|n|
+beat|نبضة؛ إيقاع|n|
+bench|مقعد طويل؛ دكّة|n|
+berry|توت؛ ثمرة صغيرة|n|
+bin|سلة مهملات؛ صندوق|n|
+bit|قطعة صغيرة؛ جزء بسيط|n|
+block|كتلة؛ مبنى سكني|n|
+board|لوح؛ مجلس إدارة|n|
+bomb|قنبلة|n|
+bond|رابطة؛ سند مالي|n|
+bow|قوس؛ انحناءة|n|
+bride|عروس|n|
+bridegroom|عريس|n|
+bunch|باقة؛ حزمة|n|
+burden|عبء؛ حمل ثقيل|n|
+bush|شجيرة؛ دغل|n|
+cage|قفص|n|
+canal|قناة مائية|n|
+cargo|حمولة؛ شحنة|n|
+chart|رسم بياني؛ مخطط|n|
+chief|زعيم؛ رئيس|n|
+chip|رقاقة؛ شريحة بطاطا|n|
+choir|جوقة؛ كورال|n|
+cigarette|سيجارة|n|
+cloth|قماش؛ قطعة قماش|n|
+club|نادٍ؛ هراوة|n|
+cocoa|كاكاو|n|
+code|رمز؛ شيفرة|n|
+collection|مجموعة؛ تحصيل|n|
+column|عمود؛ عمود صحفي|n|
+command|أمر؛ قيادة|n|
+concept|مفهوم؛ فكرة|n|
+concrete|خرسانة؛ ملموس|n|
+congratulations|تهانينا؛ مبروك|n|
+contact|اتصال؛ جهة اتصال|n|
+content|محتوى؛ رضا|n|
+continent|قارة؛ يابسة|n|
+control|تحكم؛ سيطرة|n|
+actual|فعلي؛ حقيقي|a|
+alone|وحيد؛ منفرد|a|
+amazing|مذهل؛ رائع|a|
+boring|ممل؛ مضجر|a|
+broad|عريض؛ واسع|a|
+close|قريب؛ وثيق|a|
+cool|بارد؛ رائع|a|
+correct|صحيح؛ سليم|a|
+dear|عزيز؛ غالٍ|a|
+definite|محدد؛ قاطع|a|
+delicious|لذيذ؛ شهي|a|
+different|مختلف؛ متنوع|a|
+double|مزدوج؛ ضعف|a|
+early|مبكر؛ باكر|a|
+electric|كهربائي|a|
+enough|كافٍ|a|
+exciting|مثير؛ مشوّق|a|
+extra|إضافي؛ زائد|a|
+extreme|شديد؛ متطرف|a|
+fat|سمين؛ دهني|a|
+final|أخير؛ نهائي|a|
+fixed|ثابت؛ مثبّت|a|
+glad|مسرور؛ سعيد|a|
+honest|صادق؛ أمين|a|
+late|متأخر؛ راحل|a|
+mad|مجنون؛ غاضب|a|
+naked|عارٍ؛ مكشوف|a|
+natural|طبيعي؛ فطري|a|
+nearby|قريب؛ مجاور|a|
+outdoor|خارجي؛ في الهواء الطلق|a|
+pure|نقي؛ خالص|a|
+sensible|عاقل؛ معقول|a|
+separate|منفصل؛ مستقل|a|
+simple|بسيط؛ سهل|a|
+skilled|ماهر؛ متمرس|a|
+sure|متأكد؛ واثق|a|
+total|كلي؛ إجمالي|a|
+upper|علوي؛ أعلى|a|
+various|متنوع؛ عديد|a|
+visible|مرئي؛ ظاهر|a|
+warm|دافئ؛ ودود|a|
+wrong|خاطئ؛ مخطئ|a|
+advertise|يعلن؛ يروّج|v|
+appoint|يعيّن؛ يحدد|v|
+arise|ينشأ؛ يبرز|v|
+assure|يؤكد؛ يطمئن|v|
+behave|يتصرف؛ يسلك|v|
+charge|يشحن؛ يتهم|v|
+command|يأمر؛ يقود|v|
+construct|يشيّد؛ يبني|v|
+declare|يعلن؛ يصرّح|v|
+define|يعرّف؛ يحدد|v|
+delight|يسرّ؛ يبهج|v|
+depart|يغادر؛ يرحل|v|
+detect|يكتشف؛ يرصد|v|
+dismiss|يصرف؛ يفصل|v|
+dwell|يسكن؛ يقيم|v|
+enable|يمكّن؛ يتيح|v|
+enclose|يرفق؛ يحيط|v|
+endure|يتحمل؛ يصبر|v|
+entertain|يسلّي؛ يضيّف|v|
+envy|يحسد؛ يغبط|v|
+evolve|يتطور؛ يتدرج|v|
+exclude|يستثني؛ يستبعد|v|
+execute|ينفذ؛ يعدم|v|
+exhaust|يستنفد؛ يرهق|v|
+expand|يتوسع؛ يوسّع|v|
+export|يصدّر؛ يُصدّر بضائع|v|
+fascinate|يفتن؛ يسحر|v|
+flatter|يتملق؛ يجامل|v|
+focus|يركز؛ يضبط البؤرة|v|
+gaze|يحدق؛ يتأمل|v|
+generate|يولّد؛ ينتج|v|
+govern|يحكم؛ يدير|v|
+guard|يحرس؛ يحمي|v|
+harm|يؤذي؛ يضرّ|v|
+identify|يحدد؛ يتعرف على|v|
+illustrate|يوضح؛ يمثّل|v|
+import|يستورد؛ يُدخل|v|
+impose|يفرض؛ يُلزم|v|
+indicate|يدل على؛ يشير إلى|v|
+influence|يؤثر في؛ يتحكم|v|
+insure|يؤمّن على؛ يضمن|v|
+involve|يتضمن؛ يشمل|v|
+issue|يصدر؛ يُصدر|v|
+all over|في كل مكان؛ انتهى تمامًا|c|
+all together|معًا؛ جميعًا|c|
+along with|بالإضافة إلى؛ مع|c|
+apart from|باستثناء؛ عدا|c|
+as a matter of fact|في الحقيقة؛ في الواقع|c|
+as for|أما بالنسبة لـ|c|
+as to|فيما يتعلق بـ؛ بخصوص|c|
+at the beginning of|في بداية؛ في مستهل|c|
+at the end of|في نهاية؛ في آخر|c|
+at the latest|في موعد أقصاه؛ على أبعد تقدير|c|
+back up|يدعم؛ ينسخ احتياطيًا|c|
+be afraid of|يخاف من؛ يخشى|c|
+be allowed to|مسموح له بـ؛ يُسمح له|c|
+be aware of|يدرك؛ يعي|c|
+be born|يولد؛ وُلد|c|
+be fond of|يحب؛ مولع بـ|c|
+be good at|بارع في؛ ماهر في|c|
+be interested in|مهتم بـ؛ يهتم بـ|c|
+be keen on|متحمس لـ؛ حريص على|c|
+be late|يتأخر؛ متأخر|c|
+be proud of|يفتخر بـ؛ فخور بـ|c|
+be sure|يتأكد؛ متأكد|c|
+be supposed to|من المفترض أن؛ يُفترض به|c|
+be used to|معتاد على؛ متعود على|c|
+both of|كلاهما؛ كل من|c|
+break in|يقتحم؛ يقاطع|c|
+break up|ينفصل؛ يتفرق|c|
+bring about|يسبب؛ يحدث|c|
+bring back|يعيد؛ يُرجع|c|
+bring up|يربّي؛ يثير|c|
+call off|يلغي؛ يوقف|c|
+carry out|ينفذ؛ يؤدي|c|
+catch up|يلحق بـ؛ يستدرك|c|
+clean up|ينظف؛ يرتب|c|
+clear up|يوضّح؛ يصفو|c|
+count on|يعتمد على؛ يعوّل على|c|
+cross out|يشطب؛ يلغي|c|
+cut in|يقاطع؛ يتجاوز|c|
+die out|ينقرض؛ يندثر|c|
+drop by|يمرّ بـ؛ يزور زيارة قصيرة|c|
+drop in|يزور على غير موعد؛ يمرّ|c|
+drop off|يوصل؛ ينزل|c|
+each other|بعضهم بعضًا؛ كل منهما الآخر|c|
+drain|مجرى؛ بالوعة|n|
+dread|رعب؛ خوف شديد|n|
+drift|انجراف؛ تيار|n|
+drop|قطرة؛ سقوط|n|
+earnings|أرباح؛ دخل|n|
+effect|تأثير؛ أثر|n|
+element|عنصر؛ مكوّن|n|
+embassy|سفارة|n|
+employment|توظيف؛ عمل|n|
+estate|عقار؛ تركة|n|
+evening|مساء؛ أمسية|n|
+expense|نفقة؛ تكلفة|n|
+farm|مزرعة؛ حقل|n|
+fault|خطأ؛ عيب|n|
+feast|وليمة؛ مأدبة|n|
+feature|ميزة؛ سمة|n|
+film|فيلم؛ غشاء|n|
+fireplace|موقد؛ مدفأة حائط|n|
+fleet|أسطول|n|
+flock|قطيع؛ سرب|n|
+fool|أحمق؛ مغفل|n|
+footstep|خطوة؛ وقع قدم|n|
+forecast|توقعات؛ نشرة الطقس|n|
+glory|مجد؛ عظمة|n|
+grain|حبة؛ حبوب|n|
+bribe|يرشو؛ يرتشي|v|
+comb|يمشّط؛ يسرّح|v|
+deceive|يخدع؛ يغش|v|
+demonstrate|يبرهن؛ يوضح|v|
+digest|يهضم؛ يستوعب|v|
+discourage|يثبّط؛ يحبط|v|
+dispute|يتنازع؛ يجادل|v|
+emphasize|يؤكد؛ يشدد على|v|
+enrich|يثري؛ يغني|v|
+equip|يجهز؛ يزود|v|
+establish|يؤسس؛ ينشئ|v|
+exaggerate|يبالغ؛ يغالي|v|
+exhibit|يعرض؛ يُظهر|v|
+exploit|يستغل؛ يستثمر|v|
+fit|يناسب؛ يلائم|v|
+glance|ينظر نظرة سريعة؛ يلقي نظرة|v|
+glue|يلصق؛ يغري|v|
+grasp|يمسك؛ يفهم|v|
+aged|مسن؛ طاعن في السن|a|
+annual|سنوي؛ حولي|a|
+automatic|آلي؛ تلقائي|a|
+barren|قاحل؛ جدب|a|
+basic|أساسي؛ ابتدائي|a|
+blunt|غير حاد؛ فظ|a|
+chief|رئيسي؛ أساسي|a|
+complete|كامل؛ تام|a|
+crazy|مجنون؛ طائش|a|
+edible|صالح للأكل؛ قابل للأكل|a|
+educated|متعلم؛ مثقف|a|
+abyss|هاوية|n|
+accountability|مساءلة|n|
+acorn|ثمرة البلوط|n|
+adolescent|مراهق|n|
+alliance|تحالف|n|
+altitude|ارتفاع؛ علو|n|
+amateur|هاوٍ؛ غير محترف|n|
+ambassador|سفير|n|
+ammunition|ذخيرة|n|
+ancestor|جدّ؛ سلف|n|
+antique|تحفة قديمة؛ أثر|n|
+apparatus|جهاز؛ أداة|n|
+appetizer|مقبّلات|n|
+arena|ساحة؛ حلبة|n|
+aroma|عطر؛ رائحة زكية|n|
+artisan|حِرفي؛ صانع|n|
+assembly|جمعية؛ تجمع|n|
+asset|أصل؛ ميزة|n|
+attic|علّية؛ غرفة السطح|n|
+audit|تدقيق؛ مراجعة حسابات|n|
+avalanche|انهيار جليدي|n|
+baggage|أمتعة؛ حقائب|n|
+ballot|ورقة اقتراع؛ اقتراع|n|
+banner|لافتة؛ راية|n|
+barley|شعير|n|
+barrier|حاجز؛ عائق|n|
+bay|خليج؛ جون|n|
+beetle|خنفساء|n|
+bias|تحيّز؛ انحياز|n|
+billboard|لوحة إعلانات|n|
+biography|سيرة ذاتية؛ سيرة|n|
+blossom|زهرة؛ إزهار|n|
+blueprint|مخطط؛ خريطة تنفيذية|n|
+bonus|مكافأة؛ علاوة|n|
+booklet|كتيب|n|
+boulder|صخرة كبيرة|n|
+boundary|حدّ؛ تخم|n|
+bracket|قوس؛ دعامة|n|
+brochure|كتيب دعائي|n|
+broker|وسيط؛ سمسار|n|
+buffalo|جاموس؛ ثور بري|n|
+bulb|مصباح؛ بصلة|n|
+bureau|مكتب؛ إدارة|n|
+burglar|لص؛ سارق|n|
+cafeteria|مقصف؛ كافتيريا|n|
+cane|عصا؛ قصب|n|
+capacity|سعة؛ قدرة|n|
+carnival|كرنفال؛ مهرجان|n|
+casualty|ضحية؛ مصاب|n|
+catalog|فهرس؛ كتالوج|n|
+cathedral|كاتدرائية|n|
+cellar|قبو؛ سرداب|n|
+ceramic|خزف؛ سيراميك|n|
+champagne|شمبانيا|n|
+chaos|فوضى؛ اضطراب|n|
+charm|سحر؛ جاذبية|n|
+cheetah|فهد؛ شيتا|n|
+chemistry|كيمياء؛ توافق|n|
+chorus|جوقة؛ لازمة|n|
+circuit|دارة كهربائية؛ حلبة|n|
+citizenship|مواطنة؛ جنسية|n|
+civilization|حضارة؛ مدنية|n|
+classmate|زميل الصف؛ زميل دراسة|n|
+cleaner|عامل نظافة؛ منظّف|n|
+cockpit|قمرة القيادة|n|
+colony|مستعمرة؛ مستوطنة|n|
+compound|مركّب؛ مجمع|n|
+compromise|تسوية؛ حل وسط|n|
+consonant|حرف ساكن؛ حرف صامت|n|
+constitution|دستور؛ بنية جسدية|n|
+corpse|جثة؛ جثمان|n|
+cottage|كوخ؛ بيت ريفي|n|
+counter|طاولة البيع؛ عدّاد|n|
+countryside|ريف؛ منطقة ريفية|n|
+courtyard|فناء؛ باحة|n|
+craftsman|حرفي؛ صانع ماهر|n|
+creed|عقيدة؛ مذهب|n|
+cricket|كريكيت؛ صرصور الليل|n|
+criminal|مجرم؛ جانٍ|n|
+cruelty|قسوة؛ وحشية|n|
+cuisine|مطبخ؛ فن الطهي|n|
+custody|حضانة؛ حراسة|n|
+dairy|ألبان؛ منتجات الألبان|n|
+debris|حطام؛ أنقاض|n|
+decay|تعفن؛ اضمحلال|n|
+deposit|وديعة؛ عربون|n|
+descendant|سليل؛ حفيد|n|
+diameter|قطر|n|
+dictator|دكتاتور؛ طاغية|n|
+dignity|كرامة؛ وقار|n|
+dilemma|معضلة؛ مأزق|n|
+dimension|بُعد؛ أبعاد|n|
+diploma|دبلوم؛ شهادة|n|
+discipline|انضباط؛ تخصص علمي|n|
+dwelling|مسكن؛ مأوى|n|
+dynasty|سلالة حاكمة؛ أسرة حاكمة|n|
+accelerate|يسرّع؛ يتسارع|v|
+accumulate|يتراكم؛ يجمع|v|
+acquire|يكتسب؛ يحصل على|v|
+activate|ينشّط؛ يفعّل|v|
+afflict|يصيب؛ يبتلي|v|
+aid|يعين؛ يساعد|v|
+alert|ينبّه؛ يحذّر|v|
+align|يصطف؛ يحاذي|v|
+alter|يعدّل؛ يغيّر|v|
+ambush|يكمن؛ يباغت|v|
+amend|يعدّل؛ يصحّح|v|
+amuse|يسلّي؛ يضحك|v|
+anticipate|يتوقع؛ يستبق|v|
+appeal|يستأنف؛ يناشد|v|
+applaud|يصفّق؛ يستحسن|v|
+assemble|يجمع؛ يركّب|v|
+assign|يكلّف؛ يعيّن|v|
+associate|يربط؛ يعاشر|v|
+astonish|يذهل؛ يدهش|v|
+attain|يبلغ؛ يحقق|v|
+auction|يبيع بالمزاد|v|
+authorize|يفوّض؛ يخوّل|v|
+bleed|ينزف؛ يسيل دمه|v|
+blend|يمزج؛ يخلط|v|
+boost|يعزز؛ يرفع|v|
+broaden|يوسّع؛ يعرّض|v|
+captivate|يأسر؛ يفتن|v|
+certify|يصادق؛ يصدّق|v|
+clarify|يوضّح؛ يبيّن|v|
+coincide|يتزامن؛ يتطابق|v|
+collaborate|يتعاون؛ يتشارك|v|
+comprise|يتألف من؛ يشمل|v|
+conceal|يخفي؛ يستر|v|
+condemn|يدين؛ يحكم على|v|
+conduct|يجري؛ يدير|v|
+confront|يواجه؛ يتصدى لـ|v|
+consult|يستشير؛ يراجع|v|
+contradict|يناقض؛ يعارض|v|
+contribute|يساهم؛ يتبرع|v|
+convert|يحوّل؛ يغيّر المعتقد|v|
+cultivate|يزرع؛ يستصلح|v|
+dedicate|يكرّس؛ يهدي|v|
+derive|يشتق؛ يستمد|v|
+authentic|أصيل؛ موثوق|a|
+blessed|مبارك؛ محظوظ|a|
+bloody|دامٍ؛ ملطخ بالدماء|a|
+brutal|وحشي؛ قاسٍ|a|
+charming|ساحر؛ جذاب|a|
+civilized|متحضر؛ مهذب|a|
+coarse|خشن؛ فظ|a|
+competent|كفء؛ مختص|a|
+concise|موجز؛ مقتضب|a|
+conservative|محافظ؛ تقليدي|a|
+considerable|كبير؛ جدير بالاهتمام|a|
+continuous|متواصل؛ مستمر|a|
+controversial|مثير للجدل|a|
+convenient|مريح؛ ملائم|a|
+cordial|ودي؛ حار|a|
+courageous|شجاع؛ باسل|a|
+critical|حرج؛ ناقد|a|
+decisive|حاسم؛ قاطع|a|
+defensive|دفاعي|a|
+dense|كثيف؛ مكتظ|a|
+dependent|معتمد؛ تابع|a|
+devoted|مخلص؛ متفانٍ|a|
+disastrous|كارثي؛ مدمّر|a|
+dishonest|غير أمين؛ كاذب|a|
+dramatic|مثير؛ مسرحي|a|
+durable|متين؛ دائم|a|
+ahead of|قبل؛ متقدمًا على|c|
+all in all|إجمالًا؛ في المحصلة|c|
+as a whole|ككل؛ بوجه عام|c|
+at a loss|حائر؛ في خسارة|c|
+at ease|مرتاح؛ بلا تكلف|c|
+at fault|مخطئ؛ مسؤول عن الخطأ|c|
+at large|طليق؛ بوجه عام|c|
+at risk|معرّض للخطر|c|
+at war|في حالة حرب|c|
+back to back|متتالية؛ ظهرًا لظهر|c|
+beside the point|خارج الموضوع؛ غير ذي صلة|c|
+beyond doubt|بلا شك؛ مؤكد|c|
+by all means|بكل تأكيد؛ تفضل|c|
+by no means|على الإطلاق؛ لا بأي حال|c|
+in a row|على التوالي؛ في صف واحد|c|
+in a way|بطريقة ما؛ إلى حد ما|c|
+in any case|على أي حال|c|
+in between|بين؛ في الوسط|c|
+in brief|باختصار|c|
+in contrast|على النقيض؛ في المقابل|c|
+in detail|بالتفصيل|c|
+in effect|عمليًا؛ ساري المفعول|c|
+in favor of|لصالح؛ مؤيد لـ|c|
+in half|إلى نصفين|c|
+in line with|بما يتوافق مع؛ بما ينسجم مع|c|
+in other words|بعبارة أخرى|c|
+in particular|بالأخص؛ خاصة|c|
+in person|شخصيًا؛ بنفسه|c|
+in place of|بدلًا من؛ مكان|c|
+in practice|عمليًا؛ في الواقع|c|
+in pairs|في أزواج؛ مثنى|c|
+in reality|في الحقيقة؛ واقعيًا|c|
+in return|في المقابل؛ بالمقابل|c|
+in vain|عبثًا؛ دون جدوى|c|
+in writing|كتابةً؛ خطيًا|c|
+airport|مطار|n|
+hotel|فندق|n|
+station|محطة|n|
+garbage|قمامة|n|
+sail|شراع|n|
+wave|موجة|n|
+sunrise|شروق الشمس|n|
+sunset|غروب الشمس|n|
+weekend|عطلة نهاية الأسبوع|n|
+profile|ملف شخصي|n|
+username|اسم المستخدم|n|
+scanner|ماسح ضوئي|n|
+speaker|مكبّر صوت؛ متحدث|n|
+subtitle|ترجمة مكتوبة؛ عنوان فرعي|n|
+villain|شرير|n|
+journey|رحلة؛ مسيرة|n|
+voyage|رحلة بحرية|n|
+diary|مذكرات؛ يوميات|n|
+notebook|دفتر ملاحظات|n|
+highlighter|قلم تظليل|n|
+sleeve|كمّ|n|
+sink|حوض غسيل|n|
+staircase|درج؛ سلم|n|
+hallway|ممر|n|
+lobby|ردهة؛ بهو|n|
+rooftop|سطح المبنى|n|
+landlord|مالك العقار|n|
+tenant|مستأجر|n|
+rent|إيجار|n|
+mortgage|رهن عقاري|n|
+retirement|تقاعد|n|
+cash|نقد؛ نقود|n|
+sale|تخفيض؛ بيع|n|
+review|مراجعة؛ تقييم|n|
+rating|تقييم؛ تصنيف|n|
+survey|استبيان؛ مسح|n|
+quiz|اختبار قصير|n|
+routine|روتين؛ عادة يومية|n|
+weather|طقس|n|
+temperature|درجة الحرارة|n|
+humidity|رطوبة|n|
+sunshine|ضوء الشمس|n|
+moonlight|ضوء القمر|n|
+star|نجمة؛ نجم|n|
+machine|آلة؛ جهاز|n|
+tool|أداة؛ عدّة|n|
+shovel|مجرفة|n|
+stem|ساق النبات|n|
+queue|طابور؛ صف|n|
+traffic|حركة المرور|n|
+socket|مقبس كهربائي|n|
+switch|مفتاح كهربائي؛ مفتاح|n|
+language|لغة|n|
+phrase|عبارة؛ تعبير|n|
+meaning|معنى؛ دلالة|n|
+definition|تعريف|n|
+example|مثال؛ نموذج|n|
+synonym|مرادف|n|
+antonym|ضد؛ مضاد|n|
+spelling|تهجئة؛ إملاء|n|
+reading|قراءة|n|
+writing|كتابة|n|
+anxiety|قلق؛ توتر|n|
+awareness|وعي؛ إدراك|n|
+confusion|ارتباك؛ حيرة|n|
+revise|يراجع؛ يعدّل|v|
+memorize|يحفظ عن ظهر قلب|v|
+scan|يمسح ضوئيًا|v|
+delete|يحذف|v|
+scroll|يمرّر|v|
+sketch|يرسم تخطيطًا|v|
+photograph|يصوّر|v|
+clean|ينظّف|v|
+grate|يبشّر؛ يفرم|v|
+recover|يتعافى؛ يستعيد|v|
+painful|مؤلم|a|
+thoughtful|مراعٍ؛ متأمّل|a|
+normal|طبيعي؛ عادي|a|
+central|مركزي|a|
+female|أنثوي|a|
+male|ذكوري|a|
+single|أعزب؛ فردي|a|
+married|متزوّج|a|
+strict|صارم؛ دقيق|a|
+soft|ناعم؛ لين|a|
+hard|صلب؛ صعب|a|
+wooden|خشبي|a|
+golden|ذهبي|a|
+silver|فضّي|a|
+metallic|معدني|a|
+plastic|بلاستيكي|a|
+rich|غني؛ ثري|a|
+poor|فقير؛ ضعيف|a|
+once upon a time|ذات مرة|c|
+on board|على متن|c|
+out of work|عاطل عن العمل|c|
+out of town|خارج المدينة|c|
+up and down|صعودًا وهبوطًا|c|
+under control|تحت السيطرة|c|
+within reach|في المتناول|c|
+without fail|دون استثناء|c|
+in search of|بحثًا عن|c|
+make fun of|يسخر من|c|
+make room for|يفسح مكانًا لـ|c|
+take time|يستغرق وقتًا|c|
+bring along|يحضر معه|c|
+call for|يتطلّب؛ يطلب|c|
+pay for|يدفع ثمن|c|
+hand out|يوزّع|c|
+think over|يفكّر ملياً|c|
+fill out|يملأ الاستمارة|c|
+rule out|يستبعد|c|
+set aside|يدّخر؛ يخصّص|c|
+stand out|يبرز؛ يتميّز|c|
+next door|في الجوار؛ المنزل المجاور|c|
+a great deal of|كثيرًا من|c|
+a piece of|قطعة من|c|
+a cup of|فنجان من|c|
+fire alarm|إنذار الحريق|c|
+phone book|دليل الهاتف|c|
+road map|خريطة الطريق|c|
+sign language|لغة الإشارة|c|
+full stop|نقطة|c|
+question mark|علامة استفهام|c|
+exclamation mark|علامة تعجب|c|
+capital letter|حرف كبير|c|
+small letter|حرف صغير|c|
+vegetable|خضار؛ خضروات|n|
+fruit|فاكهة؛ ثمرة|n|
+meat|لحم|n|
+bread|خبز|n|
+tip|بقشيش؛ نصيحة|n|
+reservation|حجز؛ تحفّظ|n|
+seat|مقعد؛ كرسي|n|
+pain|ألم؛ وجع|n|
+ball|كرة|n|
+goalkeeper|حارس المرمى|n|
+hardware|عتاد؛ أجهزة|n|
+inbox|صندوق الوارد|n|
+attachment|مرفق؛ ملحق|n|
+vision|رؤية؛ بصيرة|n|
+office|مكتب؛ مكتب عمل|n|
+resume|سيرة ذاتية|n|
+training|تدريب؛ تأهيل|n|
+course|دورة تدريبية؛ مسار|n|
+semester|فصل دراسي|n|
+textbook|كتاب مدرسي|n|
+vowel|حرف علة؛ حركة|n|
+kiss|قبلة؛ يقبّل|n|
+joy|فرح؛ بهجة|n|
+relief|ارتياح؛ راحة|n|
+trouble|مشكلة؛ متاعب|n|
+solution|حل؛ علاج|n|
+surprise|مفاجأة؛ يفاجئ|n|
+party|حفلة؛ حزب|n|
+vacation|إجازة؛ عطلة|n|
+camp|مخيم؛ معسكر|n|
+picnic|نزهة؛ رحلة تنزّه|n|
+sky|سماء؛ فضاء|n|
+ground|أرض؛ تراب|n|
+earth|الأرض؛ تربة|n|
+world|العالم؛ الدنيا|n|
+measure|قياس؛ مقياس|n|
+need|حاجة؛ احتياج|n|
+reply|ردّ؛ جواب|n|
+surround|يحيط؛ يطوّق|n|
+surround|يحيط؛ يطوّق|v|
+switch|يبدّل؛ يشغّل|v|
+train|يدرّب؛ يتدرّب|v|
+wave|يلوّح؛ يموج|v|
+mutter|يتمتم؛ يغمغم|v|
+stammer|يتلعثم|v|
+serve|يقدّم؛ يخدم|v|
+kind|لطيف؛ طيّب|a|
+large|كبير؛ واسع|a|
+little|صغير؛ قليل|a|
+massive|ضخم؛ هائل|a|
+mighty|قوي؛ جبّار|a|
+numerous|عديد؛ كثير|a|
+playful|مرح؛ لعوب|a|
+pretty|جميل؛ لطيف|a|
+quick|سريع؛ خفيف|a|
+royal|ملكي؛ فخم|a|
+secure|آمن؛ مؤمَّن|a|
+vivid|حيّ؛ زاهٍ|a|
+clear|واضح؛ صافٍ|a|
+all the same|على أي حال؛ سواء|c|
+go wrong|يسير بشكل خاطئ؛ يتعطل|c|
+hold back|يتردّد؛ يكبح|c|
+keep track of|يتابع؛ يتتبّع|c|
+let go of|يترك؛ يتخلّى عن|c|
+make up for|يعوّض؛ يكفّر عن|c|
+part of|جزء من|c|
+play a role|يلعب دورًا|c|
+provided that|بشرط أن|c|
+sort of|نوعًا ما؛ إلى حد ما|c|
+take turns|يتناوبون؛ يتبادلون الأدوار|c|
+under pressure|تحت الضغط|c|
+up to you|الأمر يعود إليك|c|
+wait a minute|انتظر لحظة|c|
+what about|ماذا عن؛ ما رأيك في|c|
+with respect to|فيما يخص؛ بالنسبة إلى|c|
+word of mouth|التواصل الشفهي؛ انتشار الكلام|c|
+zero in on|يركّز على؛ يحدّد بدقة|c|
+in the meantime|في غضون ذلك|c|
+advertisement|إعلان|n|
+afternoon|بعد الظهر|n|
+agency|وكالة|n|
+aircraft|طائرة|n|
+amount|مقدار|n|
+angel|ملاك|n|
+animal|حيوان|n|
+apron|مريلة|n|
+asteroid|كويكب|n|
+autumn|الخريف|n|
+avenue|شارع عريض|n|
+bamboo|خيزران|n|
+banquet|مأدبة|n|
+bath|حمّام|n|
+beggar|متسوّل|n|
+biscuit|بسكويت|n|
+body|جسم|n|
+bookshelf|رف كتب|n|
+box|صندوق|n|
+brass|نحاس أصفر|n|
+bug|حشرة|n|
+bump|نتوء|n|
+calf|ساق؛ عجل|n|
+card|بطاقة|n|
+cat|قطة|n|
+cellphone|هاتف خلوي|n|
+chair|كرسي|n|
+channel|قناة|n|
+clerk|موظف|n|
+clothes|ملابس|n|
+cobra|كوبرا|n|
+cockroach|صرصور|n|
+comfort|راحة|n|
+cook|طباخ|n|
+couch|أريكة|n|
+council|مجلس|n|
+cousin|ابن العم|n|
+crane|رافعة|n|
+crater|فوهة|n|
+cream|كريمة|n|
+creature|مخلوق|n|
+cube|مكعب|n|
+cushion|وسادة|n|
+cycle|دورة|n|
+dagger|خنجر|n|
+dam|سد|n|
+detective|محقق|n|
+device|جهاز|n|
+dinner|عشاء|n|
+dirt|وسخ|n|
+doll|دمية|n|
+dough|عجين|n|
+equator|خط الاستواء|n|
+event|حدث|n|
+explosion|انفجار|n|
+fair|معرض|n|
+fairy|جنية|n|
+faith|إيمان|n|
+fiber|ألياف|n|
+fig|تين|n|
+flash|فلاش|n|
+flat|شقة|n|
+flesh|لحم|n|
+fur|فرو|n|
+gem|جوهرة|n|
+germ|جرثومة|n|
+glacier|نهر جليدي|n|
+grandfather|جد|n|
+grandmother|جدة|n|
+gun|بندقية|n|
+hail|برَد|n|
+harvest|حصاد|n|
+heat|حرارة|n|
+heel|كعب|n|
+herb|عشبة طبية|n|
+hip|ورك|n|
+hole|حفرة|n|
+horn|بوق|n|
+hose|خرطوم|n|
+hour|ساعة|n|
+hunter|صياد|n|
+husband|زوج|n|
+ivory|عاج|n|
+jail|سجن|n|
+jaw|فك|n|
+jelly|هلام|n|
+kid|طفل|n|
+kite|طائرة ورقية|n|
+lab|مختبر|n|
+lantern|فانوس|n|
+leopard|فهد|n|
+lime|ليمون حامض|n|
+lodge|نُزل|n|
+log|سجل|n|
+lord|سيد|n|
+lotion|لوشن|n|
+lounge|صالة استرخاء|n|
+magic|سحر|n|
+mail|بريد|n|
+mammal|ثدييات|n|
+manner|أسلوب|n|
+margin|هامش|n|
+mark|علامة|n|
+mat|حصيرة|n|
+meal|وجبة|n|
+microbe|ميكروب|n|
+mine|منجم|n|
+minute|دقيقة|n|
+mist|ضباب خفيف|n|
+mixture|خليط|n|
+mole|خلد|n|
+monster|وحش|n|
+month|شهر|n|
+moss|طحلب|n|
+moth|عثّة|n|
+motor|محرك|n|
+mule|بغل|n|
+mustard|خردل|n|
+nickel|نيكل|n|
+noodle|معكرونة|n|
+oasis|واحة|n|
+orbit|مدار|n|
+ore|خام|n|
+ox|ثور|n|
+oyster|محار|n|
+passage|ممر|n|
+patch|رقعة|n|
+paw|مخلب|n|
+pea|بازلاء|n|
+peak|قمة|n|
+pebble|حصاة|n|
+pest|آفة|n|
+pet|حيوان أليف|n|
+pickle|مخلّل|n|
+pine|صنوبر|n|
+pipe|أنبوب|n|
+pit|حفرة|n|
+plum|برقوق|n|
+poison|سم|n|
+pole|عمود|n|
+portrait|صورة شخصية|n|
+pottery|فخار|n|
+powder|مسحوق|n|
+prayer|صلاة|n|
+priest|كاهن|n|
+prize|جائزة|n|
+prophet|نبي|n|
+prose|نثر|n|
+pupil|تلميذ|n|
+pyramid|هرم|n|
+raisin|زبيب|n|
+ranch|مزرعة|n|
+rat|فأر|n|
+raven|غراب|n|
+reef|شعاب مرجانية|n|
+reptile|زاحف|n|
+riddle|لغز|n|
+robe|رداء|n|
+rug|سجادة صغيرة|n|
+ruin|أطلال|n|
+rumor|إشاعة|n|
+scout|كشّاف|n|
+season|موسم|n|
+shed|سقيفة|n|
+shore|شاطئ|n|
+slipper|شبشب|n|
+soil|تربة|n|
+spark|شرارة|n|
+spine|عمود فقري|n|
+spring|ربيع|n|
+stream|جدول|n|
+string|خيط|n|
+studio|استوديو|n|
+sweater|كنزة|n|
+sweets|حلويات|n|
+tail|ذيل|n|
+tank|خزان|n|
+tap|حنفية|n|
+tape|شريط لاصق|n|
+temple|معبد|n|
+terrace|تراس|n|
+toad|ضفدع طيني|n|
+toast|خبز محمص|n|
+tobacco|تبغ|n|
+torch|مشعل|n|
+tortoise|سلحفاة برية|n|
+track|مسار|n|
+trail|درب|n|
+trap|فخ|n|
+tribe|قبيلة|n|
+trick|حيلة|n|
+turkey|ديك رومي|n|
+twig|غصين|n|
+union|اتحاد|n|
+velvet|مخمل|n|
+venom|سم|n|
+vessel|سفينة|n|
+vine|دالية|n|
+vote|تصويت|n|
+wagon|عربة|n|
+waist|خصر|n|
+walnut|جوز|n|
+wand|عصا سحرية|n|
+wardrobe|خزانة ملابس|n|
+warrior|محارب|n|
+wasp|دبور|n|
+watch|ساعة يد|n|
+weed|حشيشة|n|
+well|بئر|n|
+wheat|قمح|n|
+whip|سوط|n|
+wig|شعر مستعار|n|
+winter|شتاء|n|
+witch|ساحرة|n|
+wizard|ساحر|n|
+wrist|رسغ|n|
+yacht|يخت|n|
+yarn|غزل|n|
+yeast|خميرة|n|
+zone|منطقة|n|
+behavior|سلوك|n|
+campaign|حملة|n|
+category|فئة|n|
+challenge|تحدٍّ|n|
+connection|صلة|n|
+consequence|نتيجة|n|
+context|سياق|n|
+convenience|راحة|n|
+debate|نقاش|n|
+demand|طلب|n|
+department|قسم|n|
+development|تطوير|n|
+difficulty|صعوبة|n|
+discovery|اكتشاف|n|
+discussion|نقاش|n|
+explanation|شرح|n|
+expression|تعبير|n|
+guidance|إرشاد|n|
+hesitation|تردد|n|
+importance|أهمية|n|
+improvement|تحسين|n|
+independence|استقلال|n|
+influence|تأثير|n|
+information|معلومات|n|
+instruction|تعليمات|n|
+leadership|قيادة|n|
+limit|حد|n|
+loyalty|ولاء|n|
+motivation|دافع|n|
+necessity|ضرورة|n|
+organization|منظمة|n|
+pattern|نمط|n|
+performance|أداء|n|
+period|فترة|n|
+personality|شخصية|n|
+perspective|منظور|n|
+potential|إمكانات|n|
+pressure|ضغط|n|
+priority|أولوية|n|
+process|عملية|n|
+property|ملكية؛ خاصية|n|
+proposal|مقترح|n|
+reaction|ردّ فعل|n|
+reality|واقع|n|
+release|إطلاق|n|
+requirement|متطلب|n|
+role|دور|n|
+selection|اختيار|n|
+sensation|إحساس|n|
+standard|معيار|n|
+structure|بنية|n|
+suggestion|اقتراح|n|
+support|دعم|n|
+system|نظام|n|
+tendency|ميل|n|
+treatment|علاج|n|
+value|قيمة|n|
+variety|تنوع|n|
+version|نسخة|n|
+volume|حجم|n|
+advance|يتقدم|v|
+affect|يؤثر في|v|
+annoy|يزعج|v|
+become|يصبح|v|
+confuse|يربك؛ يخلط|v|
+control|يتحكم؛ يسيطر|v|
+desire|يرغب|v|
+direct|يوجّه؛ يخرج|v|
+dress|يرتدي|v|
+empty|يفرغ|v|
+excuse|يعذر|v|
+exercise|يتمرن|v|
+get|يحصل على|v|
+graduate|يتخرّج|v|
+inspect|يفحص|v|
+land|يهبط|v|
+lay|يضع؛ يرقد|v|
+let|يسمح؛ يدع|v|
+light|يضيء؛ يشعل|v|
+love|يحب|v|
+march|يسير بانتظام|v|
+multiply|يتكاثر؛ يضرب|v|
+place|يضع؛ يرتّب|v|
+plan|يخطط|v|
+remain|يبقى|v|
+report|يبلّغ|v|
+reserve|يحجز|v|
+ring|يرنّ؛ يتصل|v|
+scold|يوبّخ|v|
+seek|يبحث عن|v|
+set|يضع؛ يحدد|v|
+shoot|يطلق؛ يصوّر|v|
+shut|يغلق|v|
+skip|يتخطى؛ يقفز|v|
+snap|يلتقط صورة|v|
+sort|يصنّف|v|
+stick|يلصق|v|
+store|يخزّن|v|
+strike|يضرب|v|
+suck|يمتص|v|
+suit|يناسب|v|
+supply|يزوّد|v|
+treat|يعامل؛ يعالج|v|
+value|يقدّر؛ يثمّن|v|
+water|يسقي|v|
+zip|يسحّب السحّاب|v|
+debate|يناقش|v|
+harness|يسخّر|v|
+steer|يوجّه؛ يقود|v|
+yearn|يشتاق|v|
+armed|مسلّح|a|
+clean|نظيف|a|
+cold|بارد|a|
+complicated|معقّد|a|
+dead|ميت|a|
+detailed|مفصّل|a|
+dirty|متسخ|a|
+earnest|جاد|a|
+easy|سهل|a|
+evil|شرير|a|
+fast|سريع|a|
+fearful|خائف|a|
+festive|احتفالي|a|
+gigantic|هائل|a|
+gray|رمادي|a|
+great|عظيم|a|
+happy|سعيد|a|
+horrible|فظيع|a|
+hot|حار|a|
+ideal|مثالي|a|
+important|مهم|a|
+joyful|فرِح|a|
+lean|نحيف|a|
+limited|محدود|a|
+long|طويل|a|
+lost|ضائع|a|
+low|منخفض|a|
+main|رئيسي|a|
+meaningful|ذو معنى|a|
+mellow|ناعم؛ هادئ|a|
+middle|أوسط|a|
+moral|أخلاقي|a|
+motionless|ساكن|a|
+negative|سلبي|a|
+new|جديد|a|
+nice|لطيف؛ جميل|a|
+nutritious|مغذٍّ|a|
+old|قديم|a|
+open|مفتوح|a|
+parallel|متوازٍ|a|
+partial|جزئي|a|
+passive|سلبي|a|
+pathetic|مثير للشفقة|a|
+peaceful|هادئ|a|
+positive|إيجابي|a|
+precise|دقيق|a|
+prompt|سريع|a|
+real|حقيقي|a|
+recent|حديث|a|
+reluctant|مترددّ|a|
+remote|بعيد|a|
+ridiculous|سخيف|a|
+robust|قوي|a|
+round|مستدير|a|
+sad|حزين|a|
+satisfied|راضٍ|a|
+scarce|نادر|a|
+secret|سري|a|
+shocked|مصدوم|a|
+short|قصير|a|
+sick|مريض|a|
+skillful|ماهر|a|
+slender|نحيف|a|
+slippery|زلق|a|
+slow|بطيء|a|
+small|صغير|a|
+solid|صلب|a|
+sorry|آسف|a|
+stale|قديم|a|
+steep|شديد الانحدار|a|
+stiff|متصلّب|a|
+strong|قوي|a|
+subtle|خفي|a|
+swift|سريع|a|
+tall|طويل|a|
+tame|أليف|a|
+tight|ضيّق|a|
+tragic|مأساوي|a|
+transparent|شفاف|a|
+tropical|استوائي|a|
+unable|غير قادر|a|
+upright|منتصب|a|
+urgent|عاجل|a|
+usual|معتاد|a|
+vague|غامض|a|
+valid|صالح|a|
+wandering|تائه|a|
+weary|منهك|a|
+wicked|شرير|a|
+wounded|مجروح|a|
+young|صغير؛ شاب|a|
+zealous|متحمس|a|
+at present|حاليًا|c|
+for good|نهائيًا|c|
+from scratch|من الصفر|c|
+get in touch|يتواصل|c|
+get out of|يخرج من|c|
+in charge|مسؤول|c|
+in danger|في خطر|c|
+in front|في المقدمة|c|
+in order|بالترتيب|c|
+knock out|يُفقد الوعي؛ يهزم|c|
+look forward|يتطلع|c|
+look up to|يحترم؛ يُعجب بـ|c|
+make out|يفهم؛ يميّز|c|
+on top of|فوق|c|
+over time|مع مرور الوقت|c|
+run out|ينفد|c|
+so that|حتى؛ لكي|c|
+stay in|يبقى في البيت|c|
+take apart|يفكّك|c|
+take care|يعتني|c|
+take in|يستوعب؛ يخدع|c|
+take up|يبدأ؛ يشغل|c|
+think of|يفكّر في|c|
+throw out|يرمي؛ يطرد|c|
+walk away|يبتعد|c|
+work on|يعمل على|c|
+year after year|عامًا بعد عام|c|
+aisle|ممر بين المقاعد|n|
+artifact|قطعة أثرية|n|
+auction|مزاد|n|
+ballet|باليه|n|
+barrel|برميل|n|
+basin|حوض؛ مغسلة|n|
+batch|دفعة؛ كمية|n|
+beacon|منارة|n|
+biology|علم الأحياء|n|
+birthday|عيد ميلاد|n|
+bonfire|نار مخيم|n|
+bookstore|متجر كتب|n|
+buckle|مشبك حزام|n|
+buffet|بوفيه|n|
+bundle|رزمة|n|
+bus|حافلة|n|
+calculator|آلة حاسبة|n|
+casino|كازينو|n|
+chamber|حجرة|n|
+chariot|عربة حربية|n|
+chemist|كيميائي|n|
+comedian|ممثل كوميدي|n|
+commander|قائد|n|
+conductor|قائد الأوركسترا|n|
+congress|مؤتمر|n|
+corridor|ممر|n|
+costume|زي تنكّري|n|
+cradle|مهد|n|
+crystal|بلّور|n|
+cupboard|خزانة مطبخ|n|
+curl|خصلة|n|
+deed|صكّ ملكية|n|
+defeat|هزيمة|n|
+delight|بهجة|n|
+denim|قماش الجينز|n|
+depth|عمق|n|
+diagram|مخطط بياني|n|
+dial|مؤشر؛ قرص|n|
+dialect|لهجة|n|
+dish|طبق|n|
+ditch|خندق|n|
+dome|قبّة|n|
+dragonfly|يعسوب|n|
+drawing|رسمة|n|
+dressing|صلصة السلطة|n|
+dune|كثيب رملي|n|
+eclipse|كسوف؛ خسوف|n|
+edition|طبعة|n|
+eel|أنقليس|n|
+elm|دردار|n|
+emerald|زمرد|n|
+emperor|إمبراطور|n|
+entrepreneur|رائد أعمال|n|
+episode|حلقة|n|
+errand|مشوار|n|
+fairness|إنصاف|n|
+fantasy|خيال|n|
+fare|أجرة|n|
+fender|مصد|n|
+fern|سرخس|n|
+fiddle|كمان|n|
+fin|زعنفة|n|
+flute|ناي|n|
+foam|رغوة|n|
+folk|شعب|n|
+forehead|جبهة|n|
+fraud|احتيال|n|
+freight|شحن|n|
+fringe|هامش؛ أهداب|n|
+frost|صقيع|n|
+gallery|معرض فني|n|
+gallon|غالون|n|
+garment|لباس|n|
+gear|تروس؛ عتاد|n|
+gentleman|سيّد؛ رجل مهذب|n|
+glimpse|لمحة|n|
+goblet|قدح|n|
+gossip|نميمة|n|
+grit|عزيمة|n|
+grocery|بقالة|n|
+guardian|وصي|n|
+guidebook|دليل سياحي|n|
+hamburger|همبرغر|n|
+handbag|حقيبة يد|n|
+hardship|مشقة|n|
+harp|قيثارة|n|
+haven|ملاذ|n|
+hazard|خطر|n|
+hem|حاشية الثوب|n|
+hermit|ناسك|n|
+hive|خلية نحل|n|
+honor|شرف|n|
+horizon|أفق|n|
+hymn|ترنيمة|n|
+icicle|قنديل ثلجي|n|
+igloo|بيت ثلجي|n|
+inn|نُزل|n|
+jam|مربى؛ زحمة سير|n|
+jeans|بنطال جينز|n|
+jigsaw|لغز تركيب|n|
+jockey|فارس سباق|n|
+jug|إبريق|n|
+kidney|كلية|n|
+kiosk|كشك|n|
+knight|فارس|n|
+ladle|مغرفة|n|
+lagoon|بحيرة شاطئية|n|
+laundry|غسيل|n|
+lava|حمم بركانية|n|
+ledge|حافة صخرية|n|
+lever|رافعة|n|
+licence|رخصة|n|
+limb|طرف|n|
+linen|كتان|n|
+loft|علّية|n|
+lottery|يانصيب|n|
+lullaby|تهويدة|n|
+luxury|رفاهية|n|
+mackerel|سمك الماكريل|n|
+mansion|قصر|n|
+marker|قلم تحديد|n|
+marsh|مستنقع|n|
+mascot|تميمة|n|
+maze|متاهة|n|
+mermaid|حورية البحر|n|
+metaphor|استعارة|n|
+midnight|منتصف الليل|n|
+mile|ميل|n|
+millionaire|مليونير|n|
+mineral|معدن|n|
+mint|نعناع|n|
+moustache|شارب|n|
+mug|كوب كبير|n|
+muffin|مافن|n|
+mural|جدارية|n|
+mystery|غموض؛ لغز|n|
+nap|قيلولة|n|
+nectar|رحيق|n|
+nominee|مرشّح|n|
+nostril|منخر|n|
+nursery|حضانة؛ مشتل|n|
+oath|قسم|n|
+omelet|عجة|n|
+opera|أوبرا|n|
+orphan|يتيم|n|
+outfit|زي؛ ملابس|n|
+outpost|مركز متقدم|n|
+overcoat|معطف ثقيل|n|
+pajamas|بيجاما|n|
+pantry|مخزن طعام|n|
+pastry|معجنات|n|
+pedal|دواسة|n|
+pendant|قلادة|n|
+pilgrim|حاج|n|
+pioneer|رائد|n|
+plateau|هضبة|n|
+plot|حبكة؛ مؤامرة|n|
+porridge|عصيدة|n|
+postman|ساعي البريد|n|
+praise|ثناء|n|
+precipice|هاوية|n|
+prey|فريسة|n|
+prism|منشور زجاجي|n|
+propeller|مروحة|n|
+pudding|حلوى البودينغ|n|
+quarry|محجر|n|
+quartz|كوارتز|n|
+quilt|لحاف|n|
+quota|حصة|n|
+radish|فجل|n|
+raft|طوف|n|
+rainfall|هطول المطر|n|
+ram|كبش|n|
+ranger|حارس الغابة|n|
+rattle|خشخيشة|n|
+reflection|انعكاس؛ تأمّل|n|
+refuge|ملجأ|n|
+regiment|فوج عسكري|n|
+rehearsal|بروفة|n|
+reindeer|غزال الرنة|n|
+relic|أثر|n|
+reservoir|خزان مياه|n|
+reunion|لقاء شمل|n|
+rhyme|قافية|n|
+rifle|بندقية|n|
+rim|حافة|n|
+roast|لحم مشوي|n|
+sage|حكيم؛ مريمية|n|
+salmon|سلمون|n|
+sapling|شتلة|n|
+scarecrow|فزّاعة|n|
+scoop|مغرفة|n|
+scroll|لفافة|n|
+sculptor|نحات|n|
+seaside|ساحل البحر|n|
+sheriff|عمدة|n|
+shrub|شجيرة|n|
+siren|صفّارة إنذار|n|
+skunk|ظربان|n|
+slope|منحدر|n|
+smoothie|عصير سموذي|n|
+snack|وجبة خفيفة|n|
+sprout|برعم|n|
+starfish|نجم البحر|n|
+stature|قامة؛ مكانة|n|
+stiletto|كعب إبرة|n|
+storage|تخزين|n|
+stroller|عربة أطفال|n|
+submarine|غواصة|n|
+sunflower|عبّاد الشمس|n|
+syrup|شراب|n|
+tablecloth|مفرش طاولة|n|
+tadpole|شرغوف|n|
+tanker|ناقلة|n|
+tavern|حانة|n|
+teacup|فنجان شاي|n|
+temper|مزاج؛ طبع|n|
+tempo|إيقاع|n|
+throne|عرش|n|
+tissue|منديل ورقي|n|
+toddler|طفل يحبو|n|
+tongs|ملقاط|n|
+topic|موضوع|n|
+trader|تاجر|n|
+traveler|مسافر|n|
+trolley|عربة|n|
+tuna|تونة|n|
+tutor|مدرّس خصوصي|n|
+typewriter|آلة كاتبة|n|
+umpire|حكم|n|
+underwear|ملابس داخلية|n|
+upstairs|الطابق العلوي|n|
+vacuum|مكنسة كهربائية|n|
+valve|صمام|n|
+vanilla|فانيليا|n|
+vegetarian|نباتي|n|
+veterinarian|طبيب بيطري|n|
+vicinity|جوار|n|
+villa|فيلا|n|
+vinegar|خل|n|
+walrus|فرس البحر|n|
+wedge|إسفين|n|
+wilderness|برية|n|
+windmill|طاحونة هوائية|n|
+wreath|إكليل|n|
+yolk|صفار البيض|n|
+zucchini|كوسا|n|
+acknowledge|يقرّ؛ يعترف|v|
+ascend|يصعد|v|
+avert|يتفادى؛ يصرف|v|
+awake|يوقظ؛ يستيقظ|v|
+bail|يكفل؛ يفرغ الماء|v|
+cast|يلقي؛ يصبّ؛ يمثّل|v|
+chant|ينشد؛ يهتف|v|
+compel|يجبر|v|
+comprehend|يستوعب؛ يفهم|v|
+cope|يتدبّر؛ يتعامل|v|
+dazzle|يبهر|v|
+depict|يصوّر؛ يمثّل|v|
+deposit|يودع؛ يضع|v|
+devote|يكرّس؛ يخصّص|v|
+disclose|يكشف؛ يفشي|v|
+display|يعرض|v|
+dissolve|يذوب؛ يحلّ|v|
+dominate|يسيطر؛ يهيمن|v|
+ease|يخفف؛ يسهّل|v|
+eliminate|يزيل؛ يقصي|v|
+embarrass|يحرج|v|
+emit|يبعث؛ يصدر|v|
+enforce|يفرض؛ ينفّذ|v|
+enhance|يعزز؛ يحسّن|v|
+enroll|يسجّل؛ يلتحق|v|
+erupt|ينفجر؛ يثور|v|
+escort|يرافق|v|
+evaporate|يتبخّر|v|
+excel|يتفوّق|v|
+expel|يطرد؛ يفصل|v|
+extinguish|يطفئ|v|
+fling|يقذف؛ يرمي|v|
+fulfill|ينجز؛ يحقق|v|
+furnish|يفرش؛ يزوّد|v|
+glide|ينزلق؛ يحلّق|v|
+guarantee|يضمن|v|
+halt|يوقف؛ يتوقف|v|
+haunt|يطارد؛ يسكن|v|
+hover|يحوم؛ يرف|v|
+hurl|يقذف بقوة|v|
+ignite|يشعل|v|
+imitate|يقلّد|v|
+implement|ينفّذ؛ يطبّق|v|
+instruct|يعلّم؛ يوجّه|v|
+interpret|يفسّر؛ يترجم|v|
+irritate|يهيّج؛ يزعج|v|
+lament|يندب؛ يرثي|v|
+liberate|يحرّر|v|
+linger|يتمهّل؛ يتأخر|v|
+locate|يحدد موقع|v|
+loiter|يتسكع|v|
+mimic|يقلّد؛ يحاكي|v|
+mourn|يحزن؛ يرثي|v|
+murmur|يهمهم؛ يتمتم|v|
+navigate|يبحر؛ يوجّه|v|
+nominate|يرشّح|v|
+nourish|يغذّي|v|
+occupy|يحتل؛ يشغل|v|
+orbit|يدور حول|v|
+pave|يرصف|v|
+perceive|يدرك؛ يلاحظ|v|
+persist|يصرّ؛ يستمر|v|
+pierce|يثقب؛ يخترق|v|
+plead|يتوسل؛ يترافع|v|
+plunge|يغطس؛ يندفع|v|
+ponder|يتأمل؛ يفكر|v|
+possess|يملك؛ يحوز|v|
+postpone|يؤجل|v|
+prevail|ينتصر؛ يسود|v|
+proclaim|يعلن رسميًا|v|
+prosper|يزدهر|v|
+purchase|يشتري|v|
+quote|يقتبس؛ ينقل|v|
+radiate|يشع|v|
+reform|يصلح؛ يغيّر|v|
+refresh|ينعش|v|
+reign|يحكم؛ يسود|v|
+reinforce|يعزز؛ يقوّي|v|
+rejoice|يفرح؛ يبتهج|v|
+relieve|يريح؛ يخفف|v|
+render|يقدّم؛ يجعل|v|
+resolve|يحل؛ يقرر|v|
+retain|يحتفظ؛ يستبقي|v|
+retreat|ينسحب|v|
+revive|ينعش؛ يحيي|v|
+reward|يكافئ|v|
+roam|يتجوّل|v|
+rotate|يدور؛ يتناوب|v|
+sacrifice|يضحّي|v|
+savor|يتذوّق|v|
+seize|يمسك؛ يستولي|v|
+shelter|يؤوي؛ يحمي|v|
+shatter|يحطّم؛ يتحطّم|v|
+shelve|يؤجّل|v|
+shuffle|يخلط؛ يجرّ قدميه|v|
+slam|يغلق بقوة|v|
+slap|يصفع|v|
+slump|ينهار؛ يهبط|v|
+sprint|يعدو بسرعة|v|
+stagger|يترنّح|v|
+startle|يفزع؛ يفاجئ|v|
+strain|يجهد؛ يصفّي|v|
+subtract|يطرح|v|
+succumb|يستسلم؛ يخضع|v|
+summon|يستدعي|v|
+swear|يقسم؛ يشتم|v|
+tailor|يفصّل؛ يكيّف|v|
+terrify|يرعب|v|
+thrive|يزدهر|v|
+tingle|يشعر بوخز|v|
+toss|يرمي؛ يقلّب|v|
+trample|يدوس|v|
+transfer|ينقل؛ يحوّل|v|
+transform|يحوّل؛ يغيّر|v|
+trigger|يُطلق؛ يسبّب|v|
+undo|يفكّ؛ يلغي|v|
+unfold|ينشر؛ ينفتح|v|
+unveil|يكشف؛ يزيح الستار|v|
+uphold|يؤيّد؛ يدعم|v|
+verify|يتحقق؛ يثبت|v|
+vibrate|يهتز|v|
+whistle|يصفر|v|
+withdraw|ينسحب؛ يسحب|v|
+wobble|يترنّح؛ يهتز|v|
+abstract|مجرّد|a|
+alien|غريب؛ فضائي|a|
+angelic|ملائكي|a|
+anonymous|مجهول|a|
+appropriate|مناسب|a|
+enchanting|ساحر|a|
+endangered|مهدد بالانقراض|a|
+ethical|أخلاقي|a|
+expert|خبير|a|
+explicit|صريح|a|
+extinct|منقرض|a|
+faded|باهت|a|
+fickle|متقلب|a|
+firm|ثابت؛ صلب|a|
+hostile|عدائي|a|
+humid|رطب|a|
+impolite|غير مهذب|a|
+infinite|لا نهائي|a|
+intense|شديد|a|
+invisible|غير مرئي|a|
+irregular|غير منتظم|a|
+isolated|معزول|a|
+jagged|مسنّن|a|
+liberal|ليبرالي؛ سخي|a|
+literal|حرفي|a|
+logical|منطقي|a|
+mechanical|ميكانيكي|a|
+mental|ذهني|a|
+minimal|ضئيل|a|
+mischievous|مشاغب|a|
+mobile|متنقّل|a|
+moderate|معتدل|a|
+monstrous|وحشي؛ هائل|a|
+naive|ساذج|a|
+nonstop|متواصل|a|
+obscure|غامض؛ خافت|a|
+optimistic|متفائل|a|
+organic|عضوي|a|
+outdated|قديم|a|
+peculiar|غريب؛ خاص|a|
+pessimistic|متشائم|a|
+polar|قطبي|a|
+practical|عملي|a|
+premium|فاخر|a|
+preserved|محفوظ|a|
+prime|أساسي؛ ممتاز|a|
+productive|منتج|a|
+profound|عميق|a|
+prominent|بارز|a|
+quaint|طريف|a|
+radiant|مشرق|a|
+rational|عقلاني|a|
+reasonable|معقول|a|
+rebellious|متمرّد|a|
+recyclable|قابل لإعادة التدوير|a|
+refined|مهذّب|a|
+relaxed|مسترخٍ|a|
+resilient|صامد|a|
+rustic|ريفي|a|
+scornful|ساخر|a|
+second-hand|مستعمل|a|
+skeptical|متشكك|a|
+slight|طفيف|a|
+spacious|فسيح|a|
+stingy|بخيل|a|
+sufficient|كافٍ|a|
+superb|ممتاز|a|
+supreme|أسمى|a|
+sustainable|مستدام|a|
+symbolic|رمزي|a|
+talented|موهوب|a|
+tedious|ممل؛ مرهق|a|
+tense|متوتر|a|
+thrilling|مثير|a|
+tolerant|متسامح|a|
+trivial|تافه|a|
+unbelievable|لا يُصدَّق|a|
+uncommon|غير شائع|a|
+undecided|غير محسوم|a|
+uniform|موحّد|a|
+unpleasant|غير سار|a|
+variable|متغيّر|a|
+vertical|عمودي|a|
+vibrant|نابض بالحياة|a|
+victorious|منتصر|a|
+virtual|افتراضي|a|
+vulnerable|ضعيف؛ معرّض للخطر|a|
+wary|حذر|a|
+welcome|مرحّب به|a|
+wholesome|صحي|a|
+witty|ظريف|a|
+wretched|تعيس|a|
+yellow|أصفر|a|
+a little bit|قليلًا جدًا|c|
+add up|يجمع؛ يتراكم|c|
+after a while|بعد قليل|c|
+all at once|دفعة واحدة|c|
+all the time|طوال الوقت|c|
+around the corner|على وشك|c|
+as a rule|عادةً|c|
+be careful|كن حذرًا|c|
+be quiet|اهدأ|c|
+believe in|يؤمن بـ|c|
+blow up|ينفجر؛ يكبّر الصورة|c|
+break out|يندلع|c|
+bring down|يُسقط؛ يخفض|c|
+burn out|يُنهك|c|
+buy time|يكسب الوقت|c|
+catch on|يفهم؛ يشيع|c|
+come along|يرافق|c|
+cut back|يقلّص|c|
+die down|يهدأ؛ يخفت|c|
+do well|ينجح|c|
+drop out|ينسحب من الدراسة|c|
+fall apart|ينهار|c|
+far from|بعيدًا عن|c|
+fill up|يملأ تمامًا|c|
+go along with|يوافق على|c|
+hand over|يسلّم|c|
+hear of|يسمع عن|c|
+into the bargain|علاوةً على ذلك|c|
+keep up with|يواكب|c|
+lay off|يسرّح من العمل|c|
+leave out|يُغفل|c|
+let off|يعفو عن|c|
+line up|يصطف|c|
+live on|يعيش على|c|
+look down on|يحتقر|c|
+make a difference|يُحدث فرقًا|c|
+make a wish|يتمنى أمنية|c|
+make it|ينجح|c|
+on and off|من حين لآخر|c|
+once and for all|مرة واحدة وإلى الأبد|c|
+open up|ينفتح؛ يبوح|c|
+pull up|يتوقف|c|
+put on weight|يزداد وزنًا|c|
+reach out|يتواصل|c|
+ring up|يتصل هاتفيًا|c|
+sell out|ينفد|c|
+send back|يعيد|c|
+settle down|يستقر؛ يهدأ|c|
+shake hands|يتصافح|c|
+speak out|يجاهر|c|
+split up|ينفصل|c|
+spread out|ينتشر|c|
+stand by|يساند|c|
+talk into|يقنع|c|
+tell apart|يميّز|c|
+wind up|ينتهي|c|
+wrap up|ينهي؛ يختم|c|
+`;
+const NAMES={v:"فعل",a:"صفة",n:"اسم",c:"مركبة"};
+const D=RAW.split("\n").filter(l=>l.trim()).map(l=>l.split("|"));
+const q=document.getElementById("q"),L=document.getElementById("list"),C=document.getElementById("count");
+let tag="";
+const ICON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+function render(){
+  const t=q.value.trim().toLowerCase();
+  const r=D.filter(([e,a,g,m])=>(!tag||g===tag)&&(!t||e.includes(t)||a.includes(t)));
+  L.innerHTML=r.length?r.map(([e,a,g,m])=>`<div class="row"><div class="pic">${m||e[0].toUpperCase()}</div><div class="w"><div class="en">${e}</div><div class="ar">${a} ${g?`<span class="tag ${g}">${NAMES[g]}</span>`:""}</div></div><button class="star${window.nbHas&&nbHas(e)?" on":""}" data-w="${e}" aria-label="احفظ في الدفتر">${window.nbHas&&nbHas(e)?"★":"☆"}</button><button class="say" data-w="${e}" data-r=".45" aria-label="نطق بطيء">🐢</button><button class="say" data-w="${e}" data-r="1.1" aria-label="نطق سريع">⚡</button></div>`).join(""):'<div class="empty">لا توجد نتيجة</div>';
+  C.textContent=r.length+" كلمة";
+}
+let VO=[];
+function loadV(){try{VO=speechSynthesis.getVoices()}catch(e){}}
+try{loadV();speechSynthesis.onvoiceschanged=loadV}catch(e){}
+function speak(w,b,r){
+  const s=window.speechSynthesis;
+  if(!s||typeof SpeechSynthesisUtterance==="undefined"){C.textContent="هذا المتصفح لا يدعم النطق، افتح الرابط في Safari أو Chrome";return}
+  loadV();s.cancel();s.resume();
+  const u=new SpeechSynthesisUtterance(w);
+  const v=VO.find(x=>x.lang==="en-US")||VO.find(x=>x.lang&&x.lang.startsWith("en"));
+  if(v)u.voice=v;
+  u.lang=v?v.lang:"en-US";u.rate=r;
+  b.classList.add("on");
+  u.onend=()=>b.classList.remove("on");
+  u.onerror=()=>{b.classList.remove("on");C.textContent="تعذر تشغيل الصوت، تأكد أن الجوال ليس على الصامت وافتح الرابط في Safari أو Chrome"};
+  setTimeout(()=>s.speak(u),50);
+}
+L.addEventListener("click",e=>{const b=e.target.closest(".say");if(b)speak(b.dataset.w,b,+b.dataset.r)});
+document.getElementById("chips").addEventListener("click",e=>{
+  const c=e.target.closest(".chip");if(!c)return;tag=c.dataset.t;
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));render();
+});
+q.addEventListener("input",render);render();
+document.getElementById("inst").onclick=e=>{e.preventDefault();const p=document.getElementById("ip");
+p.innerHTML=/iPhone|iPad/.test(navigator.userAgent)?"آيفون: افتح الرابط في Safari، اضغط زر المشاركة، ثم «إضافة إلى الشاشة الرئيسية».":"أندرويد: افتح الرابط في Chrome، اضغط ⋮ ثم «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».";p.hidden=!p.hidden};
+
+/* الدفتر المصغّر */
+(function(){
+const $=id=>document.getElementById(id);
+let saved=[],prac={},openW=null;
+try{saved=JSON.parse(localStorage.getItem("nbw")||"[]");prac=JSON.parse(localStorage.getItem("nbp")||"{}")}catch(e){}
+const persist=()=>{try{localStorage.setItem("nbw",JSON.stringify(saved));localStorage.setItem("nbp",JSON.stringify(prac))}catch(e){}};
+const key=w=>w.trim().toLowerCase();
+const info=w=>D.find(x=>x[0].toLowerCase()===w)||[w,""];
+window.nbHas=w=>saved.includes(key(w));
+function toast(m){const t=$("toast");t.textContent=m;t.style.opacity=1;clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.opacity=0,1500)}
+function check(i,w){const v=i.value.trim().toLowerCase();i.classList.toggle("ok",v!==""&&v===w);i.classList.toggle("bad",v!==""&&v!==w&&!w.startsWith(v))}
+function panel(){
+  $("cnt").textContent=saved.length;$("nbclr").style.display=saved.length?"block":"none";
+  const box=$("nbbox");box.innerHTML="";
+  if(!saved.length){box.innerHTML='<div class="nbe">اضغط ☆ بجانب أي كلمة لحفظها هنا، ثم اكتبها 55 مرة للتدريب.</div>';return}
+  for(const w of saved){
+    const it=info(w),d=document.createElement("div");d.className="nw";
+    d.innerHTML='<div class="nwh"><div class="nm"><b></b><small></small></div><button data-a="s" aria-label="نطق بطيء">🐢</button><button data-a="f" aria-label="نطق سريع">⚡</button><button data-a="x" aria-label="حذف">✕</button></div>';
+    d.querySelector("b").textContent=it[0];d.querySelector("small").textContent=it[1];
+    d.querySelector(".nm").onclick=()=>{openW=openW===w?null:w;panel()};
+    d.querySelector('[data-a=s]').onclick=e=>speak(it[0],e.currentTarget,.45);
+    d.querySelector('[data-a=f]').onclick=e=>speak(it[0],e.currentTarget,1.1);
+    d.querySelector('[data-a=x]').onclick=()=>{saved=saved.filter(x=>x!==w);delete prac[w];if(openW===w)openW=null;persist();panel();render()};
+    if(openW===w){
+      prac[w]=prac[w]||[];while(prac[w].length<55)prac[w].push("");
+      const lines=document.createElement("div");lines.className="nl";
+      const addLine=v=>{const i=document.createElement("input");i.type="text";i.value=v;i.autocomplete="off";i.autocapitalize="off";i.spellcheck=false;
+        const next=()=>{const all=[...lines.children],k=all.indexOf(i);if(k<all.length-1){all[k+1].focus();all[k+1].scrollIntoView({block:"nearest"})}else i.blur()};
+        i.oninput=()=>{prac[w]=[...lines.children].map(x=>x.value);persist();check(i,w);if(i.classList.contains("ok"))next()};
+        i.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();next()}};
+        lines.appendChild(i);check(i,w)};
+      prac[w].forEach(addLine);d.appendChild(lines);
+      const m=document.createElement("button");m.className="nmore";m.type="button";m.textContent="+ 10 أسطر";
+      m.onclick=()=>{for(let n=0;n<10;n++){prac[w].push("");addLine("")}persist()};d.appendChild(m);
+    }
+    box.appendChild(d);
+  }
+}
+L.addEventListener("click",e=>{const b=e.target.closest(".star");if(!b)return;
+  const w=key(b.dataset.w),k=saved.indexOf(w);
+  if(k>-1){saved.splice(k,1);delete prac[w];if(openW===w)openW=null}else{saved.push(w);openW=w}
+  persist();b.classList.toggle("on",k<0);b.textContent=k<0?"★":"☆";panel();toast(k<0?"أُضيفت إلى دفترك 📓":"أُزيلت من الدفتر")});
+$("nbfab").onclick=()=>{$("nbp").hidden=!$("nbp").hidden};
+$("nbx").onclick=()=>{$("nbp").hidden=true};
+$("nbclr").onclick=()=>{if(confirm("هل تريد مسح الدفتر بالكامل؟")){saved=[];prac={};openW=null;persist();panel();render()}};
+openW=saved[saved.length-1]||null;
+panel();render();
+})();
+</script>
+<script>if("serviceWorker"in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
+<script>(function(){var s=document.getElementById("splash");if(!s)return;function hide(){s.classList.add("out");setTimeout(function(){s.remove()},700)}s.addEventListener("click",hide);setTimeout(hide,2800)})();</script>
+<script>(function(){var b=document.getElementById("themeb");function ic(){b.textContent=document.documentElement.dataset.theme==="dark"?"☀️":"🌙"}ic();b.onclick=function(){var n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}ic()}})();</script>
+<script>(function(){var $=function(i){return document.getElementById(i)};var ab=$("aib"),ap=$("aip"),k=$("aik"),m=$("aim"),q=$("aiq"),go=$("aisend"),o=$("aio"),x=$("aix");
+try{k.value=localStorage.getItem("gkey")||"";m.value=localStorage.getItem("gmodel")||"gemini-2.0-flash"}catch(e){}
+ab.onclick=function(){ap.hidden=!ap.hidden;var n=$("nbp");if(n)n.hidden=true};
+x.onclick=function(){ap.hidden=true};
+k.onchange=function(){try{localStorage.setItem("gkey",k.value.trim())}catch(e){}};
+m.onchange=function(){try{localStorage.setItem("gmodel",m.value.trim())}catch(e){}};
+go.onclick=async function(){var key=k.value.trim(),text=q.value.trim(),model=m.value.trim()||"gemini-2.0-flash";
+if(!key){o.textContent="أدخل مفتاح Gemini أولًا.";return}if(!text){o.textContent="اكتب سؤالك أولًا.";return}
+o.textContent="…جارٍ التفكير";
+try{var r=await fetch("https://generativelanguage.googleapis.com/v1beta/models/"+encodeURIComponent(model)+":generateContent?key="+encodeURIComponent(key),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({contents:[{parts:[{text:"أجب بالعربية بإيجاز ووضوح. إذا كان السؤال عن كلمة إنجليزية فاشرح معناها ونطقها وأعط مثالين. السؤال: "+text}]}]})});
+var d=await r.json();if(!r.ok){o.textContent="خطأ: "+((d.error&&d.error.message)||r.status)}else{var t=d.candidates&&d.candidates[0]&&d.candidates[0].content.parts[0].text;o.textContent=t||"لا توجد إجابة."}}
+catch(e){o.textContent="تعذّر الاتصال. تأكد من الإنترنت."}};
+})();</script>
+</body>
+</html>
